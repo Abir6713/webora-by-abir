@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>WEBORA by Abir | Website Package</title>
 
   <style>
@@ -130,6 +131,8 @@
       font-size: 17px;
     }
 
+    /* SHOWCASE */
+
     .showcase {
       padding: 80px 6%;
       background: var(--off-white);
@@ -188,7 +191,7 @@
     }
 
     .mockup-label span {
-      font-size: 11px;
+      font-size: 10px;
       color: var(--red);
       font-weight: 800;
       text-transform: uppercase;
@@ -196,21 +199,20 @@
     }
 
     .mockup {
-      min-height: 250px;
+      min-height: 270px;
       padding: 22px;
-      background: #f2f2f2;
+      background: #ededed;
     }
 
     .site-window {
-      height: 205px;
+      height: 225px;
       background: var(--white);
-      border: 1px solid #d8d8d8;
+      border: 1px solid #d5d5d5;
       overflow: hidden;
-      position: relative;
     }
 
     .site-top {
-      height: 28px;
+      height: 30px;
       background: var(--black);
       display: flex;
       align-items: center;
@@ -226,137 +228,248 @@
     }
 
     .site-content {
-      padding: 16px;
-      height: calc(100% - 28px);
+      padding: 18px;
+      height: calc(100% - 30px);
+    }
+
+    .mock-brand {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .mock-logo {
+      width: 70px;
+      height: 8px;
+      background: var(--black);
+    }
+
+    .mock-nav {
+      display: flex;
+      gap: 5px;
+    }
+
+    .mock-nav span {
+      width: 20px;
+      height: 4px;
+      background: #ccc;
     }
 
     .mock-title {
-      font-size: 18px;
-      font-weight: 900;
+      width: 75%;
+      height: 20px;
+      background: var(--black);
+      margin-bottom: 8px;
+    }
+
+    .mock-title.red {
+      width: 52%;
+      background: var(--red);
+    }
+
+    .mock-copy {
+      width: 82%;
+      height: 5px;
+      background: #ddd;
       margin-bottom: 6px;
     }
 
-    .mock-subtitle {
-      font-size: 8px;
-      color: #777;
-      margin-bottom: 13px;
+    .mock-copy.short {
+      width: 58%;
     }
 
-    .red-line {
-      width: 42px;
-      height: 4px;
-      background: var(--red);
-      margin-bottom: 12px;
-    }
-
-    .mock-grid {
+    .mock-items {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 8px;
+      margin-top: 20px;
     }
 
     .mock-item {
-      background: #eeeeee;
-      min-height: 65px;
-      padding: 8px;
+      height: 70px;
+      background: #e5e5e5;
+      border-bottom: 4px solid var(--red);
       position: relative;
     }
 
-    .mock-item::before {
+    .mock-item::after {
       content: "";
-      display: block;
-      width: 100%;
-      height: 32px;
-      background: #d5d5d5;
-      margin-bottom: 6px;
-    }
-
-    .mock-item span {
-      display: block;
-      width: 70%;
+      position: absolute;
+      left: 9px;
+      right: 9px;
+      bottom: 10px;
       height: 4px;
       background: #bbb;
     }
 
-    .mock-item span::after {
-      content: "";
-      display: block;
-      width: 45%;
-      height: 3px;
-      background: #d0d0d0;
-      margin-top: 5px;
+    /* CATEGORY-SPECIFIC VISUALS */
+
+    .cake .mock-item:nth-child(1) {
+      background:
+        radial-gradient(circle at 50% 38%, #aaa 0 14%, transparent 15%),
+        linear-gradient(#e8e8e8, #d3d3d3);
     }
 
-    .cake .mock-item::before {
+    .cake .mock-item:nth-child(2) {
       background:
-        radial-gradient(circle at 50% 35%, #fff 0 12%, transparent 13%),
-        linear-gradient(#d7d7d7, #eeeeee);
+        radial-gradient(circle at 35% 45%, #aaa 0 12%, transparent 13%),
+        radial-gradient(circle at 65% 45%, #aaa 0 12%, transparent 13%),
+        #e8e8e8;
     }
 
-    .hair .mock-item::before {
+    .cake .mock-item:nth-child(3) {
       background:
-        radial-gradient(ellipse at 50% 35%, #333 0 25%, transparent 26%),
-        linear-gradient(#ddd, #eee);
+        linear-gradient(45deg, transparent 40%, #aaa 41% 60%, transparent 61%),
+        #e8e8e8;
     }
 
-    .lash .mock-item::before {
+    .hair .mock-item:nth-child(1) {
       background:
-        radial-gradient(ellipse at 50% 50%, #222 0 10%, transparent 11%),
-        linear-gradient(#ddd, #eee);
+        radial-gradient(ellipse at 50% 38%, #555 0 27%, transparent 28%),
+        #ddd;
     }
 
-    .fashion .mock-item::before {
+    .hair .mock-item:nth-child(2) {
       background:
-        linear-gradient(135deg, transparent 40%, #bbb 41% 60%, transparent 61%),
+        radial-gradient(ellipse at 50% 38%, #777 0 24%, transparent 25%),
+        #ddd;
+    }
+
+    .hair .mock-item:nth-child(3) {
+      background:
+        linear-gradient(135deg, #777 0 25%, transparent 26% 74%, #777 75%),
+        #ddd;
+    }
+
+    .lash .mock-item {
+      background:
+        radial-gradient(ellipse at 50% 40%, #555 0 10%, transparent 11%),
+        linear-gradient(#eee, #ddd);
+    }
+
+    .fashion .mock-item:nth-child(1) {
+      background:
+        linear-gradient(135deg, transparent 35%, #999 36% 64%, transparent 65%),
+        #e5e5e5;
+    }
+
+    .fashion .mock-item:nth-child(2) {
+      background:
+        linear-gradient(45deg, #aaa 0 30%, transparent 31% 69%, #aaa 70%),
+        #e5e5e5;
+    }
+
+    .fashion .mock-item:nth-child(3) {
+      background:
+        linear-gradient(90deg, transparent 20%, #999 21% 79%, transparent 80%),
+        #e5e5e5;
+    }
+
+    .restaurant .mock-item {
+      background:
+        radial-gradient(circle at center, #999 0 28%, transparent 29%),
+        #e5e5e5;
+    }
+
+    .barber .mock-item:nth-child(1) {
+      background:
+        linear-gradient(90deg, #999 0 25%, #eee 25% 75%, #999 75%);
+    }
+
+    .barber .mock-item:nth-child(2) {
+      background:
+        linear-gradient(135deg, #999 0 20%, #eee 21% 79%, #999 80%);
+    }
+
+    .barber .mock-item:nth-child(3) {
+      background:
+        radial-gradient(circle at 50% 40%, #777 0 20%, transparent 21%),
         #eee;
     }
 
-    .restaurant .mock-item::before {
+    .makeup .mock-item:nth-child(1) {
       background:
-        radial-gradient(circle at center, #bbb 0 28%, transparent 29%),
-        #eee;
+        radial-gradient(circle at 35% 40%, #999 0 11%, transparent 12%),
+        radial-gradient(circle at 65% 60%, #aaa 0 14%, transparent 15%),
+        #e5e5e5;
     }
 
-    .barber .mock-item::before {
+    .makeup .mock-item:nth-child(2) {
       background:
-        linear-gradient(90deg, #bbb 0 25%, #eee 25% 75%, #bbb 75%);
+        radial-gradient(circle at 50% 50%, #999 0 25%, transparent 26%),
+        #e5e5e5;
     }
 
-    .makeup .mock-item::before {
+    .makeup .mock-item:nth-child(3) {
       background:
-        radial-gradient(circle at 30% 40%, #bbb 0 10%, transparent 11%),
-        radial-gradient(circle at 65% 60%, #aaa 0 13%, transparent 14%),
-        #eee;
+        linear-gradient(135deg, #aaa 0 20%, transparent 21% 79%, #aaa 80%),
+        #e5e5e5;
     }
 
-    .photography .mock-item::before {
+    .photography .mock-item:nth-child(1) {
       background:
-        linear-gradient(135deg, #bbb 0 35%, #eee 36% 65%, #aaa 66%);
+        linear-gradient(135deg, #999 0 35%, #eee 36% 64%, #999 65%);
     }
 
-    .events .mock-item::before {
+    .photography .mock-item:nth-child(2) {
       background:
-        radial-gradient(circle at 20% 50%, #aaa 0 12%, transparent 13%),
-        radial-gradient(circle at 50% 50%, #bbb 0 12%, transparent 13%),
-        radial-gradient(circle at 80% 50%, #aaa 0 12%, transparent 13%),
-        #eee;
+        linear-gradient(45deg, #777 0 25%, #eee 26% 74%, #999 75%);
     }
 
-    .catalogue .mock-item::before {
+    .photography .mock-item:nth-child(3) {
       background:
-        linear-gradient(90deg, #bbb 0 30%, #eee 30% 70%, #bbb 70%);
+        linear-gradient(160deg, #aaa 0 35%, #eee 36% 65%, #888 66%);
     }
 
-    .professional .mock-item::before {
+    .events .mock-item {
       background:
-        linear-gradient(#bbb 0 20%, #eee 20% 100%);
+        radial-gradient(circle at 20% 50%, #999 0 11%, transparent 12%),
+        radial-gradient(circle at 50% 50%, #777 0 11%, transparent 12%),
+        radial-gradient(circle at 80% 50%, #999 0 11%, transparent 12%),
+        #e5e5e5;
     }
 
-    .custom .mock-item::before {
+    .catalogue .mock-item {
       background:
-        linear-gradient(45deg, #bbb 0 10%, transparent 10% 90%, #bbb 90%),
-        #eee;
+        linear-gradient(90deg, #aaa 0 30%, #eee 31% 69%, #aaa 70%),
+        #e5e5e5;
     }
+
+    .professional .mock-item:nth-child(1) {
+      background:
+        linear-gradient(#999 0 22%, #eee 23% 100%);
+    }
+
+    .professional .mock-item:nth-child(2) {
+      background:
+        linear-gradient(135deg, #aaa 0 25%, #eee 26% 100%);
+    }
+
+    .professional .mock-item:nth-child(3) {
+      background:
+        linear-gradient(90deg, #999 0 18%, #eee 19% 100%);
+    }
+
+    .custom .mock-item:nth-child(1) {
+      background:
+        linear-gradient(45deg, #aaa 0 10%, transparent 11% 89%, #aaa 90%),
+        #e5e5e5;
+    }
+
+    .custom .mock-item:nth-child(2) {
+      background:
+        linear-gradient(135deg, #999 0 10%, transparent 11% 89%, #999 90%),
+        #e5e5e5;
+    }
+
+    .custom .mock-item:nth-child(3) {
+      background:
+        radial-gradient(circle at center, #888 0 20%, transparent 21%),
+        #e5e5e5;
+    }
+
+    /* PACKAGES */
 
     .package-section {
       padding: 85px 6%;
@@ -401,17 +514,17 @@
       text-transform: uppercase;
     }
 
-    .package-card h3 {
-      font-size: 20px;
-      margin-bottom: 5px;
-    }
-
     .package-type {
       color: var(--red);
       font-size: 11px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 1px;
+    }
+
+    .package-card h3 {
+      font-size: 20px;
+      margin-top: 5px;
     }
 
     .price {
@@ -448,8 +561,6 @@
       padding: 13px;
       font-size: 13px;
       font-weight: 800;
-      border: none;
-      cursor: pointer;
     }
 
     .package-card.featured .package-button {
@@ -542,64 +653,108 @@
 <body>
 
   <header class="header">
-    <a href="index.html" class="logo">
-      <div class="logo-mark">W</div>
-      <div class="logo-text">
-        <span class="logo-name">WEBORA</span>
-        <span class="logo-by">BY ABIR</span>
-      </div>
-    </a>
 
 ```
-<a href="javascript:history.back()" class="back-link">← Back</a>
+<a href="index.html" class="logo">
+
+  <div class="logo-mark">W</div>
+
+  <div class="logo-text">
+    <span class="logo-name">WEBORA</span>
+    <span class="logo-by">BY ABIR</span>
+  </div>
+
+</a>
+
+<a href="business.html" class="back-link">← Back</a>
 ```
 
   </header>
 
   <section class="hero">
-    <div class="hero-inner">
-      <div class="eyebrow">Website Package</div>
-      <h1 id="heroTitle">Website Package</h1>
-      <p id="heroDescription">
-        A professional website designed around your business and your customers.
-      </p>
-    </div>
-  </section>
-
-  <section class="showcase">
-    <div class="section-heading">
-      <div class="small-title">Website Inspiration</div>
-      <h2>What your website can look like.</h2>
-      <p id="showcaseDescription">
-        Every WEBORA website is designed around the type of business it represents.
-      </p>
-    </div>
 
 ```
+<div class="hero-inner">
+
+  <div class="eyebrow">
+    WEBORA BY ABIR
+  </div>
+
+  <h1 id="heroTitle">
+    Website Package
+  </h1>
+
+  <p id="heroDescription">
+    A professional website designed around your business.
+  </p>
+
+</div>
+```
+
+  </section>
+
+  <!-- WEBSITE MOCKUPS -->
+
+  <section class="showcase">
+
+```
+<div class="section-heading">
+
+  <div class="small-title">
+    Website Inspiration
+  </div>
+
+  <h2>
+    What your website can look like.
+  </h2>
+
+  <p id="showcaseDescription">
+    Your website is designed around your business and what your customers need.
+  </p>
+
+</div>
+
+
 <div class="mockup-grid" id="mockupGrid"></div>
 ```
 
   </section>
 
+  <!-- PACKAGES -->
+
   <section class="package-section">
-    <div class="package-container">
 
 ```
-  <div class="section-heading" style="padding:0;">
-    <div class="small-title">Choose Your Package</div>
-    <h2 id="packageHeading">Website Packages</h2>
+<div class="package-container">
+
+  <div class="section-heading">
+
+    <div class="small-title">
+      Website Packages
+    </div>
+
+    <h2 id="packageHeading">
+      Choose the right package.
+    </h2>
+
     <p>
-      Choose the level of website functionality your business needs.
-      Higher packages include more pages, features and customer interaction.
+      Each package increases the number of pages and functionality
+      available to your business.
     </p>
+
   </div>
+
 
   <div class="package-grid" id="packageGrid"></div>
 
+
   <div class="important-note">
+
     <strong>Important:</strong>
-    Every package can be adjusted to suit your business. Custom requirements,
-    additional pages and advanced functionality may affect the final price.
+    Packages can be adjusted to meet specific business requirements.
+    Additional pages, features or advanced functionality may affect the
+    final price.
+
   </div>
 
 </div>
@@ -607,15 +762,24 @@
 
   </section>
 
+  <!-- CTA -->
+
   <section class="cta">
-    <h2>Ready to build your website?</h2>
-    <p>
-      Tell us what your business needs and we will help you choose the right
-      website package.
-    </p>
-    <a href="mailto:hello@weborabyabir.com" class="cta-button">
-      Get Started
-    </a>
+
+```
+<h2>
+  Ready to build your website?
+</h2>
+
+<p>
+  Tell us what your business needs and let's build a website around it.
+</p>
+
+<a href="mailto:hello@weborabyabir.com" class="cta-button">
+  Get Started
+</a>
+```
+
   </section>
 
   <footer>
@@ -623,7 +787,9 @@
   </footer>
 
   <script>
+
     const businesses = {
+
       cake: {
         name: "Cake & Pastry",
         description: "Beautiful websites for cake makers, bakers, pastry businesses and dessert brands.",
@@ -645,7 +811,7 @@
         className: "hair",
         mockups: [
           "Hair Gallery",
-          "Services",
+          "Hair Services",
           "Hair Products",
           "Appointment Page",
           "Business Profile"
@@ -701,7 +867,7 @@
         className: "barber",
         mockups: [
           "Haircut Gallery",
-          "Services",
+          "Barber Services",
           "Price List",
           "Booking Page",
           "Barber Profile"
@@ -743,7 +909,7 @@
         className: "events",
         mockups: [
           "Event Portfolio",
-          "Services",
+          "Event Services",
           "Event Packages",
           "Booking Form",
           "Business Profile"
@@ -791,9 +957,12 @@
           "Advanced Function"
         ]
       }
+
     };
 
+
     const plans = {
+
       one: {
         name: "Starter",
         label: "1 Page Website",
@@ -850,7 +1019,9 @@
           "Social media integration"
         ]
       }
+
     };
+
 
     const params = new URLSearchParams(window.location.search);
 
@@ -860,105 +1031,187 @@
     const business = businesses[businessType] || businesses.cake;
     const selectedPlan = plans[planType] || plans.one;
 
-    document.title = `${selectedPlan.name} ${business.name} Website | WEBORA by Abir`;
+
+    document.title =
+      `${selectedPlan.name} ${business.name} Website | WEBORA by Abir`;
+
 
     document.getElementById("heroTitle").textContent =
       `${selectedPlan.name} for ${business.name}`;
 
+
     document.getElementById("heroDescription").textContent =
       business.description;
+
 
     document.getElementById("showcaseDescription").textContent =
       `A ${business.name} website can professionally showcase ${business.showcase}`;
 
+
     document.getElementById("packageHeading").textContent =
       `${business.name} Website Packages`;
 
-    function createMockup(title, index) {
+
+    function createMockup(title) {
+
       return `
+
         <div class="mockup-card">
+
           <div class="mockup-label">
+
             <strong>${title}</strong>
+
             <span>${business.name}</span>
+
           </div>
+
 
           <div class="mockup ${business.className}">
+
             <div class="site-window">
+
               <div class="site-top">
+
                 <span class="dot"></span>
                 <span class="dot"></span>
                 <span class="dot"></span>
+
               </div>
+
 
               <div class="site-content">
-                <div class="red-line"></div>
 
-                <div class="mock-title">
-                  ${business.name}
-                </div>
+                <div class="mock-brand">
 
-                <div class="mock-subtitle">
-                  Professional online presence by WEBORA
-                </div>
+                  <div class="mock-logo"></div>
 
-                <div class="mock-grid">
-                  <div class="mock-item">
+                  <div class="mock-nav">
+                    <span></span>
+                    <span></span>
                     <span></span>
                   </div>
 
-                  <div class="mock-item">
-                    <span></span>
-                  </div>
-
-                  <div class="mock-item">
-                    <span></span>
-                  </div>
                 </div>
+
+
+                <div class="mock-title"></div>
+
+                <div class="mock-title red"></div>
+
+                <div class="mock-copy"></div>
+
+                <div class="mock-copy short"></div>
+
+
+                <div class="mock-items">
+
+                  <div class="mock-item"></div>
+                  <div class="mock-item"></div>
+                  <div class="mock-item"></div>
+
+                </div>
+
               </div>
+
             </div>
+
           </div>
+
         </div>
+
       `;
+
     }
 
-    const mockupGrid = document.getElementById("mockupGrid");
 
-    business.mockups.forEach((mockup, index) => {
-      mockupGrid.innerHTML += createMockup(mockup, index);
+    const mockupGrid =
+      document.getElementById("mockupGrid");
+
+
+    business.mockups.forEach(title => {
+
+      mockupGrid.innerHTML +=
+        createMockup(title);
+
     });
 
+
     function createPackageCard(key, plan) {
-      const isFeatured = key === "premium";
+
+      const isFeatured =
+        key === "premium";
+
+      const selected =
+        key === planType;
+
 
       return `
+
         <div class="package-card ${isFeatured ? "featured" : ""}">
-          ${isFeatured ? '<div class="featured-tag">Most Complete</div>' : ""}
 
-          <span class="package-type">${plan.label}</span>
+          ${
+            isFeatured
+              ? '<div class="featured-tag">Most Complete</div>'
+              : ""
+          }
 
-          <h3>${plan.name}</h3>
 
-          <div class="price">${plan.price}</div>
+          <span class="package-type">
+            ${plan.label}
+          </span>
+
+
+          <h3>
+            ${plan.name}
+          </h3>
+
+
+          <div class="price">
+            ${plan.price}
+          </div>
+
 
           <ul class="features">
-            ${plan.features.map(feature => `<li>${feature}</li>`).join("")}
+
+            ${plan.features
+              .map(feature => `<li>${feature}</li>`)
+              .join("")}
+
           </ul>
+
 
           <a
             class="package-button"
             href="package.html?type=${businessType}&plan=${key}"
           >
-            ${key === planType ? "Selected Package" : "View Package"}
+
+            ${
+              selected
+                ? "Selected Package"
+                : "View Package"
+            }
+
           </a>
+
         </div>
+
       `;
+
     }
 
-    const packageGrid = document.getElementById("packageGrid");
+
+    const packageGrid =
+      document.getElementById("packageGrid");
+
 
     Object.entries(plans).forEach(([key, plan]) => {
-      packageGrid.innerHTML += createPackageCard(key, plan);
+
+      packageGrid.innerHTML +=
+        createPackageCard(key, plan);
+
     });
+
   </script>
 
 </body>
