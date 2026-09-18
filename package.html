@@ -1,107 +1,95 @@
+```html
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>WEBORA by Abir | Website Package</title>
 
   <style>
-    :root {
-      --red: #b30000;
-      --dark-red: #7f0000;
-      --black: #111111;
-      --white: #ffffff;
-      --off-white: #f7f7f7;
-      --grey: #666666;
-      --light-grey: #e8e8e8;
-      --border: #dddddd;
-    }
-
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      color: var(--black);
-      background: var(--white);
+      background: #fff;
+      color: #111;
       line-height: 1.6;
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
 
-    .header {
+    header {
       position: sticky;
       top: 0;
       z-index: 100;
-      height: 76px;
-      background: var(--white);
-      border-bottom: 1px solid var(--light-grey);
+      background: #fff;
+      border-bottom: 1px solid #eee;
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 25px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 6%;
     }
 
     .logo {
       display: flex;
       align-items: center;
       gap: 10px;
+      font-weight: 800;
     }
 
-    .logo-mark {
-      width: 40px;
-      height: 40px;
-      background: var(--red);
-      color: var(--white);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 23px;
+    .logo-box {
+      width: 38px;
+      height: 38px;
+      background: #e50914;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 21px;
       font-weight: 900;
     }
 
     .logo-text {
-      display: flex;
-      flex-direction: column;
       line-height: 1;
     }
 
-    .logo-name {
-      font-size: 22px;
-      font-weight: 900;
+    .logo-main {
+      font-size: 21px;
       letter-spacing: 1px;
     }
 
-    .logo-by {
-      font-size: 9px;
-      font-weight: 700;
+    .logo-sub {
+      display: block;
+      font-size: 8px;
       letter-spacing: 3px;
-      color: var(--red);
-      margin-top: 5px;
+      color: #e50914;
+      margin-top: 4px;
     }
 
-    .back-link {
-      color: var(--black);
-      font-size: 14px;
+    .back {
       font-weight: 700;
+      font-size: 14px;
     }
 
-    .back-link:hover {
-      color: var(--red);
+    .back:hover {
+      color: #e50914;
     }
 
     .hero {
-      background: var(--black);
-      color: var(--white);
-      padding: 80px 6%;
+      background: #090909;
+      color: #fff;
+      padding: 90px 25px;
     }
 
     .hero-inner {
@@ -110,1109 +98,1097 @@
     }
 
     .eyebrow {
-      color: #e00000;
-      font-size: 12px;
+      color: #e50914;
+      font-size: 13px;
       font-weight: 800;
       letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 18px;
+      margin-bottom: 15px;
     }
 
     .hero h1 {
-      font-size: clamp(36px, 6vw, 68px);
-      line-height: 1.05;
+      font-size: clamp(38px, 6vw, 72px);
+      line-height: 1;
       max-width: 850px;
-      margin-bottom: 22px;
+      margin-bottom: 25px;
     }
 
     .hero p {
       max-width: 700px;
-      color: #d2d2d2;
-      font-size: 17px;
+      color: #ccc;
+      font-size: 18px;
     }
 
-    /* SHOWCASE */
-
-    .showcase {
-      padding: 80px 6%;
-      background: var(--off-white);
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 80px 25px;
     }
 
     .section-heading {
-      max-width: 1100px;
-      margin: 0 auto 38px;
+      margin-bottom: 35px;
     }
 
-    .section-heading .small-title {
-      color: var(--red);
+    .section-heading span {
+      color: #e50914;
       font-size: 12px;
       font-weight: 800;
       letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 8px;
     }
 
     .section-heading h2 {
-      font-size: clamp(30px, 4vw, 48px);
-      line-height: 1.1;
-      margin-bottom: 10px;
+      font-size: clamp(30px, 5vw, 48px);
+      margin-top: 8px;
     }
 
     .section-heading p {
-      color: var(--grey);
-      max-width: 680px;
+      color: #666;
+      max-width: 650px;
+      margin-top: 10px;
     }
 
-    .mockup-grid {
-      max-width: 1100px;
-      margin: auto;
+    /* SHOWCASE */
+
+    .showcase-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
     }
 
-    .mockup-card {
-      background: var(--white);
-      border: 1px solid var(--border);
+    .product-card {
+      border: 1px solid #e7e7e7;
+      background: #fff;
       overflow: hidden;
+      cursor: pointer;
+      transition: transform .25s ease, box-shadow .25s ease;
     }
 
-    .mockup-label {
-      padding: 18px 20px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,.10);
     }
 
-    .mockup-label strong {
-      font-size: 15px;
+    .product-image {
+      height: 250px;
+      overflow: hidden;
+      background: #eee;
     }
 
-    .mockup-label span {
-      font-size: 10px;
-      color: var(--red);
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .4s ease;
+    }
+
+    .product-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .product-info {
+      padding: 20px;
+    }
+
+    .product-info h3 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .product-info p {
+      color: #777;
+      font-size: 14px;
+    }
+
+    .view-label {
+      margin-top: 14px;
+      color: #e50914;
+      font-size: 12px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 1px;
-    }
-
-    .mockup {
-      min-height: 270px;
-      padding: 22px;
-      background: #ededed;
-    }
-
-    .site-window {
-      height: 225px;
-      background: var(--white);
-      border: 1px solid #d5d5d5;
-      overflow: hidden;
-    }
-
-    .site-top {
-      height: 30px;
-      background: var(--black);
-      display: flex;
-      align-items: center;
-      padding: 0 10px;
-      gap: 5px;
-    }
-
-    .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #aaa;
-    }
-
-    .site-content {
-      padding: 18px;
-      height: calc(100% - 30px);
-    }
-
-    .mock-brand {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-
-    .mock-logo {
-      width: 70px;
-      height: 8px;
-      background: var(--black);
-    }
-
-    .mock-nav {
-      display: flex;
-      gap: 5px;
-    }
-
-    .mock-nav span {
-      width: 20px;
-      height: 4px;
-      background: #ccc;
-    }
-
-    .mock-title {
-      width: 75%;
-      height: 20px;
-      background: var(--black);
-      margin-bottom: 8px;
-    }
-
-    .mock-title.red {
-      width: 52%;
-      background: var(--red);
-    }
-
-    .mock-copy {
-      width: 82%;
-      height: 5px;
-      background: #ddd;
-      margin-bottom: 6px;
-    }
-
-    .mock-copy.short {
-      width: 58%;
-    }
-
-    .mock-items {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px;
-      margin-top: 20px;
-    }
-
-    .mock-item {
-      height: 70px;
-      background: #e5e5e5;
-      border-bottom: 4px solid var(--red);
-      position: relative;
-    }
-
-    .mock-item::after {
-      content: "";
-      position: absolute;
-      left: 9px;
-      right: 9px;
-      bottom: 10px;
-      height: 4px;
-      background: #bbb;
-    }
-
-    /* CATEGORY-SPECIFIC VISUALS */
-
-    .cake .mock-item:nth-child(1) {
-      background:
-        radial-gradient(circle at 50% 38%, #aaa 0 14%, transparent 15%),
-        linear-gradient(#e8e8e8, #d3d3d3);
-    }
-
-    .cake .mock-item:nth-child(2) {
-      background:
-        radial-gradient(circle at 35% 45%, #aaa 0 12%, transparent 13%),
-        radial-gradient(circle at 65% 45%, #aaa 0 12%, transparent 13%),
-        #e8e8e8;
-    }
-
-    .cake .mock-item:nth-child(3) {
-      background:
-        linear-gradient(45deg, transparent 40%, #aaa 41% 60%, transparent 61%),
-        #e8e8e8;
-    }
-
-    .hair .mock-item:nth-child(1) {
-      background:
-        radial-gradient(ellipse at 50% 38%, #555 0 27%, transparent 28%),
-        #ddd;
-    }
-
-    .hair .mock-item:nth-child(2) {
-      background:
-        radial-gradient(ellipse at 50% 38%, #777 0 24%, transparent 25%),
-        #ddd;
-    }
-
-    .hair .mock-item:nth-child(3) {
-      background:
-        linear-gradient(135deg, #777 0 25%, transparent 26% 74%, #777 75%),
-        #ddd;
-    }
-
-    .lash .mock-item {
-      background:
-        radial-gradient(ellipse at 50% 40%, #555 0 10%, transparent 11%),
-        linear-gradient(#eee, #ddd);
-    }
-
-    .fashion .mock-item:nth-child(1) {
-      background:
-        linear-gradient(135deg, transparent 35%, #999 36% 64%, transparent 65%),
-        #e5e5e5;
-    }
-
-    .fashion .mock-item:nth-child(2) {
-      background:
-        linear-gradient(45deg, #aaa 0 30%, transparent 31% 69%, #aaa 70%),
-        #e5e5e5;
-    }
-
-    .fashion .mock-item:nth-child(3) {
-      background:
-        linear-gradient(90deg, transparent 20%, #999 21% 79%, transparent 80%),
-        #e5e5e5;
-    }
-
-    .restaurant .mock-item {
-      background:
-        radial-gradient(circle at center, #999 0 28%, transparent 29%),
-        #e5e5e5;
-    }
-
-    .barber .mock-item:nth-child(1) {
-      background:
-        linear-gradient(90deg, #999 0 25%, #eee 25% 75%, #999 75%);
-    }
-
-    .barber .mock-item:nth-child(2) {
-      background:
-        linear-gradient(135deg, #999 0 20%, #eee 21% 79%, #999 80%);
-    }
-
-    .barber .mock-item:nth-child(3) {
-      background:
-        radial-gradient(circle at 50% 40%, #777 0 20%, transparent 21%),
-        #eee;
-    }
-
-    .makeup .mock-item:nth-child(1) {
-      background:
-        radial-gradient(circle at 35% 40%, #999 0 11%, transparent 12%),
-        radial-gradient(circle at 65% 60%, #aaa 0 14%, transparent 15%),
-        #e5e5e5;
-    }
-
-    .makeup .mock-item:nth-child(2) {
-      background:
-        radial-gradient(circle at 50% 50%, #999 0 25%, transparent 26%),
-        #e5e5e5;
-    }
-
-    .makeup .mock-item:nth-child(3) {
-      background:
-        linear-gradient(135deg, #aaa 0 20%, transparent 21% 79%, #aaa 80%),
-        #e5e5e5;
-    }
-
-    .photography .mock-item:nth-child(1) {
-      background:
-        linear-gradient(135deg, #999 0 35%, #eee 36% 64%, #999 65%);
-    }
-
-    .photography .mock-item:nth-child(2) {
-      background:
-        linear-gradient(45deg, #777 0 25%, #eee 26% 74%, #999 75%);
-    }
-
-    .photography .mock-item:nth-child(3) {
-      background:
-        linear-gradient(160deg, #aaa 0 35%, #eee 36% 65%, #888 66%);
-    }
-
-    .events .mock-item {
-      background:
-        radial-gradient(circle at 20% 50%, #999 0 11%, transparent 12%),
-        radial-gradient(circle at 50% 50%, #777 0 11%, transparent 12%),
-        radial-gradient(circle at 80% 50%, #999 0 11%, transparent 12%),
-        #e5e5e5;
-    }
-
-    .catalogue .mock-item {
-      background:
-        linear-gradient(90deg, #aaa 0 30%, #eee 31% 69%, #aaa 70%),
-        #e5e5e5;
-    }
-
-    .professional .mock-item:nth-child(1) {
-      background:
-        linear-gradient(#999 0 22%, #eee 23% 100%);
-    }
-
-    .professional .mock-item:nth-child(2) {
-      background:
-        linear-gradient(135deg, #aaa 0 25%, #eee 26% 100%);
-    }
-
-    .professional .mock-item:nth-child(3) {
-      background:
-        linear-gradient(90deg, #999 0 18%, #eee 19% 100%);
-    }
-
-    .custom .mock-item:nth-child(1) {
-      background:
-        linear-gradient(45deg, #aaa 0 10%, transparent 11% 89%, #aaa 90%),
-        #e5e5e5;
-    }
-
-    .custom .mock-item:nth-child(2) {
-      background:
-        linear-gradient(135deg, #999 0 10%, transparent 11% 89%, #999 90%),
-        #e5e5e5;
-    }
-
-    .custom .mock-item:nth-child(3) {
-      background:
-        radial-gradient(circle at center, #888 0 20%, transparent 21%),
-        #e5e5e5;
     }
 
     /* PACKAGES */
 
-    .package-section {
-      padding: 85px 6%;
-      background: var(--white);
+    .plans {
+      background: #f7f7f7;
     }
 
-    .package-container {
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .package-grid {
+    .plan-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 18px;
-      margin-top: 35px;
     }
 
-    .package-card {
-      border: 1px solid var(--border);
-      padding: 28px 22px;
-      background: var(--white);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .package-card.featured {
-      border: 2px solid var(--red);
+    .plan {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 30px 24px;
       position: relative;
     }
 
-    .featured-tag {
+    .plan.featured {
+      border: 2px solid #e50914;
+    }
+
+    .plan-badge {
       position: absolute;
-      top: -12px;
-      right: 15px;
-      background: var(--red);
-      color: var(--white);
+      top: 0;
+      right: 0;
+      background: #e50914;
+      color: #fff;
+      padding: 7px 12px;
       font-size: 10px;
       font-weight: 800;
-      padding: 5px 9px;
-      letter-spacing: 1px;
       text-transform: uppercase;
     }
 
-    .package-type {
-      color: var(--red);
-      font-size: 11px;
+    .plan h3 {
+      font-size: 23px;
+      margin-bottom: 6px;
+    }
+
+    .plan-type {
+      color: #e50914;
+      font-size: 12px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 1px;
+      margin-bottom: 20px;
     }
 
-    .package-card h3 {
-      font-size: 20px;
-      margin-top: 5px;
-    }
-
-    .price {
-      font-size: 28px;
-      font-weight: 900;
-      margin: 20px 0;
-    }
-
-    .features {
+    .plan ul {
       list-style: none;
-      margin-bottom: 25px;
-      flex: 1;
     }
 
-    .features li {
-      font-size: 13px;
-      padding: 7px 0;
+    .plan li {
+      padding: 9px 0;
       border-bottom: 1px solid #eee;
+      font-size: 14px;
+      color: #555;
     }
 
-    .features li::before {
+    .plan li::before {
       content: "✓";
-      color: var(--red);
+      color: #e50914;
       font-weight: 900;
       margin-right: 8px;
     }
 
-    .package-button {
-      display: block;
-      width: 100%;
-      background: var(--black);
-      color: var(--white);
-      text-align: center;
-      padding: 13px;
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    .package-card.featured .package-button {
-      background: var(--red);
-    }
-
-    .package-button:hover {
-      background: var(--dark-red);
-    }
-
-    .important-note {
-      margin-top: 30px;
-      padding: 20px;
-      background: #fff5f5;
-      border-left: 4px solid var(--red);
-      font-size: 13px;
-      color: #444;
-    }
+    /* CTA */
 
     .cta {
-      background: var(--red);
-      color: var(--white);
-      padding: 70px 6%;
+      background: #e50914;
+      color: #fff;
+      max-width: none;
       text-align: center;
     }
 
     .cta h2 {
-      font-size: clamp(30px, 4vw, 48px);
-      margin-bottom: 12px;
+      font-size: clamp(32px, 5vw, 52px);
+      margin-bottom: 15px;
     }
 
     .cta p {
       max-width: 600px;
-      margin: 0 auto 25px;
-      color: #ffe6e6;
+      margin: auto auto 25px;
+      color: #ffe5e5;
     }
 
     .cta-button {
       display: inline-block;
-      background: var(--white);
-      color: var(--black);
-      padding: 14px 26px;
-      font-size: 14px;
+      background: #fff;
+      color: #111;
+      padding: 15px 25px;
       font-weight: 800;
     }
 
-    footer {
-      background: var(--black);
-      color: #aaa;
+    /* MODAL */
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.9);
+      z-index: 999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 25px;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      max-width: 950px;
+      width: 100%;
+      position: relative;
+    }
+
+    .modal-content img {
+      width: 100%;
+      max-height: 80vh;
+      object-fit: contain;
+      display: block;
+    }
+
+    .modal-title {
+      color: #fff;
       text-align: center;
-      padding: 25px 6%;
-      font-size: 12px;
+      margin-top: 12px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .close {
+      position: absolute;
+      top: -45px;
+      right: 0;
+      color: #fff;
+      font-size: 34px;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    footer {
+      background: #080808;
+      color: #999;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 13px;
     }
 
     @media (max-width: 900px) {
-      .package-grid {
+      .showcase-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .plan-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media (max-width: 700px) {
-      .header {
-        padding: 0 5%;
-      }
-
-      .hero,
-      .showcase,
-      .package-section {
-        padding-left: 5%;
-        padding-right: 5%;
-      }
-
-      .mockup-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .package-grid {
+    @media (max-width: 600px) {
+      .showcase-grid,
+      .plan-grid {
         grid-template-columns: 1fr;
       }
 
       .hero {
-        padding-top: 60px;
-        padding-bottom: 60px;
+        padding: 65px 20px;
+      }
+
+      section {
+        padding: 60px 20px;
+      }
+
+      .product-image {
+        height: 280px;
       }
     }
   </style>
-
 </head>
 
 <body>
 
-  <header class="header">
+<header>
+  <nav class="nav">
+    <a href="index.html" class="logo">
+      <div class="logo-box">W</div>
 
-```
-<a href="index.html" class="logo">
+      <div class="logo-text">
+        <div class="logo-main">WEBORA</div>
+        <span class="logo-sub">BY ABIR</span>
+      </div>
+    </a>
 
-  <div class="logo-mark">W</div>
+    <a href="business.html" class="back">← Back</a>
+  </nav>
+</header>
 
-  <div class="logo-text">
-    <span class="logo-name">WEBORA</span>
-    <span class="logo-by">BY ABIR</span>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Website Package</div>
+    <h1 id="heroTitle">Website Package</h1>
+    <p id="heroDescription"></p>
   </div>
+</section>
 
-</a>
-
-<a href="business.html" class="back-link">← Back</a>
-```
-
-  </header>
-
-  <section class="hero">
-
-```
-<div class="hero-inner">
-
-  <div class="eyebrow">
-    WEBORA BY ABIR
-  </div>
-
-  <h1 id="heroTitle">
-    Website Package
-  </h1>
-
-  <p id="heroDescription">
-    A professional website designed around your business.
-  </p>
-
-</div>
-```
-
-  </section>
-
-  <!-- WEBSITE MOCKUPS -->
-
-  <section class="showcase">
-
-```
-<div class="section-heading">
-
-  <div class="small-title">
-    Website Inspiration
-  </div>
-
-  <h2>
-    What your website can look like.
-  </h2>
-
-  <p id="showcaseDescription">
-    Your website is designed around your business and what your customers need.
-  </p>
-
-</div>
-
-
-<div class="mockup-grid" id="mockupGrid"></div>
-```
-
-  </section>
-
-  <!-- PACKAGES -->
-
-  <section class="package-section">
-
-```
-<div class="package-container">
-
+<section>
   <div class="section-heading">
+    <span>Website Showcase</span>
+    <h2>See what your website could look like.</h2>
+    <p>
+      These examples show how products, services and visual content can
+      be presented on your website.
+    </p>
+  </div>
 
-    <div class="small-title">
-      Website Packages
+  <div class="showcase-grid" id="showcaseGrid"></div>
+</section>
+
+<section class="plans">
+  <div class="section-heading">
+    <span>Website Packages</span>
+    <h2>Choose your website level.</h2>
+    <p>
+      Each package adds more pages, features and functionality.
+    </p>
+  </div>
+
+  <div class="plan-grid">
+
+    <div class="plan">
+      <h3>Starter</h3>
+      <div class="plan-type">1 Page Website</div>
+
+      <ul>
+        <li>Business introduction</li>
+        <li>About your business</li>
+        <li>Products or services showcase</li>
+        <li>Basic business information</li>
+        <li>Mobile-friendly design</li>
+      </ul>
     </div>
 
-    <h2 id="packageHeading">
-      Choose the right package.
-    </h2>
+    <div class="plan">
+      <h3>Standard</h3>
+      <div class="plan-type">2 Page Website</div>
 
-    <p>
-      Each package increases the number of pages and functionality
-      available to your business.
-    </p>
+      <ul>
+        <li>Everything in Starter</li>
+        <li>Dedicated product/service page</li>
+        <li>Product categories</li>
+        <li>Product photos</li>
+        <li>Descriptions and details</li>
+        <li>Professional navigation</li>
+      </ul>
+    </div>
+
+    <div class="plan">
+      <h3>Business</h3>
+      <div class="plan-type">3 Page Website</div>
+
+      <ul>
+        <li>Everything in Standard</li>
+        <li>Ordering or booking page</li>
+        <li>Customer information form</li>
+        <li>Order or booking selection</li>
+        <li>Delivery or appointment options</li>
+        <li>Order summary</li>
+      </ul>
+    </div>
+
+    <div class="plan featured">
+      <div class="plan-badge">Most Complete</div>
+
+      <h3>Premium</h3>
+      <div class="plan-type">Advanced Website</div>
+
+      <ul>
+        <li>Everything in Business</li>
+        <li>Advanced ordering or booking</li>
+        <li>Shopping cart where applicable</li>
+        <li>Online checkout</li>
+        <li>Payment gateway</li>
+        <li>Payment confirmation</li>
+        <li>WhatsApp integration</li>
+        <li>Social media integration</li>
+      </ul>
+    </div>
 
   </div>
+</section>
 
+<section class="cta">
+  <h2>Ready for your website?</h2>
 
-  <div class="package-grid" id="packageGrid"></div>
+  <p>
+    Tell us what your business does and we'll help you choose the
+    right website structure.
+  </p>
 
+  <a class="cta-button" href="mailto:hello@weborabyabir.com">
+    Start Your Website
+  </a>
+</section>
 
-  <div class="important-note">
+<footer>
+  © 2026 WEBORA by Abir. Websites built for businesses that mean business.
+</footer>
 
-    <strong>Important:</strong>
-    Packages can be adjusted to meet specific business requirements.
-    Additional pages, features or advanced functionality may affect the
-    final price.
+<!-- IMAGE MODAL -->
+
+<div class="modal" id="imageModal">
+  <div class="modal-content">
+
+    <button class="close" id="closeModal">&times;</button>
+
+    <img id="modalImage" src="" alt="">
+
+    <div class="modal-title" id="modalTitle"></div>
 
   </div>
-
 </div>
-```
 
-  </section>
+<script>
 
-  <!-- CTA -->
+const businesses = {
 
-  <section class="cta">
+  cake: {
+    name: "Cake & Pastry",
+    description:
+      "A beautiful website for cake makers, bakers and pastry businesses to showcase their creations and attract customers.",
 
-```
-<h2>
-  Ready to build your website?
-</h2>
-
-<p>
-  Tell us what your business needs and let's build a website around it.
-</p>
-
-<a href="mailto:hello@weborabyabir.com" class="cta-button">
-  Get Started
-</a>
-```
-
-  </section>
-
-  <footer>
-    © 2026 WEBORA by Abir. Websites built for businesses that mean business.
-  </footer>
-
-  <script>
-
-    const businesses = {
-
-      cake: {
-        name: "Cake & Pastry",
-        description: "Beautiful websites for cake makers, bakers, pastry businesses and dessert brands.",
-        showcase: "cakes, pastries, menus, custom orders and delivery options.",
-        className: "cake",
-        mockups: [
-          "Cake Showcase",
-          "Product Menu",
-          "Custom Cake Orders",
-          "Bakery Information",
-          "Customer Orders"
-        ]
+    products: [
+      {
+        name: "Chocolate Cake",
+        description: "A premium cake showcase.",
+        image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1000&q=85"
       },
 
-      hair: {
-        name: "Hair Business",
-        description: "Professional websites for hairstylists, hair vendors, salons and hair brands.",
-        showcase: "hairstyles, services, hair products, appointments and customer enquiries.",
-        className: "hair",
-        mockups: [
-          "Hair Gallery",
-          "Hair Services",
-          "Hair Products",
-          "Appointment Page",
-          "Business Profile"
-        ]
+      {
+        name: "Birthday Cake",
+        description: "Perfect for celebrations and special occasions.",
+        image: "https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?auto=format&fit=crop&w=1000&q=85"
       },
 
-      lash: {
-        name: "Lash & Beauty",
-        description: "Elegant websites for lash technicians, beauty studios and beauty professionals.",
-        showcase: "lash styles, beauty services, pricing, appointments and customer information.",
-        className: "lash",
-        mockups: [
-          "Lash Gallery",
-          "Beauty Services",
-          "Price List",
-          "Booking Page",
-          "Beauty Profile"
-        ]
+      {
+        name: "Wedding Cake",
+        description: "Elegant cake presentation for wedding businesses.",
+        image: "https://images.unsplash.com/photo-1535254973040-607b474cb50d?auto=format&fit=crop&w=1000&q=85"
       },
 
-      fashion: {
-        name: "Fashion",
-        description: "Modern websites for fashion designers, clothing brands, boutiques and vendors.",
-        showcase: "fashion collections, products, sizes, prices, orders and brand information.",
-        className: "fashion",
-        mockups: [
-          "Fashion Collection",
-          "Product Catalogue",
-          "New Arrivals",
-          "Order Page",
-          "Brand Story"
-        ]
+      {
+        name: "Cupcakes",
+        description: "A visual showcase for pastries and desserts.",
+        image: "https://images.unsplash.com/photo-1587668178277-295251f900ce?auto=format&fit=crop&w=1000&q=85"
       },
 
-      restaurant: {
-        name: "Restaurant",
-        description: "Websites for restaurants, food vendors, cafés and food businesses.",
-        showcase: "menus, food items, prices, ordering options, locations and contact information.",
-        className: "restaurant",
-        mockups: [
-          "Food Menu",
-          "Popular Meals",
-          "Online Ordering",
-          "Restaurant Profile",
-          "Customer Checkout"
-        ]
+      {
+        name: "Pastries",
+        description: "Showcase your bakery products beautifully.",
+        image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=85"
       },
 
-      barber: {
-        name: "Barber",
-        description: "Clean and professional websites for barbers, barber shops and grooming businesses.",
-        showcase: "haircuts, grooming services, prices, barber profiles and bookings.",
-        className: "barber",
-        mockups: [
-          "Haircut Gallery",
-          "Barber Services",
-          "Price List",
-          "Booking Page",
-          "Barber Profile"
-        ]
-      },
-
-      makeup: {
-        name: "Makeup Artist",
-        description: "Stylish websites for makeup artists, beauty professionals and bridal makeup businesses.",
-        showcase: "makeup looks, service packages, portfolios, appointments and client information.",
-        className: "makeup",
-        mockups: [
-          "Makeup Portfolio",
-          "Service Packages",
-          "Bridal Looks",
-          "Booking Page",
-          "Artist Profile"
-        ]
-      },
-
-      photography: {
-        name: "Photography",
-        description: "Portfolio-focused websites for photographers and creative visual professionals.",
-        showcase: "photography portfolios, packages, galleries, bookings and client enquiries.",
-        className: "photography",
-        mockups: [
-          "Photography Portfolio",
-          "Gallery",
-          "Packages",
-          "Booking Page",
-          "Photographer Profile"
-        ]
-      },
-
-      events: {
-        name: "Event Business",
-        description: "Professional websites for event planners, decorators and event service providers.",
-        showcase: "past events, services, packages, galleries, enquiries and bookings.",
-        className: "events",
-        mockups: [
-          "Event Portfolio",
-          "Event Services",
-          "Event Packages",
-          "Booking Form",
-          "Business Profile"
-        ]
-      },
-
-      catalogue: {
-        name: "Product Catalogue",
-        description: "Product-focused websites for businesses that need a professional online catalogue.",
-        showcase: "products, categories, prices, descriptions and customer ordering options.",
-        className: "catalogue",
-        mockups: [
-          "Product Catalogue",
-          "Product Categories",
-          "Product Details",
-          "Order Page",
-          "Customer Summary"
-        ]
-      },
-
-      professional: {
-        name: "Professional Services",
-        description: "Professional websites for consultants, agencies, service providers and personal brands.",
-        showcase: "services, company information, professional profiles, enquiries and bookings.",
-        className: "professional",
-        mockups: [
-          "Professional Profile",
-          "Services",
-          "About Business",
-          "Contact Form",
-          "Booking Page"
-        ]
-      },
-
-      custom: {
-        name: "Custom Website",
-        description: "A completely tailored website for businesses with specific functionality or unique requirements.",
-        showcase: "custom layouts, unique features, specialised pages and advanced business functions.",
-        className: "custom",
-        mockups: [
-          "Custom Homepage",
-          "Custom Feature",
-          "Business Dashboard",
-          "Customer Area",
-          "Advanced Function"
-        ]
+      {
+        name: "Custom Cakes",
+        description: "Show customers your custom cake designs.",
+        image: "https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=1000&q=85"
       }
+    ]
+  },
 
-    };
+  hair: {
+    name: "Hair Business",
+    description:
+      "A stylish website for hair vendors, stylists and hair brands to showcase hairstyles, products and services.",
 
-
-    const plans = {
-
-      one: {
-        name: "Starter",
-        label: "1 Page Website",
-        price: "₦80,000",
-        features: [
-          "Business introduction",
-          "About the business",
-          "Products or services showcase",
-          "Basic business information",
-          "Mobile-friendly design"
-        ]
+    products: [
+      {
+        name: "Hair Collection",
+        description: "Showcase your available hair collection.",
+        image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=85"
       },
 
-      two: {
-        name: "Standard",
-        label: "2 Page Website",
-        price: "₦120,000",
-        features: [
-          "Everything in Starter",
-          "Dedicated product or service page",
-          "Product categories",
-          "Product photos",
-          "Prices and descriptions",
-          "Professional navigation"
-        ]
+      {
+        name: "Styled Hair",
+        description: "Display your styling work.",
+        image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1000&q=85"
       },
 
-      three: {
-        name: "Business",
-        label: "3 Page Website",
-        price: "₦180,000",
-        features: [
-          "Everything in Standard",
-          "Dedicated ordering or booking page",
-          "Customer information form",
-          "Order or booking selection",
-          "Delivery or appointment options",
-          "Order summary"
-        ]
+      {
+        name: "Hair Installation",
+        description: "Showcase installation and styling services.",
+        image: "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=1000&q=85"
       },
 
-      premium: {
-        name: "Premium",
-        label: "Advanced Website",
-        price: "₦250,000+",
-        features: [
-          "Everything in Business",
-          "Advanced ordering or booking system",
-          "Shopping cart where applicable",
-          "Online checkout",
-          "Payment gateway integration",
-          "Payment confirmation",
-          "WhatsApp integration",
-          "Social media integration"
-        ]
+      {
+        name: "Hair Care",
+        description: "Present your hair care products.",
+        image: "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Braids",
+        description: "Display hairstyle inspiration.",
+        image: "https://images.unsplash.com/photo-1620331311520-246422fd82f9?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Salon Services",
+        description: "Showcase your professional services.",
+        image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1000&q=85"
       }
-
-    };
-
-
-    const params = new URLSearchParams(window.location.search);
-
-    const businessType = params.get("type") || "cake";
-    const planType = params.get("plan") || "one";
-
-    const business = businesses[businessType] || businesses.cake;
-    const selectedPlan = plans[planType] || plans.one;
-
-
-    document.title =
-      `${selectedPlan.name} ${business.name} Website | WEBORA by Abir`;
-
-
-    document.getElementById("heroTitle").textContent =
-      `${selectedPlan.name} for ${business.name}`;
-
-
-    document.getElementById("heroDescription").textContent =
-      business.description;
-
-
-    document.getElementById("showcaseDescription").textContent =
-      `A ${business.name} website can professionally showcase ${business.showcase}`;
-
-
-    document.getElementById("packageHeading").textContent =
-      `${business.name} Website Packages`;
-
-
-    function createMockup(title) {
-
-      return `
-
-        <div class="mockup-card">
-
-          <div class="mockup-label">
-
-            <strong>${title}</strong>
-
-            <span>${business.name}</span>
-
-          </div>
-
-
-          <div class="mockup ${business.className}">
-
-            <div class="site-window">
-
-              <div class="site-top">
-
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
-
-              </div>
-
-
-              <div class="site-content">
-
-                <div class="mock-brand">
-
-                  <div class="mock-logo"></div>
-
-                  <div class="mock-nav">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-
-                </div>
-
-
-                <div class="mock-title"></div>
-
-                <div class="mock-title red"></div>
-
-                <div class="mock-copy"></div>
-
-                <div class="mock-copy short"></div>
-
-
-                <div class="mock-items">
-
-                  <div class="mock-item"></div>
-                  <div class="mock-item"></div>
-                  <div class="mock-item"></div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      `;
-
-    }
-
-
-    const mockupGrid =
-      document.getElementById("mockupGrid");
-
-
-    business.mockups.forEach(title => {
-
-      mockupGrid.innerHTML +=
-        createMockup(title);
-
-    });
-
-
-    function createPackageCard(key, plan) {
-
-      const isFeatured =
-        key === "premium";
-
-      const selected =
-        key === planType;
-
-
-      return `
-
-        <div class="package-card ${isFeatured ? "featured" : ""}">
-
-          ${
-            isFeatured
-              ? '<div class="featured-tag">Most Complete</div>'
-              : ""
-          }
-
-
-          <span class="package-type">
-            ${plan.label}
-          </span>
-
-
-          <h3>
-            ${plan.name}
-          </h3>
-
-
-          <div class="price">
-            ${plan.price}
-          </div>
-
-
-          <ul class="features">
-
-            ${plan.features
-              .map(feature => `<li>${feature}</li>`)
-              .join("")}
-
-          </ul>
-
-
-          <a
-            class="package-button"
-            href="package.html?type=${businessType}&plan=${key}"
-          >
-
-            ${
-              selected
-                ? "Selected Package"
-                : "View Package"
-            }
-
-          </a>
-
-        </div>
-
-      `;
-
-    }
-
-
-    const packageGrid =
-      document.getElementById("packageGrid");
-
-
-    Object.entries(plans).forEach(([key, plan]) => {
-
-      packageGrid.innerHTML +=
-        createPackageCard(key, plan);
-
-    });
-
-  </script>
+    ]
+  },
+
+  fashion: {
+    name: "Fashion",
+    description:
+      "A modern fashion website designed to showcase clothing, collections and your brand identity.",
+
+    products: [
+      {
+        name: "Fashion Collection",
+        description: "Showcase your latest collection.",
+        image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "New Arrivals",
+        description: "Highlight your newest designs.",
+        image: "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Women's Fashion",
+        description: "Beautiful presentation for fashion brands.",
+        image: "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Men's Fashion",
+        description: "Showcase men's clothing and collections.",
+        image: "https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Streetwear",
+        description: "Present modern fashion styles.",
+        image: "https://images.unsplash.com/photo-1523398002811-999ca8dec234?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Accessories",
+        description: "Showcase fashion accessories.",
+        image: "https://images.unsplash.com/photo-1523779917675-b6ed3a42a561?auto=format&fit=crop&w=1000&q=85"
+      }
+    ]
+  },
+
+  restaurant: {
+    name: "Restaurant",
+    description:
+      "A professional restaurant website where customers can explore food, view your menu and discover your brand.",
+
+    products: [
+      {
+        name: "Signature Dish",
+        description: "Showcase your restaurant's signature meals.",
+        image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Fine Dining",
+        description: "Present your premium dining experience.",
+        image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Desserts",
+        description: "Showcase your dessert selection.",
+        image: "https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Breakfast",
+        description: "Display your breakfast menu.",
+        image: "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Drinks",
+        description: "Showcase drinks and refreshments.",
+        image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Restaurant Experience",
+        description: "Give visitors a feel for your restaurant.",
+        image: "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1000&q=85"
+      }
+    ]
+  },
+
+  barber: {
+    name: "Barber",
+    description:
+      "A sharp website for barbers and grooming businesses to showcase styles, services and their professional work.",
+
+    products: [
+      {
+        name: "Classic Cut",
+        description: "Showcase your barbering work.",
+        image: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Modern Fade",
+        description: "Display your signature haircut styles.",
+        image: "https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Beard Grooming",
+        description: "Showcase beard grooming services.",
+        image: "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Barber Studio",
+        description: "Show customers your barber environment.",
+        image: "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Hair Styling",
+        description: "Showcase different styling options.",
+        image: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Grooming",
+        description: "Present your complete grooming services.",
+        image: "https://images.unsplash.com/photo-1512690459411-b9245aed614b?auto=format&fit=crop&w=1000&q=85"
+      }
+    ]
+  },
+
+  makeup: {
+    name: "Makeup Artist",
+    description:
+      "A beauty-focused website for makeup artists to showcase their looks, services and portfolio.",
+
+    products: [
+      {
+        name: "Bridal Makeup",
+        description: "Showcase bridal makeup work.",
+        image: "https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Beauty Look",
+        description: "Present your signature makeup style.",
+        image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Glam Look",
+        description: "Showcase glamorous makeup work.",
+        image: "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Natural Makeup",
+        description: "Display natural beauty looks.",
+        image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Event Makeup",
+        description: "Showcase makeup for special events.",
+        image: "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Makeup Studio",
+        description: "Give customers a glimpse of your workspace.",
+        image: "https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&fit=crop&w=1000&q=85"
+      }
+    ]
+  },
+
+  photography: {
+    name: "Photography",
+    description:
+      "A portfolio-driven website for photographers to showcase their best work and attract new clients.",
+
+    products: [
+      {
+        name: "Portrait Photography",
+        description: "Showcase portrait work.",
+        image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Wedding Photography",
+        description: "Present wedding photography work.",
+        image: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Lifestyle Photography",
+        description: "Showcase lifestyle sessions.",
+        image: "https://images.unsplash.com/photo-1492725764893-90b379c2b6e7?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Studio Work",
+        description: "Display your studio photography.",
+        image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Event Photography",
+        description: "Showcase event coverage.",
+        image: "https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Creative Photography",
+        description: "Present creative photography projects.",
+        image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1000&q=85"
+      }
+    ]
+  },
+
+  lash: {
+    name: "Lash & Beauty",
+    description:
+      "A polished beauty website for lash artists, brow artists and beauty professionals.",
+
+    products: [
+      {
+        name: "Classic Lashes",
+        description: "Showcase your lash work.",
+        image: "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Beauty Studio",
+        description: "Present your beauty environment.",
+        image: "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Lash Styling",
+        description: "Display different lash styles.",
+        image: "https://images.unsplash.com/photo-1583001931096-959e8f3f6f3c?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Beauty Care",
+        description: "Showcase your beauty services.",
+        image: "https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Brow Services",
+        description: "Present brow and beauty work.",
+        image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Beauty Experience",
+        description: "Give customers a visual experience.",
+        image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1000&q=85"
+      }
+    ]
+  },
+
+  events: {
+    name: "Event Business",
+    description:
+      "A visual event website for planners, decorators and event businesses to showcase memorable setups.",
+
+    products: [
+      {
+        name: "Wedding Setup",
+        description: "Showcase wedding decoration work.",
+        image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Birthday Setup",
+        description: "Display celebration designs.",
+        image: "https://images.unsplash.com/photo-1464349153735-7db50ed83c84?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Corporate Event",
+        description: "Present professional event setups.",
+        image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Decor",
+        description: "Showcase your decoration work.",
+        image: "https://images.unsplash.com/photo-1478146896981-b80fe463b330?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Table Setup",
+        description: "Display elegant table designs.",
+        image: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Event Experience",
+        description: "Show clients what you can create.",
+        image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1000&q=85"
+      }
+    ]
+  },
+
+  catalogue: {
+    name: "Product Catalogue",
+    description:
+      "A clean catalogue website for businesses that want to display multiple products in one professional place.",
+
+    products: [
+      {
+        name: "Featured Product",
+        description: "Highlight your most important product.",
+        image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Product Collection",
+        description: "Display a collection of products.",
+        image: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "New Product",
+        description: "Highlight a new product.",
+        image: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Premium Product",
+        description: "Present premium products professionally.",
+        image: "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Product Display",
+        description: "Create a clean product catalogue.",
+        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Collection",
+        description: "Showcase multiple products together.",
+        image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=1000&q=85"
+      }
+    ]
+  },
+
+  professional: {
+    name: "Professional Services",
+    description:
+      "A professional website for consultants, agencies, coaches and service-based businesses.",
+
+    products: [
+      {
+        name: "Business Consulting",
+        description: "Present your professional services.",
+        image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Professional Office",
+        description: "Showcase your business environment.",
+        image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Team",
+        description: "Introduce your professional team.",
+        image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Meeting",
+        description: "Showcase your professional approach.",
+        image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Strategy",
+        description: "Present your business expertise.",
+        image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Professional Brand",
+        description: "Build trust through a strong online presence.",
+        image: "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1000&q=85"
+      }
+    ]
+  },
+
+  custom: {
+    name: "Custom Website",
+    description:
+      "A completely tailored website built around the exact needs of your business.",
+
+    products: [
+      {
+        name: "Custom Homepage",
+        description: "A unique homepage designed around your brand.",
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Custom Services",
+        description: "Present your services exactly how you want.",
+        image: "https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Custom Catalogue",
+        description: "Build a catalogue around your products.",
+        image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Custom Portfolio",
+        description: "Showcase your work with a unique layout.",
+        image: "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Custom Booking",
+        description: "Create a booking experience for your clients.",
+        image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1000&q=85"
+      },
+
+      {
+        name: "Custom Experience",
+        description: "A website built specifically for your business.",
+        image: "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1000&q=85"
+      }
+    ]
+  }
+
+};
+
+
+/* GET BUSINESS AND PLAN FROM URL */
+
+const params = new URLSearchParams(window.location.search);
+
+const type = params.get("type") || "cake";
+const plan = params.get("plan") || "one";
+
+const business = businesses[type] || businesses.cake;
+
+
+/* PLAN NAMES */
+
+const planNames = {
+  one: "1 Page Website",
+  two: "2 Page Website",
+  three: "3 Page Website",
+  premium: "Premium Website"
+};
+
+
+/* UPDATE HERO */
+
+document.getElementById("heroTitle").textContent =
+  `${planNames[plan] || "Website Package"} for ${business.name}`;
+
+document.getElementById("heroDescription").textContent =
+  business.description;
+
+
+/* CREATE SHOWCASE CARDS */
+
+const showcaseGrid = document.getElementById("showcaseGrid");
+
+business.products.forEach((product) => {
+
+  const card = document.createElement("div");
+
+  card.className = "product-card";
+
+  card.innerHTML = `
+    <div class="product-image">
+      <img
+        src="${product.image}"
+        alt="${product.name}"
+        loading="lazy"
+      >
+    </div>
+
+    <div class="product-info">
+      <h3>${product.name}</h3>
+
+      <p>${product.description}</p>
+
+      <div class="view-label">
+        Click to view
+      </div>
+    </div>
+  `;
+
+  card.addEventListener("click", () => {
+
+    document.getElementById("modalImage").src =
+      product.image;
+
+    document.getElementById("modalImage").alt =
+      product.name;
+
+    document.getElementById("modalTitle").textContent =
+      product.name;
+
+    document.getElementById("imageModal")
+      .classList.add("active");
+
+  });
+
+  showcaseGrid.appendChild(card);
+
+});
+
+
+/* CLOSE IMAGE */
+
+const modal = document.getElementById("imageModal");
+
+document.getElementById("closeModal")
+  .addEventListener("click", () => {
+
+    modal.classList.remove("active");
+
+  });
+
+
+/* CLICK OUTSIDE IMAGE TO CLOSE */
+
+modal.addEventListener("click", (event) => {
+
+  if (event.target === modal) {
+
+    modal.classList.remove("active");
+
+  }
+
+});
+
+
+/* ESC KEY */
+
+document.addEventListener("keydown", (event) => {
+
+  if (event.key === "Escape") {
+
+    modal.classList.remove("active");
+
+  }
+
+});
+
+</script>
 
 </body>
 </html>
+```
