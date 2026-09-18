@@ -9,16 +9,14 @@
 <style>
 :root{
   --red:#d71920;
-  --red-dark:#a90f15;
-  --red-soft:#fff1f1;
+  --red-dark:#a80f15;
   --black:#111;
   --ink:#202020;
-  --muted:#707070;
+  --muted:#737373;
   --white:#fff;
-  --cream:#faf8f6;
-  --line:#e8e8e8;
-  --shadow:0 18px 50px rgba(0,0,0,.10);
-  --radius:18px;
+  --soft:#f7f7f7;
+  --line:#e7e7e7;
+  --shadow:0 20px 55px rgba(0,0,0,.12);
 }
 
 *{
@@ -27,14 +25,10 @@
   padding:0;
 }
 
-html{
-  scroll-behavior:smooth;
-}
-
 body{
   min-height:100vh;
-  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  background:#f5f5f5;
+  font-family:Inter,Arial,sans-serif;
+  background:#f4f4f4;
   color:var(--ink);
 }
 
@@ -45,19 +39,13 @@ textarea{
   font:inherit;
 }
 
-button,
-a{
-  -webkit-tap-highlight-color:transparent;
-}
-
 .topbar{
   position:sticky;
   top:0;
-  z-index:100;
+  z-index:50;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:20px;
   padding:15px clamp(18px,5vw,70px);
   background:#fff;
   border-bottom:1px solid var(--line);
@@ -67,36 +55,34 @@ a{
   display:flex;
   align-items:center;
   gap:10px;
-  color:var(--black);
+  color:#111;
   text-decoration:none;
 }
 
 .logo-mark{
-  width:38px;
-  height:38px;
+  width:39px;
+  height:39px;
   display:grid;
   place-items:center;
   border-radius:9px;
   background:var(--red);
   color:#fff;
-  font-size:20px;
   font-weight:900;
+  font-size:20px;
 }
 
 .logo-text strong{
   display:block;
   font-size:18px;
-  line-height:1;
   letter-spacing:.03em;
 }
 
 .logo-text small{
   display:block;
-  margin-top:3px;
   color:#777;
   font-size:8px;
   font-weight:800;
-  letter-spacing:.22em;
+  letter-spacing:.2em;
 }
 
 .home-link{
@@ -111,43 +97,42 @@ a{
 }
 
 .hero{
-  padding:58px 20px 48px;
-  background:
-    radial-gradient(circle at 90% 10%,rgba(215,25,32,.20),transparent 30%),
-    #111;
+  padding:65px 20px 55px;
+  background:#111;
   color:#fff;
   text-align:center;
 }
 
-.hero .eyebrow{
+.hero small{
+  display:block;
   margin-bottom:10px;
   color:#ff777c;
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:.16em;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.18em;
   text-transform:uppercase;
 }
 
 .hero h1{
   max-width:850px;
-  margin:0 auto 12px;
-  font-size:clamp(30px,5vw,52px);
-  line-height:1.05;
+  margin:auto;
+  font-size:clamp(32px,5vw,52px);
+  line-height:1;
   letter-spacing:-.04em;
 }
 
 .hero p{
   max-width:650px;
-  margin:auto;
-  color:#ccc;
-  font-size:16px;
+  margin:15px auto 0;
+  color:#c9c9c9;
+  font-size:15px;
 }
 
 .selector-wrap{
-  width:min(100% - 32px,1100px);
-  margin:-24px auto 35px;
+  width:min(100% - 30px,1100px);
+  margin:-25px auto 40px;
   position:relative;
-  z-index:5;
+  z-index:2;
 }
 
 .selector{
@@ -155,9 +140,9 @@ a{
   grid-template-columns:1fr 1fr;
   gap:15px;
   padding:18px;
+  background:#fff;
   border:1px solid var(--line);
   border-radius:16px;
-  background:#fff;
   box-shadow:var(--shadow);
 }
 
@@ -165,45 +150,41 @@ a{
   display:block;
   margin-bottom:7px;
   color:#666;
-  font-size:12px;
-  font-weight:800;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.07em;
   text-transform:uppercase;
-  letter-spacing:.06em;
 }
 
 .selector select{
   width:100%;
   min-height:48px;
-  padding:11px 13px;
-  border:1px solid #d8d8d8;
-  border-radius:10px;
+  padding:10px 13px;
+  border:1px solid #d7d7d7;
+  border-radius:9px;
   background:#fff;
-  color:#222;
   outline:none;
 }
 
 .selector select:focus{
   border-color:var(--red);
-  box-shadow:0 0 0 3px rgba(215,25,32,.10);
 }
 
 .packages{
-  width:min(100% - 32px,1200px);
-  margin:0 auto 45px;
+  width:min(100% - 30px,1200px);
+  margin:0 auto 50px;
 }
 
-.package-heading{
-  margin-bottom:20px;
-}
-
-.package-heading h2{
+.packages h2{
+  margin-bottom:5px;
   font-size:28px;
   letter-spacing:-.03em;
 }
 
-.package-heading p{
-  margin-top:5px;
+.packages-intro{
+  margin-bottom:22px;
   color:var(--muted);
+  font-size:14px;
 }
 
 .package-grid{
@@ -213,59 +194,45 @@ a{
 }
 
 .package-card{
-  position:relative;
   display:flex;
   flex-direction:column;
   padding:22px;
   border:1px solid var(--line);
-  border-radius:16px;
+  border-radius:15px;
   background:#fff;
-  transition:.25s ease;
+  transition:.2s ease;
 }
 
 .package-card:hover{
-  transform:translateY(-4px);
+  transform:translateY(-3px);
   box-shadow:0 15px 35px rgba(0,0,0,.08);
 }
 
-.package-card.featured{
+.package-card.selected{
   border:2px solid var(--red);
+  box-shadow:0 12px 35px rgba(215,25,32,.13);
 }
 
-.package-card.featured::before{
-  content:"MOST POPULAR";
-  position:absolute;
-  top:-12px;
-  right:16px;
-  padding:5px 9px;
-  border-radius:20px;
-  background:var(--red);
-  color:#fff;
-  font-size:9px;
-  font-weight:900;
-  letter-spacing:.08em;
-}
-
-.package-number{
+.package-label{
   color:var(--red);
-  font-size:11px;
+  font-size:10px;
   font-weight:900;
   letter-spacing:.1em;
   text-transform:uppercase;
 }
 
 .package-card h3{
-  margin:7px 0 4px;
+  margin:7px 0;
   font-size:20px;
 }
 
-.package-price{
-  margin-bottom:14px;
+.price{
+  margin-bottom:17px;
   font-size:25px;
   font-weight:900;
 }
 
-.package-price small{
+.price span{
   color:#777;
   font-size:11px;
   font-weight:600;
@@ -273,59 +240,41 @@ a{
 
 .package-card ul{
   flex:1;
-  margin:0 0 20px;
-  padding:0;
+  margin-bottom:20px;
   list-style:none;
 }
 
 .package-card li{
-  position:relative;
   margin:9px 0;
   padding-left:18px;
   color:#555;
-  font-size:13px;
-  line-height:1.45;
+  font-size:12px;
+  line-height:1.4;
 }
 
 .package-card li::before{
   content:"✓";
-  position:absolute;
-  left:0;
+  margin-left:-18px;
+  margin-right:8px;
   color:var(--red);
   font-weight:900;
 }
 
-.view-btn{
-  width:100%;
-  min-height:45px;
-  border:0;
-  border-radius:9px;
-  background:#111;
-  color:#fff;
-  cursor:pointer;
-  font-size:13px;
-  font-weight:800;
-}
-
-.view-btn:hover{
-  background:var(--red);
-}
-
-.preview-section{
-  width:min(100% - 32px,1200px);
+.preview{
+  width:min(100% - 30px,1200px);
   margin:0 auto 70px;
 }
 
-.preview-heading{
+.preview-head{
   margin-bottom:20px;
 }
 
-.preview-heading h2{
+.preview-head h2{
   font-size:30px;
   letter-spacing:-.03em;
 }
 
-.preview-heading p{
+.preview-head p{
   margin-top:5px;
   color:var(--muted);
 }
@@ -335,62 +284,61 @@ a{
   border:1px solid #ccc;
   border-radius:18px;
   background:#ddd;
-  box-shadow:0 25px 70px rgba(0,0,0,.16);
+  box-shadow:0 25px 70px rgba(0,0,0,.18);
 }
 
-.browser-top{
+.browser-bar{
+  height:46px;
   display:flex;
   align-items:center;
-  gap:8px;
-  height:45px;
+  gap:7px;
   padding:0 15px;
-  background:#e9e9e9;
-  border-bottom:1px solid #d2d2d2;
+  background:#e8e8e8;
+  border-bottom:1px solid #d1d1d1;
 }
 
-.dot{
+.browser-dot{
   width:11px;
   height:11px;
   border-radius:50%;
-  background:#bbb;
+  background:#aaa;
 }
 
-.address-bar{
-  flex:1;
-  max-width:500px;
-  margin-left:12px;
-  padding:6px 12px;
+.browser-address{
+  width:min(500px,65%);
+  margin-left:10px;
+  padding:6px 11px;
   border-radius:7px;
   background:#fff;
   color:#888;
-  font-size:11px;
+  font-size:10px;
 }
 
-.demo-site{
-  min-height:680px;
+.site{
+  min-height:700px;
   background:#fff;
 }
 
-.demo-nav{
+.site-header{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:20px;
-  padding:15px clamp(16px,4vw,38px);
+  gap:15px;
+  padding:15px clamp(15px,4vw,38px);
   border-bottom:1px solid var(--line);
   background:#fff;
 }
 
-.demo-brand{
+.site-logo{
   display:flex;
   align-items:center;
   gap:8px;
   color:#111;
-  font-size:15px;
+  font-size:14px;
   font-weight:900;
 }
 
-.demo-brand-mark{
+.site-logo-box{
   width:25px;
   height:25px;
   display:grid;
@@ -398,35 +346,37 @@ a{
   border-radius:6px;
   background:var(--red);
   color:#fff;
-  font-size:12px;
+  font-size:11px;
 }
 
-.demo-links{
+.site-nav{
   display:flex;
   align-items:center;
-  gap:16px;
+  gap:5px;
 }
 
-.demo-link{
-  padding:5px 0;
+.site-nav button{
+  padding:7px 9px;
   border:0;
-  background:none;
+  border-radius:6px;
+  background:transparent;
   color:#666;
   cursor:pointer;
-  font-size:11px;
+  font-size:10px;
   font-weight:800;
 }
 
-.demo-link.active,
-.demo-link:hover{
-  color:var(--red);
+.site-nav button:hover,
+.site-nav button.active{
+  background:var(--red);
+  color:#fff;
 }
 
-.demo-cart{
+.cart-button{
   display:none;
-  padding:6px 9px;
+  padding:7px 10px;
   border:0;
-  border-radius:7px;
+  border-radius:6px;
   background:#111;
   color:#fff;
   cursor:pointer;
@@ -434,267 +384,237 @@ a{
   font-weight:800;
 }
 
-.demo-page{
+.page{
   display:none;
 }
 
-.demo-page.active{
+.page.active{
   display:block;
 }
 
-.demo-hero{
+.site-hero{
   position:relative;
-  min-height:330px;
+  min-height:350px;
   display:flex;
   align-items:flex-end;
-  padding:35px clamp(20px,6vw,65px);
   overflow:hidden;
+  padding:35px clamp(18px,6vw,60px);
   background:#222;
   color:#fff;
 }
 
-.demo-hero-image{
+.site-hero img{
   position:absolute;
   inset:0;
   width:100%;
   height:100%;
   object-fit:cover;
-  opacity:.72;
+  opacity:.68;
 }
 
-.demo-hero-overlay{
+.site-hero::after{
+  content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(90deg,rgba(0,0,0,.78),rgba(0,0,0,.15));
+  background:linear-gradient(90deg,rgba(0,0,0,.82),rgba(0,0,0,.15));
 }
 
-.demo-hero-content{
+.site-hero-content{
   position:relative;
   z-index:2;
-  max-width:570px;
+  max-width:620px;
 }
 
-.demo-eyebrow{
+.site-eyebrow{
   margin-bottom:8px;
-  color:#ff8a8f;
+  color:#ff858a;
   font-size:10px;
   font-weight:900;
-  letter-spacing:.14em;
+  letter-spacing:.13em;
   text-transform:uppercase;
 }
 
-.demo-hero h2{
-  margin-bottom:10px;
+.site-hero h2{
+  margin-bottom:11px;
   font-size:clamp(28px,5vw,50px);
   line-height:1;
   letter-spacing:-.04em;
 }
 
-.demo-hero p{
-  max-width:530px;
-  color:#e8e8e8;
-  font-size:13px;
-  line-height:1.6;
-}
-
-.demo-cta{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-height:40px;
-  margin-top:18px;
-  padding:9px 17px;
-  border:0;
-  border-radius:7px;
-  background:var(--red);
-  color:#fff;
-  font-size:11px;
-  font-weight:900;
-}
-
-.demo-content{
-  padding:34px clamp(20px,5vw,55px);
-}
-
-.demo-section-title{
-  margin-bottom:7px;
-  font-size:24px;
-  letter-spacing:-.03em;
-}
-
-.demo-section-intro{
-  max-width:650px;
-  margin-bottom:20px;
-  color:#777;
+.site-hero p{
+  color:#e5e5e5;
   font-size:12px;
   line-height:1.6;
 }
 
-.product-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:15px;
+.site-cta{
+  display:inline-block;
+  margin-top:18px;
+  padding:10px 16px;
+  border-radius:7px;
+  background:var(--red);
+  color:#fff;
+  font-size:10px;
+  font-weight:900;
 }
 
-.product-card{
+.site-content{
+  padding:35px clamp(18px,5vw,55px);
+}
+
+.section-eyebrow{
+  margin-bottom:7px;
+  color:var(--red);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+.site-content h3{
+  margin-bottom:7px;
+  font-size:25px;
+  letter-spacing:-.03em;
+}
+
+.section-intro{
+  max-width:650px;
+  margin-bottom:20px;
+  color:#777;
+  font-size:11px;
+  line-height:1.6;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+
+.card{
   overflow:hidden;
   border:1px solid var(--line);
-  border-radius:11px;
+  border-radius:10px;
   background:#fff;
 }
 
-.product-card img{
+.card img{
   width:100%;
   height:155px;
   display:block;
   object-fit:cover;
 }
 
-.product-card-body{
-  padding:14px;
+.card-body{
+  padding:13px;
 }
 
-.product-card h4{
+.card-body h4{
   margin-bottom:5px;
-  font-size:14px;
+  font-size:13px;
 }
 
-.product-card p{
-  min-height:36px;
+.card-body p{
+  min-height:34px;
   color:#777;
   font-size:10px;
   line-height:1.5;
 }
 
-.product-price{
-  margin-top:10px;
+.card-price{
+  margin-top:9px;
   color:var(--red);
-  font-size:12px;
+  font-size:11px;
   font-weight:900;
 }
 
-.demo-about{
+.about-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:18px;
-  margin-top:30px;
+  gap:15px;
+  margin-top:25px;
 }
 
-.info-box{
-  padding:20px;
-  border-radius:12px;
-  background:#fafafa;
-}
-
-.info-box h4{
-  margin-bottom:7px;
-  font-size:13px;
-}
-
-.info-box p{
-  color:#666;
-  font-size:11px;
-  line-height:1.6;
-}
-
-.service-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-}
-
-.service-card{
+.info{
   padding:18px;
-  border:1px solid var(--line);
-  border-radius:11px;
+  border-radius:10px;
+  background:#f8f8f8;
 }
 
-.service-card strong{
-  display:block;
-  margin-bottom:5px;
-  font-size:13px;
+.info h4{
+  margin-bottom:6px;
+  font-size:12px;
 }
 
-.service-card span{
-  color:#777;
+.info p{
+  color:#666;
   font-size:10px;
-}
-
-.portfolio-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-}
-
-.portfolio-grid img{
-  width:100%;
-  height:180px;
-  display:block;
-  object-fit:cover;
-  border-radius:9px;
+  line-height:1.6;
 }
 
 .order-layout{
   display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:25px;
+  grid-template-columns:1fr .8fr;
+  gap:20px;
 }
 
-.form-preview{
+.order-form{
   padding:22px;
   border:1px solid var(--line);
-  border-radius:12px;
+  border-radius:11px;
 }
 
-.form-preview h3{
+.order-form h3{
   margin-bottom:6px;
-  font-size:20px;
+  font-size:21px;
 }
 
-.form-preview p{
-  margin-bottom:18px;
+.order-form > p{
+  margin-bottom:17px;
   color:#777;
-  font-size:11px;
-}
-
-.form-preview label{
-  display:block;
-  margin:12px 0 6px;
   font-size:10px;
-  font-weight:800;
 }
 
-.form-preview input,
-.form-preview select,
-.form-preview textarea{
+.order-form label{
+  display:block;
+  margin:11px 0 5px;
+  font-size:9px;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+.order-form input,
+.order-form select,
+.order-form textarea{
   width:100%;
   padding:10px;
   border:1px solid #ddd;
   border-radius:7px;
   outline:none;
-  font-size:11px;
+  font-size:10px;
 }
 
-.form-preview textarea{
-  min-height:70px;
+.order-form textarea{
+  min-height:65px;
   resize:none;
 }
 
-.preview-submit{
+.order-submit{
   width:100%;
-  margin-top:14px;
+  margin-top:13px;
   padding:11px;
   border:0;
   border-radius:7px;
   background:var(--red);
   color:#fff;
-  font-size:11px;
+  cursor:pointer;
+  font-size:10px;
   font-weight:900;
 }
 
 .order-side{
-  padding:24px;
-  border-radius:12px;
+  padding:23px;
+  border-radius:11px;
   background:#111;
   color:#fff;
 }
@@ -706,227 +626,229 @@ a{
 
 .order-side p{
   color:#bbb;
-  font-size:11px;
+  font-size:10px;
   line-height:1.6;
 }
 
-.order-list{
+.check-list{
   margin-top:20px;
 }
 
-.order-row{
+.check-row{
   display:flex;
   justify-content:space-between;
-  gap:10px;
   padding:10px 0;
   border-bottom:1px solid #333;
-  color:#ddd;
-  font-size:11px;
-}
-
-.cart-preview{
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:20px;
-}
-
-.cart-items{
-  border:1px solid var(--line);
-  border-radius:12px;
-  overflow:hidden;
-}
-
-.cart-row{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding:14px;
-  border-bottom:1px solid var(--line);
-}
-
-.cart-row:last-child{
-  border-bottom:0;
-}
-
-.cart-row img{
-  width:62px;
-  height:55px;
-  object-fit:cover;
-  border-radius:8px;
-}
-
-.cart-row-info{
-  flex:1;
-}
-
-.cart-row-info strong{
-  display:block;
-  font-size:12px;
-}
-
-.cart-row-info span{
-  color:#777;
+  color:#ccc;
   font-size:10px;
 }
 
-.cart-row-price{
-  color:var(--red);
-  font-size:11px;
-  font-weight:900;
-}
-
-.checkout-box{
-  padding:22px;
-  border-radius:12px;
+.premium-banner{
+  margin-bottom:20px;
+  padding:16px;
+  border-radius:10px;
   background:#111;
   color:#fff;
 }
 
-.checkout-box h3{
-  margin-bottom:16px;
-  font-size:19px;
+.premium-banner strong{
+  display:block;
+  margin-bottom:4px;
+  font-size:15px;
 }
 
-.checkout-line{
+.premium-banner span{
+  color:#bbb;
+  font-size:10px;
+}
+
+.cart-layout{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:18px;
+}
+
+.cart-list{
+  border:1px solid var(--line);
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.cart-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:13px;
+  border-bottom:1px solid var(--line);
+}
+
+.cart-item:last-child{
+  border-bottom:0;
+}
+
+.cart-item img{
+  width:62px;
+  height:55px;
+  object-fit:cover;
+  border-radius:7px;
+}
+
+.cart-item-info{
+  flex:1;
+}
+
+.cart-item-info strong{
+  display:block;
+  font-size:11px;
+}
+
+.cart-item-info span{
+  color:#777;
+  font-size:9px;
+}
+
+.cart-price{
+  color:var(--red);
+  font-size:10px;
+  font-weight:900;
+}
+
+.checkout{
+  padding:22px;
+  border-radius:10px;
+  background:#111;
+  color:#fff;
+}
+
+.checkout h3{
+  margin-bottom:15px;
+  font-size:20px;
+}
+
+.checkout-row{
   display:flex;
   justify-content:space-between;
   padding:8px 0;
   color:#bbb;
-  font-size:11px;
+  font-size:10px;
 }
 
 .checkout-total{
   display:flex;
   justify-content:space-between;
-  margin-top:10px;
+  margin-top:8px;
   padding-top:13px;
   border-top:1px solid #333;
   font-size:16px;
   font-weight:900;
 }
 
-.payment-options{
-  display:grid;
-  gap:8px;
+.payment{
   margin-top:17px;
 }
 
+.payment-title{
+  margin-bottom:8px;
+  color:#fff;
+  font-size:10px;
+  font-weight:900;
+}
+
 .payment-option{
+  margin-top:7px;
   padding:10px;
   border:1px solid #333;
   border-radius:7px;
   color:#ddd;
-  font-size:10px;
+  font-size:9px;
 }
 
-.integration-row{
+.pay-button{
+  width:100%;
+  margin-top:13px;
+  padding:11px;
+  border:0;
+  border-radius:7px;
+  background:var(--red);
+  color:#fff;
+  font-size:10px;
+  font-weight:900;
+}
+
+.integrations{
   display:flex;
   flex-wrap:wrap;
-  gap:8px;
-  margin-top:16px;
+  gap:6px;
+  margin-top:14px;
 }
 
 .integration{
-  padding:7px 9px;
-  border-radius:6px;
+  padding:6px 8px;
+  border-radius:5px;
   background:#222;
-  color:#ddd;
-  font-size:9px;
-  font-weight:800;
+  color:#ccc;
+  font-size:8px;
 }
 
-.demo-footer{
-  padding:22px;
+.site-footer{
+  padding:20px;
   background:#111;
   color:#aaa;
   text-align:center;
-  font-size:9px;
-}
-
-.package-note{
-  margin-top:18px;
-  padding:15px 17px;
-  border-left:4px solid var(--red);
-  border-radius:7px;
-  background:var(--red-soft);
-  color:#555;
-  font-size:12px;
-  line-height:1.6;
+  font-size:8px;
 }
 
 @media(max-width:1000px){
   .package-grid{
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:1fr 1fr;
   }
 }
 
 @media(max-width:760px){
+
   .selector{
     grid-template-columns:1fr;
   }
 
-  .demo-links{
-    gap:8px;
+  .site-nav{
+    display:none;
   }
 
-  .demo-link{
-    font-size:9px;
-  }
-
-  .demo-cart{
+  .cart-button{
     display:block;
   }
 
-  .product-grid,
-  .service-grid,
-  .portfolio-grid{
+  .cards{
     grid-template-columns:1fr 1fr;
   }
 
-  .demo-about,
+  .about-grid,
   .order-layout,
-  .cart-preview{
+  .cart-layout{
     grid-template-columns:1fr;
-  }
-
-  .package-grid{
-    grid-template-columns:1fr 1fr;
   }
 }
 
 @media(max-width:520px){
+
   .package-grid{
     grid-template-columns:1fr;
   }
 
-  .browser-top{
-    height:40px;
-  }
-
-  .demo-site{
-    min-height:600px;
-  }
-
-  .demo-nav{
-    padding:12px;
-  }
-
-  .demo-links{
-    display:none;
-  }
-
-  .product-grid,
-  .service-grid,
-  .portfolio-grid{
+  .cards{
     grid-template-columns:1fr;
   }
 
-  .demo-hero{
-    min-height:350px;
+  .site{
+    min-height:600px;
   }
 
-  .demo-content{
-    padding:27px 16px;
+  .site-hero{
+    min-height:370px;
+  }
+
+  .browser-address{
+    width:60%;
   }
 }
 </style>
@@ -936,75 +858,109 @@ a{
 <body>
 
 <header class="topbar">
+
   <a href="index.html" class="logo">
-    <span class="logo-mark">W</span>
-    <span class="logo-text">
-      <strong>WEBORA</strong>
-      <small>BY ABIR</small>
-    </span>
+
+```
+<span class="logo-mark">W</span>
+
+<span class="logo-text">
+  <strong>WEBORA</strong>
+  <small>BY ABIR</small>
+</span>
+```
+
   </a>
 
-<a href="index.html" class="home-link">← Back to Home</a>
+  <a href="index.html" class="home-link">
+    ← Back to Home
+  </a>
 
 </header>
 
 <section class="hero">
-  <div class="eyebrow">Website Package Preview</div>
-  <h1 id="heroTitle">See what your website could look like.</h1>
+
+<small>WEBORA BY ABIR</small>
+
+  <h1 id="heroTitle">
+    See the difference between our website packages.
+  </h1>
+
   <p id="heroText">
-    Explore the website experience included in each WEBORA package.
+    Select a business and package to experience how the website grows with your business.
   </p>
+
 </section>
 
 <div class="selector-wrap">
+
   <div class="selector">
-    <div>
-      <label for="businessSelect">Business Type</label>
-      <select id="businessSelect">
-        <option value="cake">Cake & Pastry</option>
-        <option value="hair">Hair Business</option>
-        <option value="lash">Lash & Beauty</option>
-        <option value="fashion">Fashion</option>
-        <option value="restaurant">Restaurant</option>
-        <option value="barber">Barber</option>
-        <option value="makeup">Makeup Artist</option>
-        <option value="photography">Photography</option>
-        <option value="events">Event Business</option>
-        <option value="catalogue">Product Catalogue</option>
-        <option value="professional">Professional Services</option>
-        <option value="custom">Custom Website</option>
-      </select>
-    </div>
 
 ```
 <div>
-  <label for="planSelect">Preview Package</label>
+  <label>Business Type</label>
+
+  <select id="businessSelect">
+
+    <option value="cake">Cake & Pastry</option>
+    <option value="hair">Hair Business</option>
+    <option value="lash">Lash & Beauty</option>
+    <option value="fashion">Fashion</option>
+    <option value="restaurant">Restaurant</option>
+    <option value="barber">Barber</option>
+    <option value="makeup">Makeup Artist</option>
+    <option value="photography">Photography</option>
+    <option value="events">Event Business</option>
+    <option value="catalogue">Product Catalogue</option>
+    <option value="professional">Professional Services</option>
+    <option value="custom">Custom Website</option>
+
+  </select>
+
+</div>
+
+<div>
+
+  <label>Package Preview</label>
+
   <select id="planSelect">
+
     <option value="1 Page">1 Page Website</option>
     <option value="2 Pages">2 Page Website</option>
     <option value="3 Pages">3 Page Website</option>
     <option value="Premium">Premium Website</option>
+
   </select>
+
 </div>
 ```
 
   </div>
+
 </div>
 
 <section class="packages">
 
-  <div class="package-heading">
-    <h2 id="packagesTitle">Website Packages</h2>
-    <p>Choose the level of website your business needs.</p>
-  </div>
+  <h2 id="packageTitle">
+    Website Packages
+  </h2>
+
+  <p class="packages-intro">
+    Each package adds a real layer of functionality to the customer experience.
+  </p>
 
   <div class="package-grid">
 
 ```
-<article class="package-card">
-  <span class="package-number">01 / Starter</span>
+<article class="package-card" data-plan="1 Page">
+
+  <span class="package-label">Starter</span>
+
   <h3>1 Page</h3>
-  <div class="package-price">₦80,000</div>
+
+  <div class="price">
+    ₦80,000
+  </div>
 
   <ul>
     <li>One complete business page</li>
@@ -1016,52 +972,70 @@ a{
   </ul>
 
   <button class="view-btn" data-plan="1 Page">
-    View Website
+    View 1 Page Website
   </button>
+
 </article>
 
-<article class="package-card featured">
-  <span class="package-number">02 / Standard</span>
+<article class="package-card" data-plan="2 Pages">
+
+  <span class="package-label">Standard</span>
+
   <h3>2 Pages</h3>
-  <div class="package-price">₦120,000</div>
+
+  <div class="price">
+    ₦120,000
+  </div>
 
   <ul>
     <li>Everything in 1 Page</li>
     <li>Dedicated products/services page</li>
-    <li>Categories and detailed listings</li>
+    <li>Product categories</li>
     <li>Product photos</li>
     <li>Prices and descriptions</li>
     <li>Professional navigation</li>
   </ul>
 
   <button class="view-btn" data-plan="2 Pages">
-    View Website
+    View 2 Page Website
   </button>
+
 </article>
 
-<article class="package-card">
-  <span class="package-number">03 / Business</span>
+<article class="package-card" data-plan="3 Pages">
+
+  <span class="package-label">Business</span>
+
   <h3>3 Pages</h3>
-  <div class="package-price">₦180,000</div>
+
+  <div class="price">
+    ₦180,000
+  </div>
 
   <ul>
     <li>Everything in 2 Pages</li>
-    <li>Dedicated ordering or booking page</li>
+    <li>Dedicated order/booking page</li>
     <li>Customer information form</li>
-    <li>Order/booking selection</li>
+    <li>Selection options</li>
     <li>Delivery or appointment options</li>
     <li>Order summary</li>
   </ul>
 
   <button class="view-btn" data-plan="3 Pages">
-    View Website
+    View 3 Page Website
   </button>
+
 </article>
 
-<article class="package-card">
-  <span class="package-number">04 / Premium</span>
+<article class="package-card" data-plan="Premium">
+
+  <span class="package-label">Premium</span>
+
   <h3>Premium</h3>
-  <div class="package-price">₦250,000<small>+</small></div>
+
+  <div class="price">
+    ₦250,000<span>+</span>
+  </div>
 
   <ul>
     <li>Everything in 3 Pages</li>
@@ -1073,66 +1047,80 @@ a{
   </ul>
 
   <button class="view-btn" data-plan="Premium">
-    View Website
+    View Premium Website
   </button>
+
 </article>
 ```
 
   </div>
+
 </section>
 
-<section class="preview-section">
+<section class="preview">
 
-  <div class="preview-heading">
-    <h2 id="previewTitle">Website Preview</h2>
-    <p id="previewDescription">
-      This is a realistic example of how the selected website package can work.
-    </p>
+  <div class="preview-head">
+
+```
+<h2 id="previewTitle">
+  Website Preview
+</h2>
+
+<p id="previewDescription">
+  Click the navigation inside the website to experience each page.
+</p>
+```
+
   </div>
 
   <div class="browser">
 
 ```
-<div class="browser-top">
-  <span class="dot"></span>
-  <span class="dot"></span>
-  <span class="dot"></span>
+<div class="browser-bar">
 
-  <div class="address-bar" id="addressBar">
+  <span class="browser-dot"></span>
+  <span class="browser-dot"></span>
+  <span class="browser-dot"></span>
+
+  <div class="browser-address" id="browserAddress">
     yourbusiness.com
   </div>
+
 </div>
 
-<div class="demo-site">
+<div class="site">
 
-  <nav class="demo-nav">
+  <header class="site-header">
 
-    <div class="demo-brand">
-      <span class="demo-brand-mark" id="demoMark">B</span>
-      <span id="demoBrand">Your Business</span>
+    <div class="site-logo">
+
+      <span class="site-logo-box" id="siteLogoBox">
+        A
+      </span>
+
+      <span id="siteLogoName">
+        Your Business
+      </span>
+
     </div>
 
-    <div class="demo-links" id="demoLinks"></div>
+    <nav class="site-nav" id="siteNav"></nav>
 
-    <button class="demo-cart" id="demoCartButton">
-      Cart (0)
+    <button class="cart-button" id="cartButton">
+      Cart (3)
     </button>
 
-  </nav>
+  </header>
 
-  <div id="demoPages"></div>
+  <main id="sitePages"></main>
 
-  <footer class="demo-footer" id="demoFooter">
-    Your Business · Built by WEBORA by Abir
+  <footer class="site-footer" id="siteFooter">
+    Built by WEBORA by Abir
   </footer>
 
 </div>
 ```
 
-  </div>
-
-  <div class="package-note" id="packageNote">
-    Select a package above to experience the difference.
   </div>
 
 </section>
@@ -1145,24 +1133,24 @@ const businessData = {
     name:"Sweet Crumbs",
     short:"Cake & Pastry",
     eyebrow:"Freshly baked. Beautifully made.",
-    heroTitle:"Cakes made for moments worth celebrating.",
-    heroText:"Custom cakes, pastries and dessert boxes prepared for birthdays, weddings, celebrations and everyday cravings.",
+    title:"Cakes made for moments worth celebrating.",
+    text:"Custom cakes, pastries and dessert boxes prepared for birthdays, weddings and special occasions.",
     cta:"Order a Cake",
-    about:"Sweet Crumbs creates handcrafted cakes and pastries with custom designs made around your celebration.",
+    about:"Sweet Crumbs creates handcrafted cakes and pastries with custom designs made around every celebration.",
     location:"Lagos, Nigeria",
-    hours:"Mon - Sat · 8:00 AM - 7:00 PM",
+    hours:"Mon - Sat · 8AM - 7PM",
     contact:"0900 000 0000",
-    productsTitle:"Our Best Sellers",
-    productsIntro:"A preview of how your cakes and pastries could be presented online.",
-    heroImage:"https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1400&q=85",
+    hero:"https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1400&q=85",
+    productsTitle:"Our Cakes",
+    productsIntro:"A dedicated products page lets customers browse your cakes, prices and descriptions.",
     orderTitle:"Custom Cake Order",
-    orderIntro:"Tell us what you need and we will prepare your order.",
+    orderIntro:"Tell us what you want and our team will prepare your order.",
     orderButton:"Submit Cake Request",
-    detailsPlaceholder:"Cake size, flavour and design",
+    detail:"Cake size, flavour and design",
     products:[
-      ["Classic Birthday Cake","Soft vanilla cake with buttercream finish.","₦35,000","https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80"],
-      ["Chocolate Cake","Rich chocolate cake finished with chocolate cream.","₦40,000","https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?auto=format&fit=crop&w=800&q=80"],
-      ["Dessert Box","A selection of sweet treats for sharing.","₦18,000","https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=800&q=80"]
+      ["Classic Birthday Cake","Soft vanilla cake with buttercream.","₦35,000","https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80"],
+      ["Chocolate Cake","Rich chocolate cake with chocolate cream.","₦40,000","https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?auto=format&fit=crop&w=800&q=80"],
+      ["Dessert Box","A selection of sweet treats.","₦18,000","https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=800&q=80"]
     ]
   },
 
@@ -1170,24 +1158,24 @@ const businessData = {
     name:"Luxe Hair Studio",
     short:"Hair Business",
     eyebrow:"Hair. Beauty. Confidence.",
-    heroTitle:"Your hair deserves the Luxe treatment.",
-    heroText:"Professional hair styling, treatment and installation services designed around your personal style.",
+    title:"Your hair deserves the Luxe treatment.",
+    text:"Professional hair styling, treatment and installation services designed around your personal style.",
     cta:"Book Appointment",
     about:"Luxe Hair Studio provides professional hair services with a focus on quality, comfort and personal style.",
     location:"Lagos, Nigeria",
-    hours:"Tue - Sun · 9:00 AM - 7:00 PM",
+    hours:"Tue - Sun · 9AM - 7PM",
     contact:"0900 111 1111",
-    productsTitle:"Popular Services",
-    productsIntro:"A polished service menu makes it easy for customers to understand what you offer.",
-    heroImage:"https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1400&q=85",
+    hero:"https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1400&q=85",
+    productsTitle:"Hair Services",
+    productsIntro:"Customers can browse your services and understand what each service includes.",
     orderTitle:"Book Your Appointment",
-    orderIntro:"Choose a service and preferred appointment time.",
+    orderIntro:"Choose your preferred service and appointment time.",
     orderButton:"Request Appointment",
-    detailsPlaceholder:"Preferred style or special request",
+    detail:"Preferred style or special request",
     products:[
       ["Wig Installation","Professional installation and styling.","₦25,000","https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80"],
       ["Hair Treatment","Deep treatment for healthier-looking hair.","₦18,000","https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=800&q=80"],
-      ["Hair Styling","Complete styling for your event or occasion.","₦20,000","https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=80"]
+      ["Hair Styling","Complete styling for events.","₦20,000","https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=80"]
     ]
   },
 
@@ -1195,24 +1183,24 @@ const businessData = {
     name:"Lash & Glow",
     short:"Lash & Beauty",
     eyebrow:"Beauty that gets noticed.",
-    heroTitle:"Soft glam. Beautiful lashes. Confident you.",
-    heroText:"Lash extensions, brow services and beauty treatments designed to enhance your natural look.",
+    title:"Soft glam. Beautiful lashes. Confident you.",
+    text:"Lash extensions, brow services and beauty treatments designed to enhance your natural look.",
     cta:"Book a Beauty Session",
-    about:"Lash & Glow provides professional lash and beauty services in a calm, modern studio.",
+    about:"Lash & Glow provides professional lash and beauty services in a calm modern studio.",
     location:"Lagos, Nigeria",
-    hours:"Mon - Sat · 9:00 AM - 6:00 PM",
+    hours:"Mon - Sat · 9AM - 6PM",
     contact:"0900 222 2222",
+    hero:"https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&w=1400&q=85",
     productsTitle:"Beauty Services",
-    productsIntro:"Show your services clearly and let customers book directly from the website.",
-    heroImage:"https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&w=1400&q=85",
-    orderTitle:"Book a Session",
+    productsIntro:"A dedicated service page lets customers browse your treatments.",
+    orderTitle:"Book a Beauty Session",
     orderIntro:"Select your preferred service and appointment time.",
     orderButton:"Book Appointment",
-    detailsPlaceholder:"Tell us your preferred style",
+    detail:"Preferred beauty service",
     products:[
       ["Classic Lashes","Natural-looking lash extensions.","₦20,000","https://images.unsplash.com/photo-1583001931096-959e9a1a6223?auto=format&fit=crop&w=800&q=80"],
       ["Volume Lashes","Fuller lashes for a dramatic finish.","₦28,000","https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=800&q=80"],
-      ["Brow Styling","Professional brow shaping and styling.","₦12,000","https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=800&q=80"]
+      ["Brow Styling","Professional brow shaping.","₦12,000","https://images.unsplash.com/photo-1605497788044-5a32c7078486?auto=format&fit=crop&w=800&q=80"]
     ]
   },
 
@@ -1220,22 +1208,22 @@ const businessData = {
     name:"Abir Fashion",
     short:"Fashion",
     eyebrow:"Modern Nigerian fashion.",
-    heroTitle:"Style that speaks before you do.",
-    heroText:"Discover carefully designed pieces made for everyday confidence, special occasions and statement moments.",
+    title:"Style that speaks before you do.",
+    text:"Discover carefully designed pieces made for everyday confidence and special occasions.",
     cta:"Shop Collection",
     about:"Abir Fashion creates contemporary fashion pieces with a strong focus on detail and individuality.",
     location:"Lagos, Nigeria",
-    hours:"Mon - Sat · 9:00 AM - 6:00 PM",
+    hours:"Mon - Sat · 9AM - 6PM",
     contact:"0900 333 3333",
+    hero:"https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1400&q=85",
     productsTitle:"Latest Collection",
-    productsIntro:"Your fashion website can present collections, sizes, prices and product details professionally.",
-    heroImage:"https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1400&q=85",
+    productsIntro:"Show collections, sizes, prices and product details professionally.",
     orderTitle:"Place Your Order",
     orderIntro:"Select your preferred item, size and delivery option.",
-    orderButton:"Add Order Request",
-    detailsPlaceholder:"Size, colour and delivery information",
+    orderButton:"Submit Order",
+    detail:"Size, colour and delivery information",
     products:[
-      ["Classic Black Dress","Elegant statement dress for special occasions.","₦65,000","https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=800&q=80"],
+      ["Classic Black Dress","Elegant statement dress.","₦65,000","https://images.unsplash.com/photo-1539008835657-9e8e9680c956?auto=format&fit=crop&w=800&q=80"],
       ["Signature Blazer","Structured blazer for a polished look.","₦75,000","https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=800&q=80"],
       ["Weekend Set","Relaxed two-piece fashion set.","₦55,000","https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&w=800&q=80"]
     ]
@@ -1245,24 +1233,24 @@ const businessData = {
     name:"Abir Restaurant",
     short:"Restaurant",
     eyebrow:"Good food. Good mood.",
-    heroTitle:"Food made to bring people together.",
-    heroText:"Enjoy delicious meals prepared fresh and served with the warmth your table deserves.",
+    title:"Food made to bring people together.",
+    text:"Enjoy delicious meals prepared fresh and served with the warmth your table deserves.",
     cta:"View Menu",
     about:"Abir Restaurant serves delicious local and continental meals for individuals, families and events.",
     location:"Lagos, Nigeria",
-    hours:"Mon - Sun · 10:00 AM - 10:00 PM",
+    hours:"Mon - Sun · 10AM - 10PM",
     contact:"0906 632 4358",
-    productsTitle:"Popular Menu",
-    productsIntro:"A restaurant website can turn your menu into an easy-to-browse online experience.",
-    heroImage:"https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1400&q=85",
+    hero:"https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1400&q=85",
+    productsTitle:"Our Menu",
+    productsIntro:"Customers can browse meals, prices and descriptions before ordering.",
     orderTitle:"Order Your Meal",
     orderIntro:"Select your meal and provide your delivery details.",
     orderButton:"Place Order",
-    detailsPlaceholder:"Delivery address or special request",
+    detail:"Delivery address or special request",
     products:[
-      ["Jollof Rice & Chicken","Classic Nigerian jollof rice served with chicken.","₦7,500","https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?auto=format&fit=crop&w=800&q=80"],
+      ["Jollof Rice & Chicken","Classic Nigerian jollof rice with chicken.","₦7,500","https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?auto=format&fit=crop&w=800&q=80"],
       ["Fried Rice & Chicken","Fried rice served with seasoned chicken.","₦8,000","https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80"],
-      ["Beef Suya","Spicy grilled beef served with onions and pepper.","₦6,500","https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80"]
+      ["Beef Suya","Spicy grilled beef with onions and pepper.","₦6,500","https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=800&q=80"]
     ]
   },
 
@@ -1270,24 +1258,24 @@ const businessData = {
     name:"The Gentleman's Cut",
     short:"Barber",
     eyebrow:"Sharp cuts. Clean confidence.",
-    heroTitle:"Look sharp. Feel sharper.",
-    heroText:"Professional barbering services for men who care about how they look and feel.",
+    title:"Look sharp. Feel sharper.",
+    text:"Professional barbering services for men who care about how they look and feel.",
     cta:"Book a Cut",
     about:"The Gentleman's Cut provides modern barbering services in a clean and comfortable environment.",
     location:"Lagos, Nigeria",
-    hours:"Mon - Sat · 9:00 AM - 8:00 PM",
+    hours:"Mon - Sat · 9AM - 8PM",
     contact:"0900 444 4444",
+    hero:"https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1400&q=85",
     productsTitle:"Barber Services",
-    productsIntro:"Customers can see your haircut packages and book their preferred time.",
-    heroImage:"https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1400&q=85",
+    productsIntro:"Customers can view haircut packages and book their preferred time.",
     orderTitle:"Book Your Cut",
     orderIntro:"Choose a service and appointment time.",
     orderButton:"Book Appointment",
-    detailsPlaceholder:"Preferred barber or haircut style",
+    detail:"Preferred haircut style",
     products:[
       ["Classic Haircut","Clean haircut and finishing.","₦8,000","https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80"],
       ["Haircut & Beard","Complete haircut and beard grooming.","₦12,000","https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=800&q=80"],
-      ["Premium Grooming","Full grooming session for a complete finish.","₦18,000","https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=800&q=80"]
+      ["Premium Grooming","Full grooming session.","₦18,000","https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=800&q=80"]
     ]
   },
 
@@ -1295,24 +1283,24 @@ const businessData = {
     name:"Face by Abir",
     short:"Makeup Artist",
     eyebrow:"Beauty for your biggest moments.",
-    heroTitle:"Makeup that makes the moment unforgettable.",
-    heroText:"Professional makeup services for weddings, birthdays, shoots, events and special occasions.",
+    title:"Makeup that makes the moment unforgettable.",
+    text:"Professional makeup services for weddings, birthdays, shoots and special occasions.",
     cta:"Book Makeup",
-    about:"Face by Abir provides professional makeup services tailored to each client's features and occasion.",
+    about:"Face by Abir provides professional makeup services tailored to each client's occasion.",
     location:"Lagos, Nigeria",
-    hours:"Mon - Sun · By Appointment",
+    hours:"By Appointment",
     contact:"0900 555 5555",
+    hero:"https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1400&q=85",
     productsTitle:"Makeup Services",
-    productsIntro:"Showcase your looks, packages and portfolio in one professional online space.",
-    heroImage:"https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1400&q=85",
+    productsIntro:"Showcase your looks, packages and portfolio in one professional space.",
     orderTitle:"Book a Makeup Session",
-    orderIntro:"Choose your makeup package and preferred appointment date.",
+    orderIntro:"Choose your makeup package and preferred date.",
     orderButton:"Request Booking",
-    detailsPlaceholder:"Event type, date and preferred look",
+    detail:"Event type, date and preferred look",
     products:[
       ["Soft Glam","Elegant makeup for birthdays and events.","₦35,000","https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=80"],
       ["Bridal Glam","Full bridal makeup package.","₦80,000","https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80"],
-      ["Photoshoot Glam","Camera-ready makeup for professional shoots.","₦45,000","https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=800&q=80"]
+      ["Photoshoot Glam","Camera-ready makeup.","₦45,000","https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=800&q=80"]
     ]
   },
 
@@ -1320,24 +1308,24 @@ const businessData = {
     name:"Abir Visuals",
     short:"Photography",
     eyebrow:"Stories captured beautifully.",
-    heroTitle:"Your moments deserve more than memories.",
-    heroText:"Professional photography and visual storytelling for people, brands, events and important moments.",
+    title:"Your moments deserve more than memories.",
+    text:"Professional photography and visual storytelling for people, brands, events and important moments.",
     cta:"Book a Shoot",
     about:"Abir Visuals creates professional photographs that preserve moments and communicate stories.",
     location:"Lagos, Nigeria",
-    hours:"Mon - Sun · By Appointment",
+    hours:"By Appointment",
     contact:"0900 666 6666",
+    hero:"https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1400&q=85",
     productsTitle:"Selected Work",
-    productsIntro:"Photography websites put the visual work first, with large galleries and clear booking options.",
-    heroImage:"https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1400&q=85",
+    productsIntro:"A photography website puts the portfolio first with large visual galleries.",
     orderTitle:"Book a Photography Session",
     orderIntro:"Tell us about your shoot and preferred date.",
     orderButton:"Request a Shoot",
-    detailsPlaceholder:"Shoot type, location and preferred date",
+    detail:"Shoot type, location and preferred date",
     products:[
       ["Portrait Session","Professional portrait session.","₦50,000","https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=800&q=80"],
-      ["Event Coverage","Photography coverage for your special event.","₦120,000","https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80"],
-      ["Brand Photography","Professional visual content for businesses.","₦100,000","https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80"]
+      ["Event Coverage","Photography coverage for your event.","₦120,000","https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80"],
+      ["Brand Photography","Professional visual content.","₦100,000","https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80"]
     ]
   },
 
@@ -1345,24 +1333,24 @@ const businessData = {
     name:"Abir Events",
     short:"Event Business",
     eyebrow:"We create moments.",
-    heroTitle:"Beautiful events. Thoughtfully delivered.",
-    heroText:"Event planning, decoration and coordination for celebrations that deserve to be remembered.",
+    title:"Beautiful events. Thoughtfully delivered.",
+    text:"Event planning, decoration and coordination for celebrations that deserve to be remembered.",
     cta:"Plan Your Event",
     about:"Abir Events handles event planning, styling and coordination for celebrations and corporate occasions.",
     location:"Lagos, Nigeria",
-    hours:"Mon - Sat · 9:00 AM - 6:00 PM",
+    hours:"Mon - Sat · 9AM - 6PM",
     contact:"0900 777 7777",
+    hero:"https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=1400&q=85",
     productsTitle:"Our Event Work",
     productsIntro:"Show potential clients your previous work and make enquiries easy.",
-    heroImage:"https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=1400&q=85",
     orderTitle:"Event Enquiry",
     orderIntro:"Tell us about your event and what you need.",
     orderButton:"Send Enquiry",
-    detailsPlaceholder:"Event date, venue and requirements",
+    detail:"Event date, venue and requirements",
     products:[
-      ["Wedding Planning","Complete wedding planning and coordination.","From ₦350,000","https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"],
-      ["Birthday Styling","Beautiful styling for birthday celebrations.","From ₦150,000","https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80"],
-      ["Corporate Events","Professional planning for corporate events.","From ₦250,000","https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=800&q=80"]
+      ["Wedding Planning","Complete wedding planning.","From ₦350,000","https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80"],
+      ["Birthday Styling","Beautiful birthday styling.","From ₦150,000","https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80"],
+      ["Corporate Events","Professional event planning.","From ₦250,000","https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=800&q=80"]
     ]
   },
 
@@ -1370,23 +1358,23 @@ const businessData = {
     name:"Abir Store",
     short:"Product Catalogue",
     eyebrow:"Everything you need, in one place.",
-    heroTitle:"Discover products worth having.",
-    heroText:"A clean online catalogue that helps customers browse products, compare options and make enquiries.",
+    title:"Discover products worth having.",
+    text:"A clean online catalogue that helps customers browse products, compare options and make enquiries.",
     cta:"Browse Products",
-    about:"Abir Store showcases products in a simple, professional catalogue designed for easy browsing.",
+    about:"Abir Store showcases products in a simple professional catalogue designed for easy browsing.",
     location:"Lagos, Nigeria",
-    hours:"Mon - Sat · 9:00 AM - 6:00 PM",
+    hours:"Mon - Sat · 9AM - 6PM",
     contact:"0900 888 8888",
+    hero:"https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1400&q=85",
     productsTitle:"Featured Products",
-    productsIntro:"A catalogue website can organise products into categories with photos, descriptions and prices.",
-    heroImage:"https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1400&q=85",
+    productsIntro:"Organise products into categories with photos, descriptions and prices.",
     orderTitle:"Product Enquiry",
-    orderIntro:"Tell us which products you want and how we can reach you.",
+    orderIntro:"Tell us which products you want.",
     orderButton:"Send Enquiry",
-    detailsPlaceholder:"Product names and quantities",
+    detail:"Product names and quantities",
     products:[
-      ["Premium Product","A professionally presented product listing.","₦45,000","https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80"],
-      ["Signature Collection","Featured item from the latest collection.","₦60,000","https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80"],
+      ["Premium Product","Professionally presented product listing.","₦45,000","https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80"],
+      ["Signature Collection","Featured collection item.","₦60,000","https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80"],
       ["New Arrival","A new product ready for customers.","₦35,000","https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=800&q=80"]
     ]
   },
@@ -1395,24 +1383,24 @@ const businessData = {
     name:"Abir Consulting",
     short:"Professional Services",
     eyebrow:"Professional service. Clear results.",
-    heroTitle:"Expert support for businesses that want to move forward.",
-    heroText:"Professional consulting and advisory services designed to help businesses make better decisions.",
+    title:"Expert support for businesses that want to move forward.",
+    text:"Professional consulting and advisory services designed to help businesses make better decisions.",
     cta:"Book a Consultation",
     about:"Abir Consulting provides professional advisory services for individuals, entrepreneurs and organisations.",
     location:"Lagos, Nigeria",
-    hours:"Mon - Fri · 9:00 AM - 5:00 PM",
+    hours:"Mon - Fri · 9AM - 5PM",
     contact:"0900 999 9999",
+    hero:"https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=85",
     productsTitle:"Our Services",
-    productsIntro:"A professional services website can clearly explain your expertise and turn visitors into enquiries.",
-    heroImage:"https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=85",
+    productsIntro:"Clearly explain your expertise and turn website visitors into enquiries.",
     orderTitle:"Book a Consultation",
     orderIntro:"Tell us what you need help with.",
     orderButton:"Request Consultation",
-    detailsPlaceholder:"Tell us about your business or project",
+    detail:"Tell us about your business or project",
     products:[
       ["Business Consulting","Practical support for business growth.","₦100,000","https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80"],
-      ["Digital Strategy","Build a clearer digital direction for your business.","₦80,000","https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=80"],
-      ["Project Advisory","Professional guidance for your next project.","₦120,000","https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"]
+      ["Digital Strategy","Build a clearer digital direction.","₦80,000","https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=80"],
+      ["Project Advisory","Professional project guidance.","₦120,000","https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"]
     ]
   },
 
@@ -1420,20 +1408,20 @@ const businessData = {
     name:"Your Brand",
     short:"Custom Website",
     eyebrow:"Built around your business.",
-    heroTitle:"A website designed around your exact idea.",
-    heroText:"For businesses that need something beyond the standard package structure.",
+    title:"A website designed around your exact idea.",
+    text:"For businesses that need something beyond the standard package structure.",
     cta:"Start Your Project",
-    about:"A custom WEBORA website is planned around the business, audience, features and customer journey.",
+    about:"A custom WEBORA website is planned around your business, audience, features and customer journey.",
     location:"Your Location",
     hours:"Your Business Hours",
     contact:"Your Phone Number",
+    hero:"https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=85",
     productsTitle:"Your Services or Products",
-    productsIntro:"The structure, design and functionality can be created around your exact business requirements.",
-    heroImage:"https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1400&q=85",
+    productsIntro:"The structure, design and functionality are created around your exact requirements.",
     orderTitle:"Project Enquiry",
     orderIntro:"Tell us what you want your website to do.",
     orderButton:"Send Project Enquiry",
-    detailsPlaceholder:"Describe your website requirements",
+    detail:"Describe your website requirements",
     products:[
       ["Your Feature","Custom content and functionality.","Custom","https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"],
       ["Your Service","Designed around your business.","Custom","https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80"],
@@ -1443,227 +1431,142 @@ const businessData = {
 
 };
 
-const planInfo = {
-
-  "1 Page":{
-    label:"1 Page Website",
-    note:"A complete single-page business website. Everything a visitor needs is presented through one polished scrolling experience."
-  },
-
-  "2 Pages":{
-    label:"2 Page Website",
-    note:"The website now separates the main business introduction from the products, services or portfolio, giving visitors a clearer browsing experience."
-  },
-
-  "3 Pages":{
-    label:"3 Page Website",
-    note:"The website adds a dedicated order, booking or enquiry experience so customers can take action directly from the website."
-  },
-
-  "Premium":{
-    label:"Premium Website",
-    note:"The full customer journey is demonstrated here: browsing, cart, checkout, payment gateway and customer integrations."
-  }
-
-};
-
 let currentType = "restaurant";
 let currentPlan = "1 Page";
 let currentPage = "home";
 
-const businessSelect = document.getElementById("businessSelect");
-const planSelect = document.getElementById("planSelect");
+const businessSelect =
+  document.getElementById("businessSelect");
 
-function getParams(){
+const planSelect =
+  document.getElementById("planSelect");
 
-  const params = new URLSearchParams(window.location.search);
+function getUrlSettings(){
 
-  const type = params.get("type");
-  const plan = params.get("plan");
+  const params =
+    new URLSearchParams(window.location.search);
+
+  const type =
+    params.get("type");
+
+  const plan =
+    params.get("plan");
 
   if(type && businessData[type]){
     currentType = type;
   }
 
-  if(plan && planInfo[plan]){
+  if(plan &&
+     ["1 Page","2 Pages","3 Pages","Premium"].includes(plan)){
     currentPlan = plan;
   }
 
 }
 
-function money(value){
-  return value;
-}
+function createProducts(data){
 
-function productCards(data){
+  return data.products.map(product => `
 
-  return data.products.map(product => {
+    <article class="card">
 
-    return `
-      <article class="product-card">
+      <img
+        src="${product[3]}"
+        alt="${product[0]}"
+      >
 
-        <img src="${product[3]}" alt="${product[0]}">
+      <div class="card-body">
 
-        <div class="product-card-body">
-          <h4>${product[0]}</h4>
-          <p>${product[1]}</p>
-          <div class="product-price">${money(product[2])}</div>
+        <h4>${product[0]}</h4>
+
+        <p>${product[1]}</p>
+
+        <div class="card-price">
+          ${product[2]}
         </div>
 
-      </article>
-    `;
+      </div>
 
-  }).join("");
+    </article>
 
-}
-
-function serviceCards(data){
-
-  return data.products.map(product => {
-
-    return `
-      <article class="service-card">
-        <strong>${product[0]}</strong>
-        <span>${product[1]} · ${product[2]}</span>
-      </article>
-    `;
-
-  }).join("");
+  `).join("");
 
 }
 
-function portfolioImages(data){
-
-  return data.products.map(product => {
-
-    return `
-      <img src="${product[3]}" alt="${product[0]}">
-    `;
-
-  }).join("");
-
-}
-
-function homePage(data){
-
-  const isPhotography = currentType === "photography";
-  const isService = ["hair","lash","barber","makeup","professional"].includes(currentType);
-  const isEvents = currentType === "events";
-
-  let secondaryContent = "";
-
-  if(isPhotography || isEvents){
-
-    secondaryContent = `
-      <section class="demo-content">
-
-        <h3 class="demo-section-title">
-          ${data.productsTitle}
-        </h3>
-
-        <p class="demo-section-intro">
-          ${data.productsIntro}
-        </p>
-
-        <div class="portfolio-grid">
-          ${portfolioImages(data)}
-        </div>
-
-      </section>
-    `;
-
-  }else if(isService){
-
-    secondaryContent = `
-      <section class="demo-content">
-
-        <h3 class="demo-section-title">
-          ${data.productsTitle}
-        </h3>
-
-        <p class="demo-section-intro">
-          ${data.productsIntro}
-        </p>
-
-        <div class="service-grid">
-          ${serviceCards(data)}
-        </div>
-
-      </section>
-    `;
-
-  }else{
-
-    secondaryContent = `
-      <section class="demo-content">
-
-        <h3 class="demo-section-title">
-          ${data.productsTitle}
-        </h3>
-
-        <p class="demo-section-intro">
-          ${data.productsIntro}
-        </p>
-
-        <div class="product-grid">
-          ${productCards(data)}
-        </div>
-
-      </section>
-    `;
-
-  }
+function createHome(data){
 
   return `
 
-    <section class="demo-page active" data-page="home">
+    <section class="page active" data-page="home">
 
-      <div class="demo-hero">
+      <section class="site-hero">
 
         <img
-          class="demo-hero-image"
-          src="${data.heroImage}"
+          src="${data.hero}"
           alt="${data.name}"
         >
 
-        <div class="demo-hero-overlay"></div>
+        <div class="site-hero-content">
 
-        <div class="demo-hero-content">
-
-          <div class="demo-eyebrow">
+          <div class="site-eyebrow">
             ${data.eyebrow}
           </div>
 
-          <h2>${data.heroTitle}</h2>
+          <h2>
+            ${data.title}
+          </h2>
 
-          <p>${data.heroText}</p>
+          <p>
+            ${data.text}
+          </p>
 
-          <span class="demo-cta">
+          <span class="site-cta">
             ${data.cta}
           </span>
 
         </div>
 
-      </div>
+      </section>
 
-      ${secondaryContent}
+      <section class="site-content">
 
-      <section class="demo-content">
+        <div class="section-eyebrow">
+          ${data.short}
+        </div>
 
-        <div class="demo-about">
+        <h3>
+          Welcome to ${data.name}
+        </h3>
 
-          <div class="info-box">
-            <h4>About the Business</h4>
-            <p>${data.about}</p>
-          </div>
+        <p class="section-intro">
+          ${data.about}
+        </p>
 
-          <div class="info-box">
-            <h4>Business Information</h4>
+        <div class="about-grid">
+
+          <div class="info">
+
+            <h4>
+              Business Information
+            </h4>
+
             <p>
               ${data.location}<br>
               ${data.hours}<br>
               ${data.contact}
             </p>
+
+          </div>
+
+          <div class="info">
+
+            <h4>
+              Built for your customers
+            </h4>
+
+            <p>
+              A clean, mobile-friendly website designed to help visitors understand your business quickly.
+            </p>
+
           </div>
 
         </div>
@@ -1676,33 +1579,31 @@ function homePage(data){
 
 }
 
-function productsPage(data){
+function createProducts(data){
 
   return `
 
-    <section class="demo-page" data-page="products">
+    <section class="page" data-page="products">
 
-      <div class="demo-content">
+      <section class="site-content">
 
-        <div class="demo-eyebrow">
+        <div class="section-eyebrow">
           ${data.short}
         </div>
 
-        <h2 class="demo-section-title">
+        <h3>
           ${data.productsTitle}
-        </h2>
+        </h3>
 
-        <p class="demo-section-intro">
+        <p class="section-intro">
           ${data.productsIntro}
         </p>
 
-        <div class="product-grid">
-
-          ${productCards(data)}
-
+        <div class="cards">
+          ${createProducts(data)}
         </div>
 
-      </div>
+      </section>
 
     </section>
 
@@ -1710,57 +1611,83 @@ function productsPage(data){
 
 }
 
-function orderPage(data){
+function createOrder(data){
 
-  const actionWord =
-    currentType === "restaurant" ||
-    currentType === "fashion" ||
-    currentType === "catalogue"
-      ? "Order"
-      : "Booking";
+  const isOrder =
+    ["restaurant","fashion","catalogue"].includes(currentType);
 
   return `
 
-    <section class="demo-page" data-page="order">
+    <section class="page" data-page="order">
 
-      <div class="demo-content">
+      <section class="site-content">
 
         <div class="order-layout">
 
-          <div class="form-preview">
+          <div class="order-form">
 
-            <h3>${data.orderTitle}</h3>
+            <h3>
+              ${data.orderTitle}
+            </h3>
 
-            <p>${data.orderIntro}</p>
-
-            <label>Name</label>
-            <input type="text" placeholder="Your full name">
-
-            <label>Phone Number</label>
-            <input type="tel" placeholder="0800 000 0000">
+            <p>
+              ${data.orderIntro}
+            </p>
 
             <label>
-              ${actionWord === "Order" ? "Select Item" : "Select Service"}
+              Full Name
+            </label>
+
+            <input
+              type="text"
+              placeholder="Your full name"
+            >
+
+            <label>
+              Phone Number
+            </label>
+
+            <input
+              type="tel"
+              placeholder="0800 000 0000"
+            >
+
+            <label>
+              ${isOrder ? "Select Item" : "Select Service"}
             </label>
 
             <select>
+
               ${data.products.map(product => `
-                <option>${product[0]}</option>
+                <option>
+                  ${product[0]}
+                </option>
               `).join("")}
+
             </select>
 
             <label>
-              ${actionWord === "Order" ? "Delivery / Additional Details" : "Preferred Date"}
+              ${isOrder ? "Delivery / Details" : "Preferred Date"}
             </label>
 
-            <input type="text" placeholder="${data.detailsPlaceholder}">
+            <input
+              type="text"
+              placeholder="${data.detail}"
+            >
 
-            <label>Additional Note</label>
+            <label>
+              Additional Note
+            </label>
 
-            <textarea placeholder="Additional information"></textarea>
+            <textarea
+              placeholder="Additional information"
+            ></textarea>
 
 ```
-        <button class="preview-submit">
+        <button
+          class="order-submit"
+          type="button"
+        >
           ${data.orderButton}
         </button>
 
@@ -1768,32 +1695,33 @@ function orderPage(data){
 
       <aside class="order-side">
 
-        <h3>Simple customer journey.</h3>
+        <h3>
+          Take action directly.
+        </h3>
 
         <p>
-          Your visitors can select what they need and send their details
-          without leaving the website.
+          The 3-page package adds a dedicated customer action page instead of keeping everything on one page.
         </p>
 
-        <div class="order-list">
+        <div class="check-list">
 
-          <div class="order-row">
+          <div class="check-row">
             <span>Customer details</span>
             <strong>✓</strong>
           </div>
 
-          <div class="order-row">
-            <span>Selection</span>
+          <div class="check-row">
+            <span>Product/service selection</span>
             <strong>✓</strong>
           </div>
 
-          <div class="order-row">
-            <span>Preferred option</span>
+          <div class="check-row">
+            <span>Order or booking details</span>
             <strong>✓</strong>
           </div>
 
-          <div class="order-row">
-            <span>Order summary</span>
+          <div class="check-row">
+            <span>Customer request</span>
             <strong>✓</strong>
           </div>
 
@@ -1803,7 +1731,7 @@ function orderPage(data){
 
     </div>
 
-  </div>
+  </section>
 
 </section>
 ```
@@ -1812,43 +1740,53 @@ function orderPage(data){
 
 }
 
-function cartPage(data){
+function createPremium(data){
 
 return `
 
 ```
-<section class="demo-page" data-page="cart">
+<section class="page" data-page="cart">
 
-  <div class="demo-content">
+  <section class="site-content">
 
-    <div class="demo-eyebrow">
-      PREMIUM EXPERIENCE
+    <div class="premium-banner">
+
+      <strong>
+        Premium customer experience
+      </strong>
+
+      <span>
+        Browse → Select → Cart → Checkout → Payment
+      </span>
+
     </div>
 
-    <h2 class="demo-section-title">
-      Your Cart
-    </h2>
+    <div class="cart-layout">
 
-    <p class="demo-section-intro">
-      Customers can review their selections before moving to checkout.
-    </p>
+      <div class="cart-list">
 
-    <div class="cart-preview">
+        ${data.products.map(product => `
 
-      <div class="cart-items">
+          <div class="cart-item">
 
-        ${data.products.map((product,index) => `
+            <img
+              src="${product[3]}"
+              alt="${product[0]}"
+            >
 
-          <div class="cart-row">
+            <div class="cart-item-info">
 
-            <img src="${product[3]}" alt="${product[0]}">
+              <strong>
+                ${product[0]}
+              </strong>
 
-            <div class="cart-row-info">
-              <strong>${product[0]}</strong>
-              <span>Quantity: 1</span>
+              <span>
+                Quantity: 1
+              </span>
+
             </div>
 
-            <div class="cart-row-price">
+            <div class="cart-price">
               ${product[2]}
             </div>
 
@@ -1858,16 +1796,18 @@ return `
 
       </div>
 
-      <div class="checkout-box">
+      <div class="checkout">
 
-        <h3>Checkout</h3>
+        <h3>
+          Checkout
+        </h3>
 
-        <div class="checkout-line">
+        <div class="checkout-row">
           <span>Items</span>
           <span>3</span>
         </div>
 
-        <div class="checkout-line">
+        <div class="checkout-row">
           <span>Delivery</span>
           <span>Calculated</span>
         </div>
@@ -1877,7 +1817,11 @@ return `
           <span>₦120,000</span>
         </div>
 
-        <div class="payment-options">
+        <div class="payment">
+
+          <div class="payment-title">
+            Payment Method
+          </div>
 
           <div class="payment-option">
             Card Payment
@@ -1888,27 +1832,43 @@ return `
           </div>
 
           <div class="payment-option">
-            Other Payment Methods
+            Other Payment Method
           </div>
 
         </div>
 
-        <button class="preview-submit">
+        <button
+          type="button"
+          class="pay-button"
+        >
           Proceed to Payment
         </button>
 
-        <div class="integration-row">
-          <span class="integration">Payment Gateway</span>
-          <span class="integration">WhatsApp</span>
-          <span class="integration">Instagram</span>
-          <span class="integration">Facebook</span>
+        <div class="integrations">
+
+          <span class="integration">
+            Payment Gateway
+          </span>
+
+          <span class="integration">
+            WhatsApp
+          </span>
+
+          <span class="integration">
+            Instagram
+          </span>
+
+          <span class="integration">
+            Facebook
+          </span>
+
         </div>
 
       </div>
 
     </div>
 
-  </div>
+  </section>
 
 </section>
 ```
@@ -1917,64 +1877,78 @@ return `
 
 }
 
-function renderPreview(){
+function render(){
 
-const data = businessData[currentType];
-const plan = planInfo[currentPlan];
+const data =
+businessData[currentType];
 
 document.getElementById("heroTitle").textContent =
 `${data.name} Website Preview`;
 
 document.getElementById("heroText").textContent =
-`See how the ${plan.label} could look and work for ${data.short}.`;
+`Experience what the ${currentPlan} package could look like for your ${data.short} business.`;
 
-document.getElementById("packagesTitle").textContent =
+document.getElementById("packageTitle").textContent =
 `${data.name} Website Packages`;
 
 document.getElementById("previewTitle").textContent =
-`${data.name} · ${plan.label}`;
+`${data.name} · ${currentPlan}`;
 
 document.getElementById("previewDescription").textContent =
-`A realistic preview of the ${plan.label.toLowerCase()} experience.`;
+currentPlan === "1 Page"
+? "A complete one-page website. Scroll through the entire business experience in one page."
+: currentPlan === "2 Pages"
+? "Use the website navigation to switch between the Home page and the Products/Services page."
+: currentPlan === "3 Pages"
+? "Use the navigation to experience Home, Products/Services and Order/Booking as separate pages."
+: "Experience the full customer journey with navigation, cart, checkout, payment and integrations.";
 
-document.getElementById("addressBar").textContent =
-`${data.name.toLowerCase().replace(/\s+/g,"")}.com`;
+document.getElementById("browserAddress").textContent =
+`${data.name.toLowerCase().replace(/[^a-z0-9]+/g,"")}.com`;
 
-document.getElementById("demoMark").textContent =
+document.getElementById("siteLogoBox").textContent =
 data.name.charAt(0);
 
-document.getElementById("demoBrand").textContent =
+document.getElementById("siteLogoName").textContent =
 data.name;
 
-document.getElementById("demoFooter").textContent =
+document.getElementById("siteFooter").textContent =
 `${data.name} · ${data.location} · Built by WEBORA by Abir`;
 
-let pages = `     ${homePage(data)}
-  `;
+let pages =
+createHome(data);
 
-let links = [
+let navigation = [
 ["home","Home"]
 ];
 
-if(currentPlan === "2 Pages" ||
+if(
+currentPlan === "2 Pages" ||
 currentPlan === "3 Pages" ||
-currentPlan === "Premium"){
+currentPlan === "Premium"
+){
 
 ```
-pages += productsPage(data);
+pages += createProducts(data);
 
-links.push(["products", data.productsTitle]);
+navigation.push([
+  "products",
+  data.productsTitle
+]);
 ```
 
 }
 
-if(currentPlan === "3 Pages" ||
-currentPlan === "Premium"){
+if(
+currentPlan === "3 Pages" ||
+currentPlan === "Premium"
+){
 
 ```
-pages += orderPage(data);
+pages += createOrder(data);
 
-links.push(["order",
+navigation.push([
+  "order",
   ["restaurant","fashion","catalogue"].includes(currentType)
     ? "Order"
     : "Booking"
@@ -1986,43 +1960,54 @@ links.push(["order",
 if(currentPlan === "Premium"){
 
 ```
-pages += cartPage(data);
+pages += createPremium(data);
 
-links.push(["cart","Cart"]);
+navigation.push([
+  "cart",
+  "Cart"
+]);
 ```
 
 }
 
-document.getElementById("demoPages").innerHTML = pages;
+document.getElementById("sitePages").innerHTML =
+pages;
 
-document.getElementById("demoLinks").innerHTML =
-links.map(link => `       <button
-        type="button"
-        class="demo-link ${link[0] === "home" ? "active" : ""}"
-        data-page="${link[0]}"       >
-        ${link[1]}       </button>
-    `).join("");
-
-const cartButton = document.getElementById("demoCartButton");
-
-if(currentPlan === "Premium"){
-cartButton.style.display = "block";
-cartButton.textContent = "Cart (3)";
-}else{
-cartButton.style.display = "none";
-}
-
-document.querySelectorAll(".demo-link").forEach(button => {
+document.getElementById("siteNav").innerHTML =
+navigation.map(item => `
 
 ```
-button.addEventListener("click",()=>{
+  <button
+    type="button"
+    class="${item[0] === "home" ? "active" : ""}"
+    data-page="${item[0]}"
+  >
+    ${item[1]}
+  </button>
 
-  showPage(button.dataset.page);
+`).join("");
+```
+
+const cartButton =
+document.getElementById("cartButton");
+
+cartButton.style.display =
+currentPlan === "Premium"
+? "block"
+: "none";
+
+document.querySelectorAll(".site-nav button")
+.forEach(button => {
+
+```
+  button.addEventListener("click",()=>{
+
+    showPage(button.dataset.page);
+
+  });
 
 });
 ```
-
-});
 
 cartButton.onclick = () => {
 
@@ -2034,129 +2019,127 @@ if(currentPlan === "Premium"){
 
 };
 
-document.getElementById("packageNote").textContent =
-plan.note;
+document.querySelectorAll(".package-card")
+.forEach(card => {
 
-updateSelectedPlan();
+```
+  card.classList.toggle(
+    "selected",
+    card.dataset.plan === currentPlan
+  );
+
+});
+```
+
+businessSelect.value =
+currentType;
+
+planSelect.value =
+currentPlan;
+
+currentPage = "home";
 
 }
 
 function showPage(page){
 
-currentPage = page;
+currentPage =
+page;
 
-document.querySelectorAll(".demo-page").forEach(section => {
+document.querySelectorAll(".page")
+.forEach(section => {
 
 ```
-section.classList.toggle(
-  "active",
-  section.dataset.page === page
+  section.classList.toggle(
+    "active",
+    section.dataset.page === page
+  );
+
+});
+```
+
+document.querySelectorAll(".site-nav button")
+.forEach(button => {
+
+```
+  button.classList.toggle(
+    "active",
+    button.dataset.page === page
+  );
+
+});
+```
+
+}
+
+businessSelect.addEventListener(
+"change",
+()=>{
+
+```
+currentType =
+  businessSelect.value;
+
+render();
+
+history.replaceState(
+  {},
+  "",
+  `package.html?type=${encodeURIComponent(currentType)}&plan=${encodeURIComponent(currentPlan)}`
+);
+```
+
+}
+);
+
+planSelect.addEventListener(
+"change",
+()=>{
+
+```
+currentPlan =
+  planSelect.value;
+
+render();
+
+history.replaceState(
+  {},
+  "",
+  `package.html?type=${encodeURIComponent(currentType)}&plan=${encodeURIComponent(currentPlan)}`
+);
+```
+
+}
+);
+
+document.querySelectorAll(".view-btn")
+.forEach(button => {
+
+```
+button.addEventListener(
+  "click",
+  ()=>{
+
+    currentPlan =
+      button.dataset.plan;
+
+    render();
+
+    document.querySelector(".preview")
+      .scrollIntoView({
+        behavior:"smooth",
+        block:"start"
+      });
+
+  }
 );
 ```
 
 });
 
-document.querySelectorAll(".demo-link").forEach(button => {
+getUrlSettings();
 
-```
-button.classList.toggle(
-  "active",
-  button.dataset.page === page
-);
-```
-
-});
-
-}
-
-function updateSelectedPlan(){
-
-planSelect.value = currentPlan;
-businessSelect.value = currentType;
-
-document.querySelectorAll(".package-card").forEach(card => {
-
-```
-const button = card.querySelector("[data-plan]");
-
-if(!button){
-  return;
-}
-
-const active =
-  button.dataset.plan === currentPlan;
-
-card.style.transform = active
-  ? "translateY(-4px)"
-  : "";
-
-card.style.boxShadow = active
-  ? "0 15px 35px rgba(215,25,32,.14)"
-  : "";
-```
-
-});
-
-}
-
-businessSelect.addEventListener("change",()=>{
-
-currentType = businessSelect.value;
-
-currentPage = "home";
-
-renderPreview();
-
-const url =
-`package.html?type=${encodeURIComponent(currentType)}&plan=${encodeURIComponent(currentPlan)}`;
-
-history.replaceState({}, "", url);
-
-});
-
-planSelect.addEventListener("change",()=>{
-
-currentPlan = planSelect.value;
-
-currentPage = "home";
-
-renderPreview();
-
-const url =
-`package.html?type=${encodeURIComponent(currentType)}&plan=${encodeURIComponent(currentPlan)}`;
-
-history.replaceState({}, "", url);
-
-});
-
-document.querySelectorAll(".view-btn").forEach(button => {
-
-button.addEventListener("click",()=>{
-
-```
-currentPlan = button.dataset.plan;
-
-planSelect.value = currentPlan;
-
-renderPreview();
-
-document.querySelector(".preview-section")
-  .scrollIntoView({
-    behavior:"smooth",
-    block:"start"
-  });
-```
-
-});
-
-});
-
-getParams();
-
-businessSelect.value = currentType;
-planSelect.value = currentPlan;
-
-renderPreview();
+render();
 
 </script>
 
