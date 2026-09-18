@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Website Packages | WEBORA by Abir</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b0b0f;
+    color: #fff;
+    line-height: 1.6;
+}
+
+header {
+    padding: 22px 7%;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 3px;
+    opacity: .55;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 14px;
+    opacity: .75;
+}
+
+.hero {
+    padding: 90px 7% 65px;
+    max-width: 950px;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 12px;
+    opacity: .5;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: clamp(42px, 7vw, 75px);
+    line-height: 1;
+    margin-bottom: 25px;
+}
+
+.hero p {
+    max-width: 680px;
+    color: #aaaab3;
+    font-size: 17px;
+}
+
+.business-selector {
+    padding: 0 7% 50px;
+}
+
+select {
+    width: 100%;
+    max-width: 500px;
+    padding: 16px;
+    background: #15151b;
+    border: 1px solid rgba(255,255,255,.15);
+    color: #fff;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.packages {
+    padding: 30px 7% 90px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.package {
+    background: #111116;
+    border: 1px solid rgba(255,255,255,.1);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+}
+
+.package.featured {
+    border-color: rgba(255,255,255,.45);
+}
+
+.package h2 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.package .description {
+    color: #aaaab3;
+    font-size: 14px;
+    min-height: 70px;
+}
+
+.price {
+    font-size: 30px;
+    font-weight: 800;
+    margin: 25px 0;
+}
+
+.package ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.package li {
+    padding: 8px 0;
+    color: #d1d1d6;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+.package li::before {
+    content: "✓";
+    margin-right: 10px;
+    opacity: .6;
+}
+
+.btn {
+    margin-top: auto;
+    display: block;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    background: #fff;
+    color: #0b0b0f;
+    font-weight: 700;
+    border-radius: 4px;
+}
+
+.premium {
+    background: linear-gradient(145deg, #17171e, #0f0f13);
+}
+
+.badge {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 9px;
+    border: 1px solid rgba(255,255,255,.2);
+    margin-bottom: 18px;
+}
+
+footer {
+    border-top: 1px solid rgba(255,255,255,.08);
+    text-align: center;
+    padding: 30px;
+    color: #777780;
+    font-size: 13px;
+}
+
+@media(max-width:700px) {
+    nav {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 65px;
+    }
+
+    .packages {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        WEBORA
+        <span>BY ABIR</span>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#businesses">Businesses</a>
+        <a href="index.html#packages">Packages</a>
+    </nav>
+</header>
+
+<section class="hero">
+
+    <div class="eyebrow">WEBORA by Abir</div>
+
+    <h1 id="businessTitle">Cake & Pastry Websites</h1>
+
+    <p id="businessIntro">
+        Professional websites designed specifically for cake and pastry businesses,
+        from simple online presence to complete ordering and payment experiences.
+    </p>
+
+</section>
+
+<section class="business-selector">
+
+    <select id="businessSelect">
+        <option value="cake">Cake & Pastry</option>
+        <option value="hair">Hair Business</option>
+        <option value="lash">Lash & Beauty</option>
+        <option value="fashion">Fashion</option>
+        <option value="restaurant">Restaurant</option>
+        <option value="barber">Barber</option>
+        <option value="makeup">Makeup Artist</option>
+        <option value="photography">Photography</option>
+        <option value="events">Event Business</option>
+        <option value="catalogue">Product Catalogue</option>
+        <option value="professional">Professional Services</option>
+    </select>
+
+</section>
+
+<section class="packages">
+
+    <div class="package">
+
+        <div class="badge">Starter</div>
+
+        <h2>1 Page Website</h2>
+
+        <p class="description">
+            A clean and professional online presence for businesses that are just
+            getting started.
+        </p>
+
+        <div class="price">₦80,000</div>
+
+        <ul>
+            <li>Business introduction</li>
+            <li>About the business</li>
+            <li>Products or services showcase</li>
+            <li>Basic business information</li>
+            <li>Mobile-friendly design</li>
+        </ul>
+
+        <a href="#" class="btn">Choose Package</a>
+
+    </div>
+
+
+    <div class="package">
+
+        <div class="badge">Standard</div>
+
+        <h2>2 Page Website</h2>
+
+        <p class="description">
+            More space to properly present your business, products and services.
+        </p>
+
+        <div class="price">₦120,000</div>
+
+        <ul>
+            <li>Everything in 1 Page</li>
+            <li>Dedicated product/service page</li>
+            <li>Product categories</li>
+            <li>Product photos</li>
+            <li>Prices and descriptions</li>
+            <li>Professional navigation</li>
+        </ul>
+
+        <a href="#" class="btn">Choose Package</a>
+
+    </div>
+
+
+    <div class="package">
+
+        <div class="badge">Business</div>
+
+        <h2>3 Page Website</h2>
+
+        <p class="description">
+            A more complete website designed to give customers more ways to
+            interact with the business.
+        </p>
+
+        <div class="price">₦180,000</div>
+
+        <ul>
+            <li>Everything in 2 Pages</li>
+            <li>Dedicated ordering or booking page</li>
+            <li>Customer information form</li>
+            <li>Order or booking selection</li>
+            <li>Delivery or appointment options</li>
+            <li>Order summary</li>
+        </ul>
+
+        <a href="#" class="btn">Choose Package</a>
+
+    </div>
+
+
+    <div class="package premium featured">
+
+        <div class="badge">Premium</div>
+
+        <h2>Premium Website</h2>
+
+        <p class="description">
+            A complete business website with advanced customer interaction,
+            online checkout and payment functionality.
+        </p>
+
+        <div class="price">₦250,000+</div>
+
+        <ul>
+            <li>Everything in 3 Pages</li>
+            <li>Advanced ordering or booking system</li>
+            <li>Shopping cart where applicable</li>
+            <li>Online checkout</li>
+            <li>Payment gateway integration</li>
+            <li>Payment confirmation</li>
+            <li>WhatsApp integration</li>
+            <li>Social media integration</li>
+        </ul>
+
+        <a href="#" class="btn">Choose Package</a>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 WEBORA by Abir. All rights reserved.
+</footer>
+
+<script>
+
+const businesses = {
+
+    cake: {
+        title: "Cake & Pastry Websites",
+        intro: "Professional websites designed specifically for cake and pastry businesses, from simple online presence to complete ordering and payment experiences."
+    },
+
+    hair: {
+        title: "Hair Business Websites",
+        intro: "Showcase hairstyles, services, prices and bookings with a website designed around your hair business."
+    },
+
+    lash: {
+        title: "Lash & Beauty Websites",
+        intro: "Present your beauty services, lash styles, prices and appointments in one professional online space."
+    },
+
+    fashion: {
+        title: "Fashion Business Websites",
+        intro: "Display your fashion products, collections, prices and customer ordering options in a beautiful online catalogue."
+    },
+
+    restaurant: {
+        title: "Restaurant Websites",
+        intro: "Turn your menu into a professional digital experience with food images, prices, ordering and payment options."
+    },
+
+    barber: {
+        title: "Barber Websites",
+        intro: "Showcase your barbering services, prices, work and appointment options to customers online."
+    },
+
+    makeup: {
+        title: "Makeup Artist Websites",
+        intro: "Showcase your makeup portfolio, packages, prices and booking options in one professional website."
+    },
+
+    photography: {
+        title: "Photography Websites",
+        intro: "Present your photography portfolio, packages, prices and booking options professionally."
+    },
+
+    events: {
+        title: "Event Business Websites",
+        intro: "Showcase your event services, packages, previous work and booking options."
+    },
+
+    catalogue: {
+        title: "Product Catalogue Websites",
+        intro: "Give your customers a professional place to browse products, descriptions, prices and ordering options."
+    },
+
+    professional: {
+        title: "Professional Business Websites",
+        intro: "A professional online presence designed around your services, brand and business goals."
+    }
+
+};
+
+const selector = document.getElementById("businessSelect");
+const title = document.getElementById("businessTitle");
+const intro = document.getElementById("businessIntro");
+
+selector.addEventListener("change", function () {
+
+    const selected = businesses[this.value];
+
+    title.textContent = selected.title;
+    intro.textContent = selected.intro;
+
+});
+
+</script>
+
+</body>
+</html>
