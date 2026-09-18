@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,228 +7,454 @@
     <title>WEBORA by Abir | Websites Built for Businesses</title>
 
     <style>
+        :root {
+            --red: #b30000;
+            --dark-red: #7f0000;
+            --white: #ffffff;
+            --off-white: #f8f8f8;
+            --black: #111111;
+            --grey: #666666;
+            --light-grey: #eeeeee;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #0b0b0f;
-            color: #ffffff;
+            background: var(--white);
+            color: var(--black);
             line-height: 1.6;
         }
 
+        /* =========================
+           HEADER
+        ========================= */
+
         header {
-            padding: 24px 7%;
+            padding: 18px 7%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            background: var(--white);
+            border-bottom: 1px solid var(--light-grey);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .logo {
-            font-size: 24px;
-            font-weight: 800;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 11px;
+        }
+
+        .logo-mark {
+            width: 48px;
+            height: 48px;
+            background: var(--red);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: 900;
+            border-radius: 8px;
+            letter-spacing: -2px;
+        }
+
+        .logo-text {
+            line-height: 1;
+        }
+
+        .logo-name {
+            display: block;
+            color: var(--black);
+            font-size: 22px;
+            font-weight: 900;
             letter-spacing: 2px;
         }
 
-        .logo span {
+        .logo-by {
             display: block;
-            font-size: 10px;
+            color: var(--red);
+            font-size: 8px;
+            font-weight: 700;
             letter-spacing: 3px;
-            font-weight: 400;
-            opacity: 0.6;
-            margin-top: -4px;
+            margin-top: 5px;
         }
 
         nav a {
-            color: #ffffff;
+            color: var(--black);
             text-decoration: none;
-            margin-left: 25px;
+            margin-left: 28px;
             font-size: 14px;
-            opacity: 0.8;
+            font-weight: 600;
         }
 
         nav a:hover {
-            opacity: 1;
+            color: var(--red);
         }
 
+        /* =========================
+           HERO
+        ========================= */
+
         .hero {
-            min-height: 80vh;
+            min-height: 82vh;
             display: flex;
             align-items: center;
-            padding: 80px 7%;
+            padding: 90px 7%;
+            position: relative;
+            overflow: hidden;
             background:
-                linear-gradient(rgba(11,11,15,0.7), rgba(11,11,15,0.95)),
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,0.98) 0%,
+                    rgba(255,255,255,0.94) 48%,
+                    rgba(255,255,255,0.55) 100%
+                ),
                 url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80")
                 center/cover;
         }
 
+        .hero::after {
+            content: "";
+            position: absolute;
+            right: -150px;
+            top: -150px;
+            width: 450px;
+            height: 450px;
+            background: var(--red);
+            opacity: 0.07;
+            border-radius: 50%;
+        }
+
         .hero-content {
-            max-width: 750px;
+            max-width: 760px;
+            position: relative;
+            z-index: 2;
         }
 
         .tag {
-            font-size: 13px;
-            letter-spacing: 3px;
+            color: var(--red);
+            font-size: 12px;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            opacity: 0.65;
+            font-weight: 800;
             margin-bottom: 20px;
         }
 
         h1 {
-            font-size: clamp(48px, 8vw, 92px);
+            font-size: clamp(48px, 8vw, 90px);
             line-height: 0.98;
-            margin-bottom: 25px;
+            letter-spacing: -3px;
+            margin-bottom: 28px;
+        }
+
+        h1 span {
+            color: var(--red);
         }
 
         .hero p {
-            max-width: 600px;
+            max-width: 620px;
             font-size: 18px;
-            color: #c8c8cf;
+            color: #555555;
             margin-bottom: 35px;
         }
 
         .buttons {
             display: flex;
-            gap: 15px;
+            gap: 14px;
             flex-wrap: wrap;
         }
 
         .btn {
             display: inline-block;
-            padding: 14px 25px;
-            border-radius: 4px;
+            padding: 15px 27px;
+            border-radius: 5px;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 800;
             font-size: 14px;
+            transition: 0.25s;
         }
 
         .btn-primary {
-            background: #ffffff;
-            color: #0b0b0f;
+            background: var(--red);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-red);
+            transform: translateY(-2px);
         }
 
         .btn-secondary {
-            border: 1px solid rgba(255,255,255,0.3);
-            color: #ffffff;
+            border: 1px solid #cccccc;
+            color: var(--black);
+            background: var(--white);
         }
 
+        .btn-secondary:hover {
+            border-color: var(--red);
+            color: var(--red);
+        }
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
         section {
-            padding: 80px 7%;
+            padding: 90px 7%;
         }
 
         .section-title {
-            max-width: 650px;
-            margin-bottom: 45px;
+            max-width: 680px;
+            margin-bottom: 48px;
+        }
+
+        .section-title .small-title {
+            color: var(--red);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
         }
 
         .section-title h2 {
-            font-size: 42px;
-            margin-bottom: 12px;
+            font-size: 44px;
+            line-height: 1.1;
+            margin-bottom: 14px;
+            letter-spacing: -1px;
         }
 
         .section-title p {
-            color: #aaaab3;
+            color: var(--grey);
+        }
+
+        /* =========================
+           BUSINESS CATEGORIES
+        ========================= */
+
+        #businesses {
+            background: var(--off-white);
         }
 
         .categories {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 15px;
         }
 
         .category {
-            padding: 30px 20px;
-            min-height: 150px;
-            border: 1px solid rgba(255,255,255,0.1);
-            background: #111116;
+            color: var(--black);
+            text-decoration: none;
+            padding: 30px 22px;
+            min-height: 155px;
+            border: 1px solid #dddddd;
+            background: var(--white);
             display: flex;
             align-items: flex-end;
+            position: relative;
+            overflow: hidden;
+            transition: 0.25s;
+        }
+
+        .category::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--red);
+            transform: scaleY(0);
+            transform-origin: bottom;
             transition: 0.25s;
         }
 
         .category:hover {
             transform: translateY(-5px);
-            border-color: rgba(255,255,255,0.35);
+            border-color: var(--red);
+        }
+
+        .category:hover::before {
+            transform: scaleY(1);
         }
 
         .category h3 {
             font-size: 18px;
         }
 
+        /* =========================
+           PACKAGES
+        ========================= */
+
         .packages {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
         }
 
         .package {
-            background: #111116;
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 30px;
+            background: var(--white);
+            border: 1px solid #dddddd;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            transition: 0.25s;
+        }
+
+        .package:hover {
+            transform: translateY(-5px);
+            border-color: var(--red);
         }
 
         .package h3 {
-            font-size: 22px;
+            font-size: 23px;
             margin-bottom: 10px;
         }
 
         .package p {
-            color: #aaaab3;
+            color: var(--grey);
             font-size: 14px;
         }
 
         .price {
-            font-size: 28px;
-            font-weight: 800;
+            color: var(--red);
+            font-size: 27px;
+            font-weight: 900;
             margin: 25px 0;
         }
 
+        .package .btn {
+            margin-top: auto;
+            text-align: center;
+        }
+
+        .premium {
+            background: var(--red);
+            color: var(--white);
+            border-color: var(--red);
+        }
+
+        .premium p,
+        .premium .price {
+            color: var(--white);
+        }
+
+        .premium .btn {
+            background: var(--white);
+            color: var(--red);
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
         .cta {
             text-align: center;
-            background: #15151b;
+            background: var(--black);
+            color: var(--white);
         }
 
         .cta h2 {
-            font-size: 45px;
+            font-size: 46px;
+            line-height: 1.1;
             margin-bottom: 15px;
         }
 
         .cta p {
-            color: #aaaab3;
+            color: #bbbbbb;
             margin-bottom: 30px;
         }
 
+        /* =========================
+           FOOTER
+        ========================= */
+
         footer {
             padding: 30px 7%;
-            border-top: 1px solid rgba(255,255,255,0.08);
-            color: #777780;
+            background: var(--white);
+            border-top: 1px solid var(--light-grey);
+            color: #777777;
             font-size: 13px;
             text-align: center;
         }
 
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 950px) {
+
+            .categories {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .packages {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 700px) {
+
+            header {
+                padding: 15px 6%;
+            }
+
             nav {
                 display: none;
             }
 
+            .logo-mark {
+                width: 42px;
+                height: 42px;
+                font-size: 19px;
+            }
+
+            .logo-name {
+                font-size: 19px;
+            }
+
             .hero {
-                min-height: 75vh;
+                min-height: 78vh;
+                padding: 70px 6%;
+            }
+
+            h1 {
+                font-size: 48px;
+                letter-spacing: -2px;
+            }
+
+            .hero p {
+                font-size: 16px;
             }
 
             section {
-                padding: 60px 6%;
+                padding: 65px 6%;
             }
 
             .section-title h2 {
-                font-size: 34px;
+                font-size: 35px;
+            }
+
+            .categories,
+            .packages {
+                grid-template-columns: 1fr;
             }
 
             .cta h2 {
-                font-size: 34px;
+                font-size: 35px;
             }
         }
     </style>
@@ -236,119 +463,271 @@
 <body>
 
 <header>
-    <div class="logo">
-        WEBORA
-        <span>BY ABIR</span>
-    </div>
+
+    <a href="index.html" class="logo">
+
+        <div class="logo-mark">
+            W
+        </div>
+
+        <div class="logo-text">
+            <span class="logo-name">WEBORA</span>
+            <span class="logo-by">BY ABIR</span>
+        </div>
+
+    </a>
 
     <nav>
         <a href="#businesses">Businesses</a>
         <a href="#packages">Packages</a>
         <a href="#contact">Get Started</a>
     </nav>
+
 </header>
 
-<section class="hero">
-    <div class="hero-content">
-        <div class="tag">WEBORA by Abir</div>
 
-        <h1>Websites built for businesses that mean business.</h1>
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="tag">
+            WEBORA by Abir
+        </div>
+
+        <h1>
+            Your business deserves a
+            <span>better website.</span>
+        </h1>
 
         <p>
-            Professional websites designed to help businesses present their brand,
-            showcase their products and services, reach customers and grow online.
+            We design professional websites for businesses that want to look
+            credible, showcase what they offer and give their customers a better
+            way to interact with them online.
         </p>
 
         <div class="buttons">
-            <a href="#businesses" class="btn btn-primary">Explore Websites</a>
-            <a href="#packages" class="btn btn-secondary">View Packages</a>
+
+            <a href="#businesses" class="btn btn-primary">
+                Explore Websites
+            </a>
+
+            <a href="#packages" class="btn btn-secondary">
+                View Packages
+            </a>
+
         </div>
+
     </div>
+
 </section>
+
 
 <section id="businesses">
 
     <div class="section-title">
-        <h2>Built for your kind of business.</h2>
+
+        <div class="small-title">
+            What We Build
+        </div>
+
+        <h2>
+            Websites designed around your business.
+        </h2>
+
         <p>
-            From small businesses starting online to established brands that need
-            a stronger digital presence.
+            Whether you sell cakes, style hair, make lashes, serve food or run
+            a professional business, we build a website around the way your
+            customers actually interact with you.
         </p>
+
     </div>
+
 
     <div class="categories">
 
-        <div class="category"><h3>Cake & Pastry</h3></div>
-        <div class="category"><h3>Hair Business</h3></div>
-        <div class="category"><h3>Lash & Beauty</h3></div>
-        <div class="category"><h3>Fashion</h3></div>
-        <div class="category"><h3>Restaurant</h3></div>
-        <div class="category"><h3>Barber</h3></div>
-        <div class="category"><h3>Makeup Artist</h3></div>
-        <div class="category"><h3>Photography</h3></div>
-        <div class="category"><h3>Event Business</h3></div>
-        <div class="category"><h3>Product Catalogue</h3></div>
-        <div class="category"><h3>Professional Services</h3></div>
-        <div class="category"><h3>Custom Website</h3></div>
+        <a class="category" href="business.html?type=cake">
+            <h3>Cake & Pastry</h3>
+        </a>
+
+        <a class="category" href="business.html?type=hair">
+            <h3>Hair Business</h3>
+        </a>
+
+        <a class="category" href="business.html?type=lash">
+            <h3>Lash & Beauty</h3>
+        </a>
+
+        <a class="category" href="business.html?type=fashion">
+            <h3>Fashion</h3>
+        </a>
+
+        <a class="category" href="business.html?type=restaurant">
+            <h3>Restaurant</h3>
+        </a>
+
+        <a class="category" href="business.html?type=barber">
+            <h3>Barber</h3>
+        </a>
+
+        <a class="category" href="business.html?type=makeup">
+            <h3>Makeup Artist</h3>
+        </a>
+
+        <a class="category" href="business.html?type=photography">
+            <h3>Photography</h3>
+        </a>
+
+        <a class="category" href="business.html?type=events">
+            <h3>Event Business</h3>
+        </a>
+
+        <a class="category" href="business.html?type=catalogue">
+            <h3>Product Catalogue</h3>
+        </a>
+
+        <a class="category" href="business.html?type=professional">
+            <h3>Professional Services</h3>
+        </a>
+
+        <a class="category" href="business.html?type=custom">
+            <h3>Custom Website</h3>
+        </a>
 
     </div>
 
 </section>
+
 
 <section id="packages">
 
     <div class="section-title">
-        <h2>Choose your website.</h2>
+
+        <div class="small-title">
+            Website Packages
+        </div>
+
+        <h2>
+            Start simple. Build bigger.
+        </h2>
+
         <p>
-            Start simple or build a complete online experience for your customers.
+            Choose a package based on how much your business needs its website
+            to do.
         </p>
+
     </div>
+
 
     <div class="packages">
 
         <div class="package">
+
             <h3>One Page</h3>
-            <p>A simple professional website for businesses that need a strong online presence.</p>
-            <div class="price">From ₦80,000</div>
+
+            <p>
+                A simple professional website for businesses that need a strong
+                online presence.
+            </p>
+
+            <div class="price">
+                From ₦80,000
+            </div>
+
+            <a href="business.html" class="btn btn-secondary">
+                View Package
+            </a>
+
         </div>
 
+
         <div class="package">
+
             <h3>Two Pages</h3>
-            <p>More room for your business information, products, services and catalogue.</p>
-            <div class="price">From ₦120,000</div>
+
+            <p>
+                More space for your business information, products, services
+                and catalogue.
+            </p>
+
+            <div class="price">
+                From ₦120,000
+            </div>
+
+            <a href="business.html" class="btn btn-secondary">
+                View Package
+            </a>
+
         </div>
 
+
         <div class="package">
+
             <h3>Three Pages</h3>
-            <p>A larger website with dedicated pages and more room for customer interaction.</p>
-            <div class="price">From ₦180,000</div>
+
+            <p>
+                A larger website with dedicated pages and more room for customer
+                interaction.
+            </p>
+
+            <div class="price">
+                From ₦180,000
+            </div>
+
+            <a href="business.html" class="btn btn-secondary">
+                View Package
+            </a>
+
         </div>
 
-        <div class="package">
+
+        <div class="package premium">
+
             <h3>Premium</h3>
-            <p>Advanced websites with ordering, booking, checkout and payment gateway options.</p>
-            <div class="price">From ₦250,000+</div>
+
+            <p>
+                Advanced websites with ordering, booking, checkout and payment
+                gateway options.
+            </p>
+
+            <div class="price">
+                From ₦250,000+
+            </div>
+
+            <a href="business.html" class="btn">
+                View Package
+            </a>
+
         </div>
 
     </div>
 
 </section>
 
+
 <section class="cta" id="contact">
 
-    <h2>Ready to build your website?</h2>
+    <h2>
+        Ready to build your website?
+    </h2>
 
     <p>
-        Tell us what your business does and we'll help you choose the right website.
+        Tell us what your business does and we'll help you choose the right
+        website package.
     </p>
 
-    <a href="#" class="btn btn-primary">Get Started</a>
+    <a href="#" class="btn btn-primary">
+        Get Started
+    </a>
 
 </section>
 
+
 <footer>
+
     © 2026 WEBORA by Abir. All rights reserved.
+
 </footer>
 
 </body>
 </html>
+```
