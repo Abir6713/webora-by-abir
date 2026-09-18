@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Start Your Website | WEBORA by Abir</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --black:#090909;
+  --black-soft:#121212;
+  --red:#d71920;
+  --red-dark:#a90f15;
+  --white:#ffffff;
+  --gray:#f1f1f1;
+  --gray-dark:#a8a8a8;
+  --border:#dedede;
+  --text:#171717;
+  --muted:#666;
+  --success:#16803c;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  min-height:100vh;
+  font-family:"Manrope",Arial,sans-serif;
+  font-weight:600;
+  background:#f3f3f3;
+  color:var(--text);
+}
+
+button,
+input,
+select,
+textarea{
+  font:inherit;
+}
+
+button,
+a,
+label{
+  -webkit-tap-highlight-color:transparent;
+}
+
+/* HEADER */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+  padding:17px clamp(20px,5vw,70px);
+  background:rgba(9,9,9,.97);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#fff;
+  text-decoration:none;
+}
+
+.logo-mark{
+  width:36px;
+  height:36px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:7px;
+  background:var(--red);
+  color:#fff;
+  font-size:19px;
+  font-weight:800;
+}
+
+.logo-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1;
+}
+
+.logo-text strong{
+  font-size:18px;
+  letter-spacing:.08em;
+}
+
+.logo-text span{
+  margin-top:4px;
+  color:#aaa;
+  font-size:8px;
+  letter-spacing:.22em;
+  font-weight:800;
+}
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:27px;
+}
+
+nav a{
+  color:#fff;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:800;
+}
+
+nav a:hover{
+  color:#e83a40;
+}
+
+/* HERO */
+
+.hero{
+  padding:80px 20px 70px;
+  background:
+    radial-gradient(circle at 80% 20%,rgba(215,25,32,.35),transparent 30%),
+    linear-gradient(135deg,#090909,#181818);
+  color:#fff;
+  text-align:center;
+}
+
+.hero .eyebrow{
+  display:inline-block;
+  margin-bottom:15px;
+  color:#ff4b51;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+
+.hero h1{
+  max-width:800px;
+  margin:0 auto;
+  font-size:clamp(34px,6vw,64px);
+  line-height:1.03;
+  letter-spacing:-.045em;
+}
+
+.hero p{
+  max-width:620px;
+  margin:18px auto 0;
+  color:#bdbdbd;
+  font-size:16px;
+  line-height:1.7;
+}
+
+/* MAIN */
+
+.container{
+  width:min(100% - 32px,1050px);
+  margin:45px auto 70px;
+}
+
+.layout{
+  display:grid;
+  grid-template-columns:minmax(0,1.6fr) minmax(280px,.8fr);
+  gap:25px;
+  align-items:start;
+}
+
+/* FORM */
+
+.form-card{
+  padding:34px;
+  border-radius:18px;
+  background:#fff;
+  border:1px solid #e2e2e2;
+  box-shadow:0 15px 45px rgba(0,0,0,.07);
+}
+
+.section{
+  padding-bottom:30px;
+  margin-bottom:30px;
+  border-bottom:1px solid #e8e8e8;
+}
+
+.section:last-of-type{
+  margin-bottom:0;
+  padding-bottom:0;
+  border-bottom:0;
+}
+
+.section-title{
+  margin-bottom:6px;
+  font-size:22px;
+  font-weight:800;
+  letter-spacing:-.025em;
+}
+
+.section-description{
+  margin-bottom:20px;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.6;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+}
+
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+}
+
+.field.full{
+  grid-column:1 / -1;
+}
+
+.field label{
+  color:#222;
+  font-size:13px;
+  font-weight:800;
+}
+
+input,
+select,
+textarea{
+  width:100%;
+  border:1px solid #d5d5d5;
+  border-radius:10px;
+  outline:none;
+  background:#fff;
+  color:#111;
+  padding:14px 15px;
+  font-size:14px;
+  transition:border-color .2s,box-shadow .2s;
+}
+
+input,
+select{
+  min-height:50px;
+}
+
+textarea{
+  min-height:130px;
+  resize:vertical;
+  line-height:1.6;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+  border-color:var(--red);
+  box-shadow:0 0 0 4px rgba(215,25,32,.10);
+}
+
+/* SELECTED PACKAGE */
+
+.selection{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+
+.selection-box{
+  padding:16px;
+  border:1px solid #dedede;
+  border-radius:12px;
+  background:#f8f8f8;
+}
+
+.selection-box span{
+  display:block;
+  margin-bottom:6px;
+  color:#777;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.selection-box strong{
+  display:block;
+  color:#111;
+  font-size:16px;
+  font-weight:800;
+}
+
+/* RADIO OPTIONS */
+
+.options{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+
+.option{
+  position:relative;
+}
+
+.option input{
+  position:absolute;
+  opacity:0;
+  pointer-events:none;
+}
+
+.option label{
+  display:block;
+  height:100%;
+  padding:16px;
+  border:1px solid #ddd;
+  border-radius:11px;
+  background:#fff;
+  cursor:pointer;
+  transition:.2s ease;
+}
+
+.option label strong{
+  display:block;
+  margin-bottom:5px;
+  color:#111;
+  font-size:14px;
+  font-weight:800;
+}
+
+.option label span{
+  display:block;
+  color:#777;
+  font-size:12px;
+  line-height:1.5;
+}
+
+.option input:checked + label{
+  border-color:var(--red);
+  background:#fff5f5;
+  box-shadow:0 0 0 3px rgba(215,25,32,.08);
+}
+
+/* BUTTON */
+
+.submit-button{
+  width:100%;
+  min-height:56px;
+  margin-top:30px;
+  padding:15px 20px;
+  border:0;
+  border-radius:11px;
+  background:var(--red);
+  color:#fff;
+  cursor:pointer;
+  font-size:16px;
+  font-weight:800;
+  transition:.2s ease;
+}
+
+.submit-button:hover{
+  background:var(--red-dark);
+  transform:translateY(-1px);
+  box-shadow:0 9px 22px rgba(215,25,32,.20);
+}
+
+.submit-note{
+  margin-top:12px;
+  color:#777;
+  font-size:11px;
+  line-height:1.6;
+  text-align:center;
+}
+
+/* SUMMARY */
+
+.summary{
+  position:sticky;
+  top:95px;
+  overflow:hidden;
+  border-radius:18px;
+  background:#090909;
+  color:#fff;
+  box-shadow:0 15px 45px rgba(0,0,0,.12);
+}
+
+.summary-top{
+  padding:27px;
+  border-bottom:1px solid rgba(255,255,255,.10);
+}
+
+.summary-top .small{
+  margin-bottom:8px;
+  color:#ff4b51;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+
+.summary-top h2{
+  font-size:25px;
+  line-height:1.15;
+  letter-spacing:-.03em;
+}
+
+.summary-body{
+  padding:27px;
+}
+
+.summary-row{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:20px;
+  padding:14px 0;
+  border-bottom:1px solid rgba(255,255,255,.09);
+}
+
+.summary-row:last-child{
+  border-bottom:0;
+}
+
+.summary-row span{
+  color:#999;
+  font-size:12px;
+}
+
+.summary-row strong{
+  max-width:170px;
+  color:#fff;
+  font-size:13px;
+  text-align:right;
+}
+
+.price-box{
+  margin-top:15px;
+  padding:18px;
+  border-radius:12px;
+  background:#171717;
+}
+
+.price-label{
+  color:#999;
+  font-size:11px;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+.price{
+  margin-top:5px;
+  color:#fff;
+  font-size:28px;
+  font-weight:800;
+  letter-spacing:-.03em;
+}
+
+.summary-bottom{
+  padding:20px 27px;
+  background:#d71920;
+}
+
+.summary-bottom p{
+  color:#fff;
+  font-size:12px;
+  line-height:1.6;
+}
+
+/* SUCCESS */
+
+.success{
+  display:none;
+  padding:50px 30px;
+  text-align:center;
+}
+
+.success-icon{
+  width:65px;
+  height:65px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto 20px;
+  border-radius:50%;
+  background:#e8f7ed;
+  color:var(--success);
+  font-size:30px;
+  font-weight:800;
+}
+
+.success h2{
+  margin-bottom:10px;
+  font-size:28px;
+  font-weight:800;
+}
+
+.success p{
+  max-width:500px;
+  margin:0 auto;
+  color:#666;
+  font-size:14px;
+  line-height:1.7;
+}
+
+.back-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:48px;
+  margin-top:24px;
+  padding:12px 20px;
+  border-radius:9px;
+  background:#111;
+  color:#fff;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:800;
+}
+
+/* FOOTER */
+
+footer{
+  padding:35px 20px;
+  background:#090909;
+  color:#888;
+  text-align:center;
+  font-size:12px;
+}
+
+footer strong{
+  color:#fff;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+  header{
+    padding:15px 20px;
+  }
+
+  nav{
+    gap:15px;
+  }
+
+  nav a{
+    font-size:11px;
+  }
+
+  .hero{
+    padding:60px 20px 55px;
+  }
+
+  .container{
+    width:min(100% - 20px,1050px);
+    margin-top:25px;
+  }
+
+  .layout{
+    grid-template-columns:1fr;
+  }
+
+  .summary{
+    position:static;
+    order:-1;
+  }
+
+  .form-card{
+    padding:23px 18px;
+  }
+}
+
+@media(max-width:560px){
+
+  header{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:14px;
+  }
+
+  nav{
+    width:100%;
+    justify-content:space-between;
+  }
+
+  .logo-mark{
+    width:33px;
+    height:33px;
+  }
+
+  .logo-text strong{
+    font-size:16px;
+  }
+
+  .form-grid,
+  .selection,
+  .options{
+    grid-template-columns:1fr;
+  }
+
+  .field.full{
+    grid-column:auto;
+  }
+
+  .hero h1{
+    font-size:39px;
+  }
+
+  .hero p{
+    font-size:14px;
+  }
+
+  .summary-top,
+  .summary-body{
+    padding:22px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<a class="logo" href="index.html">
+  <div class="logo-mark">W</div>
+
+  <div class="logo-text">
+    <strong>WEBORA</strong>
+    <span>BY ABIR</span>
+  </div>
+</a>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="business.html">Packages</a>
+  <a href="business.html#process">How It Works</a>
+</nav>
+
+</header>
+
+
+<section class="hero">
+
+<div class="eyebrow">Start Your Website</div>
+
+<h1>Let’s build your business a website.</h1>
+
+<p>
+Tell us about your business and what you need. Your selected package will already be attached to your request.
+</p>
+
+</section>
+
+
+<main class="container">
+
+<div class="layout">
+
+
+<section class="form-card">
+
+<div id="formContent">
+
+<div class="section">
+
+<h2 class="section-title">Your Selected Package</h2>
+
+<p class="section-description">
+You can change your selection below before submitting your request.
+</p>
+
+<div class="selection">
+
+<div class="selection-box">
+<span>Business Type</span>
+<strong id="selectedBusiness">Loading...</strong>
+</div>
+
+<div class="selection-box">
+<span>Website Package</span>
+<strong id="selectedPlan">Loading...</strong>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="section">
+
+<h2 class="section-title">Your Details</h2>
+
+<p class="section-description">
+Give us your basic contact information so we can reach you.
+</p>
+
+<div class="form-grid">
+
+<div class="field">
+
+<label for="fullName">Full Name</label>
+
+<input
+id="fullName"
+type="text"
+placeholder="Your full name"
+autocomplete="name"
+>
+
+</div>
+
+
+<div class="field">
+
+<label for="businessName">Business Name</label>
+
+<input
+id="businessName"
+type="text"
+placeholder="Your business name"
+>
+
+</div>
+
+
+<div class="field">
+
+<label for="phone">Phone / WhatsApp Number</label>
+
+<input
+id="phone"
+type="tel"
+placeholder="08012345678"
+autocomplete="tel"
+>
+
+</div>
+
+
+<div class="field">
+
+<label for="email">Email Address <span style="color:#888;">(Optional)</span></label>
+
+<input
+id="email"
+type="email"
+placeholder="you@example.com"
+autocomplete="email"
+>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="section">
+
+<h2 class="section-title">Website Requirements</h2>
+
+<p class="section-description">
+Tell us what you already have and what you may need from WEBORA.
+</p>
+
+
+<div class="field" style="margin-bottom:22px;">
+
+<label for="businessType">Business Type</label>
+
+<select id="businessType">
+
+<option value="Cake & Pastry">Cake & Pastry</option>
+<option value="Hair Business">Hair Business</option>
+<option value="Lash & Beauty">Lash & Beauty</option>
+<option value="Fashion">Fashion</option>
+<option value="Restaurant">Restaurant</option>
+<option value="Barber">Barber</option>
+<option value="Makeup Artist">Makeup Artist</option>
+<option value="Photography">Photography</option>
+<option value="Event Business">Event Business</option>
+<option value="Product Catalogue">Product Catalogue</option>
+<option value="Professional Services">Professional Services</option>
+<option value="Custom Website">Custom Website</option>
+
+</select>
+
+</div>
+
+
+<div class="field" style="margin-bottom:22px;">
+
+<label for="package">Website Package</label>
+
+<select id="package">
+
+<option value="1">1 Page Website</option>
+<option value="2">2 Page Website</option>
+<option value="3">3 Page Website</option>
+<option value="premium">Premium Website</option>
+
+</select>
+
+</div>
+
+
+<div style="margin-bottom:22px;">
+
+<label style="display:block;margin-bottom:10px;font-size:13px;font-weight:800;">
+Do you already have a logo?
+</label>
+
+<div class="options">
+
+<div class="option">
+
+<input
+type="radio"
+id="logoYes"
+name="logo"
+value="I already have a logo"
+checked
+>
+
+<label for="logoYes">
+
+<strong>I have a logo</strong>
+
+<span>
+I will provide my existing logo.
+</span>
+
+</label>
+
+</div>
+
+
+<div class="option">
+
+<input
+type="radio"
+id="logoNo"
+name="logo"
+value="I need a logo"
+>
+
+<label for="logoNo">
+
+<strong>I need a logo</strong>
+
+<span>
+I would like help with my branding.
+</span>
+
+</label>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div style="margin-bottom:22px;">
+
+<label style="display:block;margin-bottom:10px;font-size:13px;font-weight:800;">
+Do you already have a domain?
+</label>
+
+<div class="options">
+
+<div class="option">
+
+<input
+type="radio"
+id="domainYes"
+name="domain"
+value="I already have a domain"
+checked
+>
+
+<label for="domainYes">
+
+<strong>I have a domain</strong>
+
+<span>
+I already own a website domain.
+</span>
+
+</label>
+
+</div>
+
+
+<div class="option">
+
+<input
+type="radio"
+id="domainNo"
+name="domain"
+value="I need a domain"
+>
+
+<label for="domainNo">
+
+<strong>I need a domain</strong>
+
+<span>
+I need help getting one.
+</span>
+
+</label>
+
+</div>
+
+
+<div class="option">
+
+<input
+type="radio"
+id="domainUnsure"
+name="domain"
+value="I am not sure about the domain"
+>
+
+<label for="domainUnsure">
+
+<strong>Not sure</strong>
+
+<span>
+I would like guidance.
+</span>
+
+</label>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="field">
+
+<label for="description">
+Tell us about the website you want
+</label>
+
+<textarea
+id="description"
+placeholder="Tell us about your business, the products or services you offer, the kind of website you want, features you need, and anything else we should know."
+></textarea>
+
+</div>
+
+</div>
+
+
+<button
+type="button"
+class="submit-button"
+onclick="submitEnquiry()"
+>
+Send Website Request via WhatsApp
+</button>
+
+<p class="submit-note">
+Your request will open WhatsApp with your information already prepared. You will still be able to review the message before sending it.
+</p>
+
+</div>
+
+
+<div id="successMessage" class="success">
+
+<div class="success-icon">✓</div>
+
+<h2>Request prepared.</h2>
+
+<p>
+Your website request has been prepared for WhatsApp. Complete the message there so WEBORA can review your requirements and contact you.
+</p>
+
+<a href="business.html" class="back-button">
+View Packages Again
+</a>
+
+</div>
+
+</section>
+
+
+<aside class="summary">
+
+<div class="summary-top">
+
+<div class="small">Your Website</div>
+
+<h2 id="summaryPlan">Premium Website</h2>
+
+</div>
+
+
+<div class="summary-body">
+
+<div class="summary-row">
+
+<span>Business</span>
+
+<strong id="summaryBusiness">Restaurant</strong>
+
+</div>
+
+
+<div class="summary-row">
+
+<span>Package</span>
+
+<strong id="summaryPackage">Premium Website</strong>
+
+</div>
+
+
+<div class="summary-row">
+
+<span>Project</span>
+
+<strong>Business Website</strong>
+
+</div>
+
+
+<div class="price-box">
+
+<div class="price-label">Starting Price</div>
+
+<div class="price" id="summaryPrice">₦250,000+</div>
+
+</div>
+
+</div>
+
+
+<div class="summary-bottom">
+
+<p>
+WEBORA builds responsive websites designed around the needs of your business.
+</p>
+
+</div>
+
+</aside>
+
+
+</div>
+
+</main>
+
+
+<footer>
+
+<strong>WEBORA by Abir</strong><br>
+
+Websites built for businesses that mean business.
+
+</footer>
+
+
+<script>
+
+const whatsappNumber = "2349066324358";
+
+
+const packageData = {
+
+  "1":{
+    name:"1 Page Website",
+    price:"₦80,000"
+  },
+
+  "2":{
+    name:"2 Page Website",
+    price:"₦120,000"
+  },
+
+  "3":{
+    name:"3 Page Website",
+    price:"₦180,000"
+  },
+
+  "premium":{
+    name:"Premium Website",
+    price:"₦250,000+"
+  }
+
+};
+
+
+const businessNames = [
+
+  "Cake & Pastry",
+  "Hair Business",
+  "Lash & Beauty",
+  "Fashion",
+  "Restaurant",
+  "Barber",
+  "Makeup Artist",
+  "Photography",
+  "Event Business",
+  "Product Catalogue",
+  "Professional Services",
+  "Custom Website"
+
+];
+
+
+function getParams(){
+
+  const params = new URLSearchParams(window.location.search);
+
+  return {
+    type:params.get("type"),
+    plan:params.get("plan")
+  };
+
+}
+
+
+function findBusiness(value){
+
+  if(!value){
+    return "Restaurant";
+  }
+
+  const decoded = decodeURIComponent(value);
+
+  const match = businessNames.find(
+    name => name.toLowerCase() === decoded.toLowerCase()
+  );
+
+  return match || decoded;
+
+}
+
+
+function updatePage(){
+
+  const params = getParams();
+
+  const business = findBusiness(params.type);
+
+  const planKey =
+    packageData[params.plan]
+      ? params.plan
+      : "1";
+
+  const plan = packageData[planKey];
+
+
+  document.getElementById("selectedBusiness").textContent = business;
+  document.getElementById("selectedPlan").textContent = plan.name;
+
+  document.getElementById("summaryBusiness").textContent = business;
+  document.getElementById("summaryPackage").textContent = plan.name;
+  document.getElementById("summaryPlan").textContent = plan.name;
+  document.getElementById("summaryPrice").textContent = plan.price;
+
+
+  document.getElementById("businessType").value = business;
+  document.getElementById("package").value = planKey;
+
+}
+
+
+function syncSelection(){
+
+  const business =
+    document.getElementById("businessType").value;
+
+  const planKey =
+    document.getElementById("package").value;
+
+  const plan = packageData[planKey];
+
+
+  document.getElementById("selectedBusiness").textContent = business;
+  document.getElementById("selectedPlan").textContent = plan.name;
+
+  document.getElementById("summaryBusiness").textContent = business;
+  document.getElementById("summaryPackage").textContent = plan.name;
+  document.getElementById("summaryPlan").textContent = plan.name;
+  document.getElementById("summaryPrice").textContent = plan.price;
+
+}
+
+
+function getSelectedRadio(name){
+
+  const selected =
+    document.querySelector(
+      `input[name="${name}"]:checked`
+    );
+
+  return selected ? selected.value : "";
+
+}
+
+
+function submitEnquiry(){
+
+  const fullName =
+    document.getElementById("fullName").value.trim();
+
+  const businessName =
+    document.getElementById("businessName").value.trim();
+
+  const phone =
+    document.getElementById("phone").value.trim();
+
+  const email =
+    document.getElementById("email").value.trim();
+
+  const businessType =
+    document.getElementById("businessType").value;
+
+  const planKey =
+    document.getElementById("package").value;
+
+  const description =
+    document.getElementById("description").value.trim();
+
+  const logo =
+    getSelectedRadio("logo");
+
+  const domain =
+    getSelectedRadio("domain");
+
+  const plan =
+    packageData[planKey];
+
+
+  if(!fullName){
+
+    alert("Please enter your full name.");
+
+    document.getElementById("fullName").focus();
+
+    return;
+
+  }
+
+
+  if(!businessName){
+
+    alert("Please enter your business name.");
+
+    document.getElementById("businessName").focus();
+
+    return;
+
+  }
+
+
+  if(!phone){
+
+    alert("Please enter your phone or WhatsApp number.");
+
+    document.getElementById("phone").focus();
+
+    return;
+
+  }
+
+
+  if(!description){
+
+    alert("Please tell us a little about the website you want.");
+
+    document.getElementById("description").focus();
+
+    return;
+
+  }
+
+
+  let message =
+`Hello WEBORA by Abir,
+
+I would like to start a website project.
+
+WEBSITE DETAILS
+
+Business Type: ${businessType}
+Website Package: ${plan.name}
+Package Price: ${plan.price}
+
+CUSTOMER DETAILS
+
+Name: ${fullName}
+Business Name: ${businessName}
+Phone / WhatsApp: ${phone}`;
+
+  if(email){
+
+    message += `\nEmail: ${email}`;
+
+  }
+
+
+  message += `
+
+WEBSITE REQUIREMENTS
+
+Logo: ${logo}
+Domain: ${domain}
+
+What I want:
+${description}
+
+Please let me know the next steps for starting the project.`;
+
+
+
+  const url =
+    `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+
+  document.getElementById("formContent").style.display = "none";
+
+  document.getElementById("successMessage").style.display = "block";
+
+
+  window.open(url,"_blank");
+
+}
+
+
+document
+  .getElementById("businessType")
+  .addEventListener("change",syncSelection);
+
+
+document
+  .getElementById("package")
+  .addEventListener("change",syncSelection);
+
+
+updatePage();
+
+</script>
+
+</body>
+</html>
