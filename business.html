@@ -1,887 +1,781 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Business Website | WEBORA by Abir</title>
-
-  <style>
-    :root {
-      --red: #b30000;
-      --dark-red: #7f0000;
-      --white: #ffffff;
-      --off-white: #f8f8f8;
-      --black: #111111;
-      --grey: #666666;
-      --light-grey: #eeeeee;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--white);
-      color: var(--black);
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: var(--white);
-      border-bottom: 1px solid var(--light-grey);
-    }
-
-    .nav {
-      max-width: 1180px;
-      margin: auto;
-      padding: 16px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo-mark {
-      width: 42px;
-      height: 42px;
-      background: var(--red);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      font-weight: 900;
-      border-radius: 7px;
-    }
-
-    .logo-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1;
-    }
-
-    .logo-name {
-      font-size: 20px;
-      font-weight: 900;
-      letter-spacing: 1px;
-    }
-
-    .logo-by {
-      font-size: 9px;
-      color: var(--red);
-      font-weight: 800;
-      letter-spacing: 2px;
-      margin-top: 4px;
-    }
-
-    .home-link {
-      color: var(--red);
-      font-weight: 700;
-      font-size: 14px;
-    }
-
-    /* HERO */
-
-    .business-hero {
-      background: var(--black);
-      color: var(--white);
-      padding: 80px 24px;
-    }
-
-    .hero-inner {
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .eyebrow {
-      color: #ff4b4b;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 12px;
-      font-weight: 800;
-      margin-bottom: 14px;
-    }
-
-    .business-hero h1 {
-      font-size: clamp(40px, 6vw, 70px);
-      line-height: 1.05;
-      margin-bottom: 20px;
-      max-width: 800px;
-    }
-
-    .business-hero p {
-      max-width: 720px;
-      color: #cccccc;
-      font-size: 18px;
-    }
-
-    /* SELECTOR */
-
-    .selector-section {
-      padding: 35px 24px;
-      background: var(--white);
-      border-bottom: 1px solid var(--light-grey);
-    }
-
-    .selector-inner {
-      max-width: 1050px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .selector-inner label {
-      font-weight: 800;
-    }
-
-    select {
-      width: 300px;
-      padding: 13px 15px;
-      border: 1px solid #cccccc;
-      border-radius: 6px;
-      background: white;
-      font-size: 15px;
-    }
-
-    /* PACKAGES */
-
-    .packages-section {
-      padding: 70px 24px;
-      background: var(--off-white);
-    }
-
-    .packages-container {
-      max-width: 1050px;
-      margin: auto;
-    }
-
-    .section-heading {
-      margin-bottom: 35px;
-    }
-
-    .section-heading span {
-      color: var(--red);
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .section-heading h2 {
-      font-size: 38px;
-      margin-top: 6px;
-    }
-
-    .section-heading p {
-      color: var(--grey);
-      margin-top: 7px;
-      max-width: 700px;
-    }
-
-    .packages-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-    }
-
-    .package-card {
-      background: var(--white);
-      border: 1px solid var(--light-grey);
-      border-radius: 10px;
-      padding: 27px;
-      display: flex;
-      flex-direction: column;
-      transition: 0.2s ease;
-    }
-
-    .package-card:hover {
-      border-color: var(--red);
-      transform: translateY(-4px);
-    }
-
-    .package-card.featured {
-      border-top: 5px solid var(--red);
-    }
-
-    .package-label {
-      color: var(--red);
-      text-transform: uppercase;
-      letter-spacing: 1.3px;
-      font-size: 11px;
-      font-weight: 800;
-      margin-bottom: 9px;
-    }
-
-    .package-card h3 {
-      font-size: 23px;
-      margin-bottom: 7px;
-    }
-
-    .package-price {
-      color: var(--red);
-      font-size: 25px;
-      font-weight: 900;
-      margin-bottom: 14px;
-    }
-
-    .package-card p {
-      color: var(--grey);
-      font-size: 14px;
-      margin-bottom: 20px;
-    }
-
-    .package-card ul {
-      list-style: none;
-      margin-bottom: 25px;
-      flex-grow: 1;
-    }
-
-    .package-card li {
-      font-size: 13px;
-      padding: 7px 0;
-      border-bottom: 1px solid #f0f0f0;
-    }
-
-    .package-card li::before {
-      content: "✓";
-      color: var(--red);
-      font-weight: 900;
-      margin-right: 7px;
-    }
-
-    .view-button {
-      display: block;
-      text-align: center;
-      background: var(--red);
-      color: white;
-      padding: 13px 15px;
-      border-radius: 6px;
-      font-weight: 800;
-      font-size: 14px;
-    }
-
-    .view-button:hover {
-      background: var(--dark-red);
-    }
-
-    /* NOTE */
-
-    .note-section {
-      padding: 60px 24px;
-      background: white;
-    }
-
-    .note-box {
-      max-width: 1050px;
-      margin: auto;
-      background: #fff4f4;
-      border-left: 5px solid var(--red);
-      padding: 25px;
-      border-radius: 6px;
-    }
-
-    .note-box h3 {
-      margin-bottom: 7px;
-    }
-
-    .note-box p {
-      color: var(--grey);
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: var(--black);
-      color: white;
-      text-align: center;
-      padding: 35px 24px;
-    }
-
-    footer p {
-      color: #aaaaaa;
-      font-size: 13px;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 900px) {
-
-      .packages-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-    }
-
-    @media (max-width: 650px) {
-
-      .nav {
-        padding: 14px 18px;
-      }
-
-      .business-hero {
-        padding: 60px 20px;
-      }
-
-      .business-hero p {
-        font-size: 16px;
-      }
-
-      .selector-section,
-      .packages-section,
-      .note-section {
-        padding-left: 18px;
-        padding-right: 18px;
-      }
-
-      .selector-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      select {
-        width: 100%;
-      }
-
-      .packages-grid {
-        grid-template-columns: 1fr;
-      }
-
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Business Website | WEBORA by Abir</title>
+
+<style>
+:root{
+  --red:#b30000;
+  --dark-red:#7f0000;
+  --white:#fff;
+  --off-white:#f8f8f8;
+  --black:#111;
+  --grey:#666;
+  --light-grey:#eee;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--white);
+  color:var(--black);
+  line-height:1.6;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:#fff;
+  border-bottom:1px solid var(--light-grey);
+}
+
+.nav{
+  max-width:1180px;
+  margin:auto;
+  padding:16px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo-mark{
+  width:42px;
+  height:42px;
+  background:var(--red);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  font-weight:900;
+  border-radius:7px;
+}
+
+.logo-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1;
+}
+
+.logo-name{
+  font-size:20px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.logo-by{
+  font-size:9px;
+  color:var(--red);
+  font-weight:800;
+  letter-spacing:2px;
+  margin-top:4px;
+}
+
+.home-link{
+  color:var(--red);
+  font-weight:700;
+  font-size:14px;
+}
+
+.business-hero{
+  background:var(--black);
+  color:#fff;
+  padding:80px 24px;
+}
+
+.hero-inner{
+  max-width:1000px;
+  margin:auto;
+}
+
+.eyebrow{
+  color:#ff4b4b;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:12px;
+  font-weight:800;
+  margin-bottom:14px;
+}
+
+.business-hero h1{
+  font-size:clamp(40px,6vw,70px);
+  line-height:1.05;
+  margin-bottom:20px;
+  max-width:800px;
+}
+
+.business-hero p{
+  max-width:720px;
+  color:#ccc;
+  font-size:18px;
+}
+
+.selector-section{
+  padding:35px 24px;
+  background:#fff;
+  border-bottom:1px solid var(--light-grey);
+}
+
+.selector-inner{
+  max-width:1050px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.selector-inner label{
+  font-weight:800;
+}
+
+select{
+  width:300px;
+  padding:13px 15px;
+  border:1px solid #ccc;
+  border-radius:6px;
+  background:#fff;
+  font-size:15px;
+}
+
+.packages-section{
+  padding:70px 24px;
+  background:var(--off-white);
+}
+
+.packages-container{
+  max-width:1050px;
+  margin:auto;
+}
+
+.section-heading{
+  margin-bottom:35px;
+}
+
+.section-heading span{
+  color:var(--red);
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  font-size:12px;
+  font-weight:800;
+}
+
+.section-heading h2{
+  font-size:38px;
+  margin-top:6px;
+}
+
+.section-heading p{
+  color:var(--grey);
+  margin-top:7px;
+  max-width:700px;
+}
+
+.packages-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+}
+
+.package-card{
+  background:#fff;
+  border:1px solid var(--light-grey);
+  border-radius:10px;
+  padding:27px;
+  display:flex;
+  flex-direction:column;
+  transition:.2s ease;
+}
+
+.package-card:hover{
+  border-color:var(--red);
+  transform:translateY(-4px);
+}
+
+.package-card.featured{
+  border-top:5px solid var(--red);
+}
+
+.package-label{
+  color:var(--red);
+  text-transform:uppercase;
+  letter-spacing:1.3px;
+  font-size:11px;
+  font-weight:800;
+  margin-bottom:9px;
+}
+
+.package-card h3{
+  font-size:23px;
+  margin-bottom:7px;
+}
+
+.package-price{
+  color:var(--red);
+  font-size:25px;
+  font-weight:900;
+  margin-bottom:14px;
+}
+
+.package-card p{
+  color:var(--grey);
+  font-size:14px;
+  margin-bottom:20px;
+}
+
+.package-card ul{
+  list-style:none;
+  margin-bottom:25px;
+  flex-grow:1;
+}
+
+.package-card li{
+  font-size:13px;
+  padding:7px 0;
+  border-bottom:1px solid #f0f0f0;
+}
+
+.package-card li::before{
+  content:"✓";
+  color:var(--red);
+  font-weight:900;
+  margin-right:7px;
+}
+
+.view-button{
+  display:block;
+  text-align:center;
+  background:var(--red);
+  color:#fff;
+  padding:13px 15px;
+  border-radius:6px;
+  font-weight:800;
+  font-size:14px;
+}
+
+.view-button:hover{
+  background:var(--dark-red);
+}
+
+.note-section{
+  padding:60px 24px;
+  background:#fff;
+}
+
+.note-box{
+  max-width:1050px;
+  margin:auto;
+  background:#fff4f4;
+  border-left:5px solid var(--red);
+  padding:25px;
+  border-radius:6px;
+}
+
+.note-box h3{
+  margin-bottom:7px;
+}
+
+.note-box p{
+  color:var(--grey);
+}
+
+footer{
+  background:var(--black);
+  color:#fff;
+  text-align:center;
+  padding:35px 24px;
+}
+
+footer p{
+  color:#aaa;
+  font-size:13px;
+}
+
+@media(max-width:900px){
+  .packages-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:650px){
+
+  .nav{
+    padding:14px 18px;
+  }
+
+  .business-hero{
+    padding:60px 20px;
+  }
+
+  .business-hero p{
+    font-size:16px;
+  }
+
+  .selector-section,
+  .packages-section,
+  .note-section{
+    padding-left:18px;
+    padding-right:18px;
+  }
+
+  .selector-inner{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  select{
+    width:100%;
+  }
+
+  .packages-grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+
 </head>
 
 <body>
 
-
 <header>
 
-  <nav class="nav">
+<nav class="nav">
 
-    <a href="index.html" class="logo">
+<a href="index.html" class="logo">
 
-      <div class="logo-mark">
-        W
-      </div>
+<div class="logo-mark">W</div>
 
-      <div class="logo-text">
+<div class="logo-text">
 
-        <span class="logo-name">
-          WEBORA
-        </span>
+<span class="logo-name">
+WEBORA
+</span>
 
-        <span class="logo-by">
-          BY ABIR
-        </span>
+<span class="logo-by">
+BY ABIR
+</span>
 
-      </div>
+</div>
 
-    </a>
+</a>
 
-    <a href="index.html" class="home-link">
-      Home
-    </a>
+<a href="index.html" class="home-link">
+Home
+</a>
 
-  </nav>
+</nav>
 
 </header>
 
-
 <section class="business-hero">
 
-  <div class="hero-inner">
+<div class="hero-inner">
 
-    <div class="eyebrow" id="heroEyebrow">
-      Website Solutions
-    </div>
+<div class="eyebrow">
+Website Solutions
+</div>
 
-    <h1 id="businessTitle">
-      Cake & Pastry Website
-    </h1>
+<h1 id="businessTitle">
+Cake & Pastry Website
+</h1>
 
-    <p id="businessDescription">
-      A professional website designed around your business, your products and your customers.
-    </p>
+<p id="businessDescription">
+A professional website designed around your business, your products and your customers.
+</p>
 
-  </div>
+</div>
 
 </section>
-
 
 <section class="selector-section">
 
-  <div class="selector-inner">
+<div class="selector-inner">
 
-    <label for="businessSelect">
-      Explore another business
-    </label>
+<label for="businessSelect">
+Explore another business
+</label>
 
-    <select id="businessSelect">
+<select id="businessSelect">
 
-      <option value="cake">
-        Cake & Pastry
-      </option>
+<option value="cake">Cake & Pastry</option>
+<option value="hair">Hair Business</option>
+<option value="lash">Lash & Beauty</option>
+<option value="fashion">Fashion</option>
+<option value="restaurant">Restaurant</option>
+<option value="barber">Barber</option>
+<option value="makeup">Makeup Artist</option>
+<option value="photography">Photography</option>
+<option value="events">Event Business</option>
+<option value="catalogue">Product Catalogue</option>
+<option value="professional">Professional Services</option>
+<option value="custom">Custom Website</option>
 
-      <option value="hair">
-        Hair Business
-      </option>
+</select>
 
-      <option value="lash">
-        Lash & Beauty
-      </option>
-
-      <option value="fashion">
-        Fashion
-      </option>
-
-      <option value="restaurant">
-        Restaurant
-      </option>
-
-      <option value="barber">
-        Barber
-      </option>
-
-      <option value="makeup">
-        Makeup Artist
-      </option>
-
-      <option value="photography">
-        Photography
-      </option>
-
-      <option value="events">
-        Event Business
-      </option>
-
-      <option value="catalogue">
-        Product Catalogue
-      </option>
-
-      <option value="professional">
-        Professional Services
-      </option>
-
-      <option value="custom">
-        Custom Website
-      </option>
-
-    </select>
-
-  </div>
+</div>
 
 </section>
-
 
 <section class="packages-section">
 
-  <div class="packages-container">
+<div class="packages-container">
 
-    <div class="section-heading">
+<div class="section-heading">
 
-      <span>
-        Website Packages
-      </span>
+<span>
+Website Packages
+</span>
 
-      <h2 id="packagesTitle">
-        Choose the right website for your business
-      </h2>
+<h2 id="packagesTitle">
+Choose the right website for your business
+</h2>
 
-      <p id="packagesDescription">
-        Start with a simple online presence or choose a more advanced website with ordering, booking and payment functionality.
-      </p>
+<p id="packagesDescription">
+Start with a simple online presence or choose a more advanced website with ordering, booking and payment functionality.
+</p>
 
-    </div>
+</div>
 
+<div class="packages-grid">
 
-    <div class="packages-grid">
+<div class="package-card">
 
+<div class="package-label">
+Starter
+</div>
 
-      <!-- ONE PAGE -->
+<h3>
+1 Page Website
+</h3>
 
-      <div class="package-card">
+<div class="package-price">
+₦80,000
+</div>
 
-        <div class="package-label">
-          Starter
-        </div>
+<p>
+A simple professional online presence for your business.
+</p>
 
-        <h3>
-          1 Page Website
-        </h3>
+<ul>
 
-        <div class="package-price">
-          ₦80,000
-        </div>
+<li>Business introduction</li>
+<li>About the business</li>
+<li>Products or services showcase</li>
+<li>Business information</li>
+<li>Mobile-friendly design</li>
 
-        <p>
-          A simple professional online presence for your business.
-        </p>
+</ul>
 
-        <ul>
+<a href="#" class="view-button" data-plan="one">
+View Package
+</a>
 
-          <li>
-            Business introduction
-          </li>
+</div>
 
-          <li>
-            About the business
-          </li>
+<div class="package-card">
 
-          <li>
-            Products or services showcase
-          </li>
+<div class="package-label">
+Standard
+</div>
 
-          <li>
-            Business information
-          </li>
+<h3>
+2 Page Website
+</h3>
 
-          <li>
-            Mobile-friendly design
-          </li>
+<div class="package-price">
+₦120,000
+</div>
 
-        </ul>
+<p>
+More room for products, services and detailed business information.
+</p>
 
-        <a href="#" class="view-button" data-plan="one">
-          View Package
-        </a>
+<ul>
 
-      </div>
+<li>Everything in 1 Page</li>
+<li>Dedicated second page</li>
+<li>Product categories</li>
+<li>Product photos</li>
+<li>Prices and descriptions</li>
 
+</ul>
 
-      <!-- TWO PAGE -->
+<a href="#" class="view-button" data-plan="two">
+View Package
+</a>
 
-      <div class="package-card">
+</div>
 
-        <div class="package-label">
-          Standard
-        </div>
+<div class="package-card featured">
 
-        <h3>
-          2 Page Website
-        </h3>
+<div class="package-label">
+Business
+</div>
 
-        <div class="package-price">
-          ₦120,000
-        </div>
+<h3>
+3 Page Website
+</h3>
 
-        <p>
-          More room for products, services and detailed business information.
-        </p>
+<div class="package-price">
+₦180,000
+</div>
 
-        <ul>
+<p>
+A more complete website with ordering, booking or enquiry functionality.
+</p>
 
-          <li>
-            Everything in 1 Page
-          </li>
+<ul>
 
-          <li>
-            Dedicated second page
-          </li>
+<li>Everything in 2 Pages</li>
+<li>Ordering or booking page</li>
+<li>Customer information form</li>
+<li>Delivery or appointment options</li>
+<li>Order or booking summary</li>
 
-          <li>
-            Product categories
-          </li>
+</ul>
 
-          <li>
-            Product photos
-          </li>
+<a href="#" class="view-button" data-plan="three">
+View Package
+</a>
 
-          <li>
-            Prices and descriptions
-          </li>
+</div>
 
-        </ul>
+<div class="package-card">
 
-        <a href="#" class="view-button" data-plan="two">
-          View Package
-        </a>
+<div class="package-label">
+Premium
+</div>
 
-      </div>
+<h3>
+Premium Website
+</h3>
 
+<div class="package-price">
+₦250,000+
+</div>
 
-      <!-- THREE PAGE -->
+<p>
+Advanced website functionality for businesses ready to sell or take bookings online.
+</p>
 
-      <div class="package-card featured">
+<ul>
 
-        <div class="package-label">
-          Business
-        </div>
+<li>Everything in 3 Pages</li>
+<li>Advanced ordering or booking</li>
+<li>Shopping cart where applicable</li>
+<li>Online checkout</li>
+<li>Payment gateway integration</li>
+<li>WhatsApp integration</li>
 
-        <h3>
-          3 Page Website
-        </h3>
+</ul>
 
-        <div class="package-price">
-          ₦180,000
-        </div>
+<a href="#" class="view-button" data-plan="premium">
+View Package
+</a>
 
-        <p>
-          A more complete website with ordering, booking or enquiry functionality.
-        </p>
+</div>
 
-        <ul>
+</div>
 
-          <li>
-            Everything in 2 Pages
-          </li>
-
-          <li>
-            Ordering or booking page
-          </li>
-
-          <li>
-            Customer information form
-          </li>
-
-          <li>
-            Delivery or appointment options
-          </li>
-
-          <li>
-            Order or booking summary
-          </li>
-
-        </ul>
-
-        <a href="#" class="view-button" data-plan="three">
-          View Package
-        </a>
-
-      </div>
-
-
-      <!-- PREMIUM -->
-
-      <div class="package-card">
-
-        <div class="package-label">
-          Premium
-        </div>
-
-        <h3>
-          Premium Website
-        </h3>
-
-        <div class="package-price">
-          ₦250,000+
-        </div>
-
-        <p>
-          Advanced website functionality for businesses ready to sell or take bookings online.
-        </p>
-
-        <ul>
-
-          <li>
-            Everything in 3 Pages
-          </li>
-
-          <li>
-            Advanced ordering or booking
-          </li>
-
-          <li>
-            Shopping cart where applicable
-          </li>
-
-          <li>
-            Online checkout
-          </li>
-
-          <li>
-            Payment gateway integration
-          </li>
-
-          <li>
-            WhatsApp integration
-          </li>
-
-        </ul>
-
-        <a href="#" class="view-button" data-plan="premium">
-          View Package
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
+</div>
 
 </section>
-
 
 <section class="note-section">
 
-  <div class="note-box">
+<div class="note-box">
 
-    <h3>
-      Need something different?
-    </h3>
+<h3>
+Need something different?
+</h3>
 
-    <p>
-      If your business needs a website with features outside these packages, WEBORA by Abir can build a custom solution around your exact requirements.
-    </p>
+<p>
+If your business needs a website with features outside these packages, WEBORA by Abir can build a custom solution around your exact requirements.
+</p>
 
-  </div>
+</div>
 
 </section>
 
-
 <footer>
 
-  <p>
-    © 2026 WEBORA by Abir. Websites built for businesses that mean business.
-  </p>
+<p>
+© 2026 WEBORA by Abir. Websites built for businesses that mean business.
+</p>
 
 </footer>
 
-
 <script>
 
-  const params =
-    new URLSearchParams(window.location.search);
+const businesses = {
 
-  let currentType =
-    params.get("type") || "cake";
+cake:{
+title:"Cake & Pastry Website",
+description:"A professional website designed to showcase your cakes, pastries, menu and ordering options."
+},
 
+hair:{
+title:"Hair Business Website",
+description:"A professional website for hairstylists, salons and hair brands to showcase services and attract customers."
+},
 
-  const businesses = {
+lash:{
+title:"Lash & Beauty Website",
+description:"A polished online presence for lash artists, beauty professionals and beauty studios."
+},
 
-    cake: {
-      title: "Cake & Pastry Website",
-      description: "A professional website designed to showcase your cakes, pastries, menu and ordering options."
-    },
+fashion:{
+title:"Fashion Website",
+description:"A stylish website for fashion brands, designers and clothing businesses."
+},
 
-    hair: {
-      title: "Hair Business Website",
-      description: "A professional website for hairstylists, salons and hair brands to showcase services and attract customers."
-    },
+restaurant:{
+title:"Restaurant Website",
+description:"A professional restaurant website for displaying your menu, services and customer ordering options."
+},
 
-    lash: {
-      title: "Lash & Beauty Website",
-      description: "A polished online presence for lash artists, beauty professionals and beauty studios."
-    },
+barber:{
+title:"Barber Website",
+description:"A clean professional website for barbers and grooming businesses to showcase services and bookings."
+},
 
-    fashion: {
-      title: "Fashion Website",
-      description: "A stylish website for fashion brands, designers and clothing businesses."
-    },
+makeup:{
+title:"Makeup Artist Website",
+description:"A portfolio-focused website for makeup artists to showcase their work and attract clients."
+},
 
-    restaurant: {
-      title: "Restaurant Website",
-      description: "A professional restaurant website for displaying your menu, services and customer ordering options."
-    },
+photography:{
+title:"Photography Website",
+description:"A visual portfolio website for photographers to showcase their work and booking services."
+},
 
-    barber: {
-      title: "Barber Website",
-      description: "A clean professional website for barbers and grooming businesses to showcase services and bookings."
-    },
+events:{
+title:"Event Business Website",
+description:"A professional website for event planners, decorators and event service providers."
+},
 
-    makeup: {
-      title: "Makeup Artist Website",
-      description: "A portfolio-focused website for makeup artists to showcase their work and attract clients."
-    },
+catalogue:{
+title:"Product Catalogue Website",
+description:"A product-focused website for businesses that want to showcase products, prices and categories."
+},
 
-    photography: {
-      title: "Photography Website",
-      description: "A visual portfolio website for photographers to showcase their work and booking services."
-    },
+professional:{
+title:"Professional Services Website",
+description:"A professional website for consultants, agencies, coaches and service-based businesses."
+},
 
-    events: {
-      title: "Event Business Website",
-      description: "A professional website for event planners, decorators and event service providers."
-    },
+custom:{
+title:"Custom Website",
+description:"A fully customised website built around your exact business requirements."
+}
 
-    catalogue: {
-      title: "Product Catalogue Website",
-      description: "A product-focused website for businesses that want to showcase products, prices and categories."
-    },
-
-    professional: {
-      title: "Professional Services Website",
-      description: "A professional website for consultants, agencies, coaches and service-based businesses."
-    },
-
-    custom: {
-      title: "Custom Website",
-      description: "A fully customised website built around your exact business requirements."
-    }
-
-  };
+};
 
 
-  function updateBusiness(type) {
+function getBusinessFromURL(){
 
-    const business =
-      businesses[type] || businesses.cake;
+const params =
+new URLSearchParams(window.location.search);
 
-    currentType = type;
+const type =
+params.get("type");
 
-    document.title =
-      `${business.title} | WEBORA by Abir`;
+if(type && businesses[type]){
+return type;
+}
 
-    document.getElementById("businessTitle").textContent =
-      business.title;
+return "cake";
 
-    document.getElementById("businessDescription").textContent =
-      business.description;
-
-    document.getElementById("packagesTitle").textContent =
-      `Website packages for ${business.title.replace(" Website", "")}`;
-
-    document.getElementById("businessSelect").value =
-      type;
-
-    document.querySelectorAll(".view-button").forEach(button => {
-
-      const plan =
-        button.dataset.plan;
-
-      button.href =
-        `package.html?type=${type}&plan=${plan}`;
-
-    });
-
-  }
+}
 
 
-  document.getElementById("businessSelect")
-    .addEventListener("change", function () {
+function updateBusiness(type){
 
-      const selected =
-        this.value;
+if(!businesses[type]){
+type = "cake";
+}
 
-      window.history.replaceState(
-        {},
-        "",
-        `business.html?type=${selected}`
-      );
+const business =
+businesses[type];
 
-      updateBusiness(selected);
+document.title =
+`${business.title} | WEBORA by Abir`;
 
-    });
+document.getElementById("businessTitle").textContent =
+business.title;
+
+document.getElementById("businessDescription").textContent =
+business.description;
+
+document.getElementById("packagesTitle").textContent =
+`Website packages for ${business.title.replace(" Website","")}`;
+
+document.getElementById("businessSelect").value =
+type;
 
 
-  updateBusiness(currentType);
+document.querySelectorAll(".view-button").forEach(button=>{
+
+const plan =
+button.getAttribute("data-plan");
+
+button.setAttribute(
+"href",
+`package.html?type=${encodeURIComponent(type)}&plan=${encodeURIComponent(plan)}`
+);
+
+});
+
+}
+
+
+document.getElementById("businessSelect").addEventListener(
+"change",
+function(){
+
+const type =
+this.value;
+
+const newURL =
+`business.html?type=${encodeURIComponent(type)}`;
+
+window.history.pushState(
+{},
+"",
+newURL
+);
+
+updateBusiness(type);
+
+}
+);
+
+
+const initialType =
+getBusinessFromURL();
+
+updateBusiness(initialType);
 
 </script>
 
