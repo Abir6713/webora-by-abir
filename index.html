@@ -1,733 +1,907 @@
-```html
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WEBORA by Abir | Websites Built for Businesses</title>
-
-    <style>
-        :root {
-            --red: #b30000;
-            --dark-red: #7f0000;
-            --white: #ffffff;
-            --off-white: #f8f8f8;
-            --black: #111111;
-            --grey: #666666;
-            --light-grey: #eeeeee;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: var(--white);
-            color: var(--black);
-            line-height: 1.6;
-        }
-
-        /* =========================
-           HEADER
-        ========================= */
-
-        header {
-            padding: 18px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: var(--white);
-            border-bottom: 1px solid var(--light-grey);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo {
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 11px;
-        }
-
-        .logo-mark {
-            width: 48px;
-            height: 48px;
-            background: var(--red);
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 22px;
-            font-weight: 900;
-            border-radius: 8px;
-            letter-spacing: -2px;
-        }
-
-        .logo-text {
-            line-height: 1;
-        }
-
-        .logo-name {
-            display: block;
-            color: var(--black);
-            font-size: 22px;
-            font-weight: 900;
-            letter-spacing: 2px;
-        }
-
-        .logo-by {
-            display: block;
-            color: var(--red);
-            font-size: 8px;
-            font-weight: 700;
-            letter-spacing: 3px;
-            margin-top: 5px;
-        }
-
-        nav a {
-            color: var(--black);
-            text-decoration: none;
-            margin-left: 28px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        nav a:hover {
-            color: var(--red);
-        }
-
-        /* =========================
-           HERO
-        ========================= */
-
-        .hero {
-            min-height: 82vh;
-            display: flex;
-            align-items: center;
-            padding: 90px 7%;
-            position: relative;
-            overflow: hidden;
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(255,255,255,0.98) 0%,
-                    rgba(255,255,255,0.94) 48%,
-                    rgba(255,255,255,0.55) 100%
-                ),
-                url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80")
-                center/cover;
-        }
-
-        .hero::after {
-            content: "";
-            position: absolute;
-            right: -150px;
-            top: -150px;
-            width: 450px;
-            height: 450px;
-            background: var(--red);
-            opacity: 0.07;
-            border-radius: 50%;
-        }
-
-        .hero-content {
-            max-width: 760px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .tag {
-            color: var(--red);
-            font-size: 12px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            font-weight: 800;
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            font-size: clamp(48px, 8vw, 90px);
-            line-height: 0.98;
-            letter-spacing: -3px;
-            margin-bottom: 28px;
-        }
-
-        h1 span {
-            color: var(--red);
-        }
-
-        .hero p {
-            max-width: 620px;
-            font-size: 18px;
-            color: #555555;
-            margin-bottom: 35px;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 15px 27px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 14px;
-            transition: 0.25s;
-        }
-
-        .btn-primary {
-            background: var(--red);
-            color: var(--white);
-        }
-
-        .btn-primary:hover {
-            background: var(--dark-red);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            border: 1px solid #cccccc;
-            color: var(--black);
-            background: var(--white);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--red);
-            color: var(--red);
-        }
-
-        /* =========================
-           SECTIONS
-        ========================= */
-
-        section {
-            padding: 90px 7%;
-        }
-
-        .section-title {
-            max-width: 680px;
-            margin-bottom: 48px;
-        }
-
-        .section-title .small-title {
-            color: var(--red);
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-
-        .section-title h2 {
-            font-size: 44px;
-            line-height: 1.1;
-            margin-bottom: 14px;
-            letter-spacing: -1px;
-        }
-
-        .section-title p {
-            color: var(--grey);
-        }
-
-        /* =========================
-           BUSINESS CATEGORIES
-        ========================= */
-
-        #businesses {
-            background: var(--off-white);
-        }
-
-        .categories {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-        }
-
-        .category {
-            color: var(--black);
-            text-decoration: none;
-            padding: 30px 22px;
-            min-height: 155px;
-            border: 1px solid #dddddd;
-            background: var(--white);
-            display: flex;
-            align-items: flex-end;
-            position: relative;
-            overflow: hidden;
-            transition: 0.25s;
-        }
-
-        .category::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 5px;
-            height: 100%;
-            background: var(--red);
-            transform: scaleY(0);
-            transform-origin: bottom;
-            transition: 0.25s;
-        }
-
-        .category:hover {
-            transform: translateY(-5px);
-            border-color: var(--red);
-        }
-
-        .category:hover::before {
-            transform: scaleY(1);
-        }
-
-        .category h3 {
-            font-size: 18px;
-        }
-
-        /* =========================
-           PACKAGES
-        ========================= */
-
-        .packages {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-        }
-
-        .package {
-            background: var(--white);
-            border: 1px solid #dddddd;
-            padding: 32px;
-            display: flex;
-            flex-direction: column;
-            transition: 0.25s;
-        }
-
-        .package:hover {
-            transform: translateY(-5px);
-            border-color: var(--red);
-        }
-
-        .package h3 {
-            font-size: 23px;
-            margin-bottom: 10px;
-        }
-
-        .package p {
-            color: var(--grey);
-            font-size: 14px;
-        }
-
-        .price {
-            color: var(--red);
-            font-size: 27px;
-            font-weight: 900;
-            margin: 25px 0;
-        }
-
-        .package .btn {
-            margin-top: auto;
-            text-align: center;
-        }
-
-        .premium {
-            background: var(--red);
-            color: var(--white);
-            border-color: var(--red);
-        }
-
-        .premium p,
-        .premium .price {
-            color: var(--white);
-        }
-
-        .premium .btn {
-            background: var(--white);
-            color: var(--red);
-        }
-
-        /* =========================
-           CTA
-        ========================= */
-
-        .cta {
-            text-align: center;
-            background: var(--black);
-            color: var(--white);
-        }
-
-        .cta h2 {
-            font-size: 46px;
-            line-height: 1.1;
-            margin-bottom: 15px;
-        }
-
-        .cta p {
-            color: #bbbbbb;
-            margin-bottom: 30px;
-        }
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            padding: 30px 7%;
-            background: var(--white);
-            border-top: 1px solid var(--light-grey);
-            color: #777777;
-            font-size: 13px;
-            text-align: center;
-        }
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 950px) {
-
-            .categories {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .packages {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 700px) {
-
-            header {
-                padding: 15px 6%;
-            }
-
-            nav {
-                display: none;
-            }
-
-            .logo-mark {
-                width: 42px;
-                height: 42px;
-                font-size: 19px;
-            }
-
-            .logo-name {
-                font-size: 19px;
-            }
-
-            .hero {
-                min-height: 78vh;
-                padding: 70px 6%;
-            }
-
-            h1 {
-                font-size: 48px;
-                letter-spacing: -2px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            section {
-                padding: 65px 6%;
-            }
-
-            .section-title h2 {
-                font-size: 35px;
-            }
-
-            .categories,
-            .packages {
-                grid-template-columns: 1fr;
-            }
-
-            .cta h2 {
-                font-size: 35px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>WEBORA by Abir | Websites Built for Businesses</title>
+
+  <style>
+    :root {
+      --red: #b30000;
+      --dark-red: #7f0000;
+      --black: #111111;
+      --white: #ffffff;
+      --off-white: #f7f7f7;
+      --grey: #666666;
+      --light-grey: #e8e8e8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--black);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 76px;
+      background: var(--white);
+      border-bottom: 1px solid var(--light-grey);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6%;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+      background: var(--red);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 23px;
+      font-weight: 900;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+
+    .logo-name {
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .logo-by {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: var(--red);
+      margin-top: 5px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav a {
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .nav a:hover {
+      color: var(--red);
+    }
+
+    .nav-cta {
+      background: var(--red);
+      color: var(--white) !important;
+      padding: 11px 18px;
+    }
+
+    .hero {
+      min-height: 620px;
+      background:
+        linear-gradient(
+          rgba(255,255,255,0.91),
+          rgba(255,255,255,0.91)
+        ),
+        linear-gradient(
+          135deg,
+          #eeeeee,
+          #ffffff 50%,
+          #f0f0f0
+        );
+
+      display: flex;
+      align-items: center;
+      padding: 80px 6%;
+    }
+
+    .hero-inner {
+      width: 100%;
+      max-width: 1180px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 0.98;
+      max-width: 800px;
+      margin-bottom: 25px;
+      letter-spacing: -2px;
+    }
+
+    .hero h1 span {
+      color: var(--red);
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: var(--grey);
+      font-size: 18px;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 24px;
+      font-size: 13px;
+      font-weight: 800;
+      border: 1px solid var(--black);
+    }
+
+    .button-primary {
+      background: var(--red);
+      border-color: var(--red);
+      color: var(--white);
+    }
+
+    .button-primary:hover {
+      background: var(--dark-red);
+    }
+
+    .button-secondary {
+      background: var(--white);
+    }
+
+    .button-secondary:hover {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .hero-visual {
+      background: var(--black);
+      padding: 22px;
+      transform: rotate(2deg);
+    }
+
+    .browser {
+      background: var(--white);
+      min-height: 330px;
+    }
+
+    .browser-top {
+      height: 32px;
+      background: #252525;
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      gap: 5px;
+    }
+
+    .browser-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #aaa;
+    }
+
+    .browser-body {
+      padding: 28px;
+    }
+
+    .browser-logo {
+      width: 80px;
+      height: 9px;
+      background: var(--black);
+      margin-bottom: 32px;
+    }
+
+    .browser-heading {
+      width: 80%;
+      height: 27px;
+      background: var(--black);
+      margin-bottom: 10px;
+    }
+
+    .browser-heading-red {
+      width: 55%;
+      height: 27px;
+      background: var(--red);
+      margin-bottom: 18px;
+    }
+
+    .browser-text {
+      width: 85%;
+      height: 7px;
+      background: #ddd;
+      margin-bottom: 8px;
+    }
+
+    .browser-text.short {
+      width: 60%;
+    }
+
+    .browser-boxes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .browser-box {
+      height: 75px;
+      background: #eee;
+      border-bottom: 5px solid var(--red);
+    }
+
+    .section {
+      padding: 90px 6%;
+    }
+
+    .section-heading {
+      max-width: 1100px;
+      margin: 0 auto 45px;
+    }
+
+    .small-title {
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.05;
+      margin-bottom: 12px;
+    }
+
+    .section-heading p {
+      color: var(--grey);
+      max-width: 680px;
+    }
+
+    .categories {
+      background: var(--off-white);
+    }
+
+    .category-grid {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .category-card {
+      background: var(--white);
+      border: 1px solid var(--light-grey);
+      padding: 28px;
+      min-height: 175px;
+      position: relative;
+      transition: 0.2s ease;
+    }
+
+    .category-card:hover {
+      border-color: var(--red);
+      transform: translateY(-4px);
+    }
+
+    .category-number {
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      margin-bottom: 25px;
+    }
+
+    .category-card h3 {
+      font-size: 21px;
+      margin-bottom: 8px;
+    }
+
+    .category-card p {
+      color: var(--grey);
+      font-size: 13px;
+    }
+
+    .category-arrow {
+      position: absolute;
+      right: 24px;
+      bottom: 22px;
+      color: var(--red);
+      font-weight: 900;
+    }
+
+    .why {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .why .section-heading p {
+      color: #aaa;
+    }
+
+    .why-grid {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .why-card {
+      border-top: 2px solid var(--red);
+      padding-top: 22px;
+    }
+
+    .why-card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .why-card p {
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    .process {
+      background: var(--white);
+    }
+
+    .process-grid {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .process-card {
+      padding: 28px 20px;
+      border-top: 1px solid var(--black);
+    }
+
+    .process-number {
+      color: var(--red);
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+
+    .process-card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .process-card p {
+      color: var(--grey);
+      font-size: 13px;
+    }
+
+    .cta {
+      background: var(--red);
+      color: var(--white);
+      text-align: center;
+      padding: 90px 6%;
+    }
+
+    .cta h2 {
+      font-size: clamp(35px, 5vw, 60px);
+      line-height: 1;
+      margin-bottom: 18px;
+    }
+
+    .cta p {
+      color: #ffe4e4;
+      max-width: 620px;
+      margin: 0 auto 28px;
+    }
+
+    .cta .button {
+      background: var(--white);
+      color: var(--black);
+      border-color: var(--white);
+    }
+
+    .cta .button:hover {
+      background: var(--black);
+      color: var(--white);
+      border-color: var(--black);
+    }
+
+    footer {
+      background: var(--black);
+      color: #999;
+      padding: 30px 6%;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        max-width: 650px;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 650px) {
+      .header {
+        height: auto;
+        min-height: 70px;
+        padding: 14px 5%;
+      }
+
+      .nav {
+        gap: 12px;
+      }
+
+      .nav a:not(.nav-cta) {
+        display: none;
+      }
+
+      .hero {
+        padding: 65px 5%;
+      }
+
+      .section {
+        padding: 70px 5%;
+      }
+
+      .category-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        letter-spacing: -1px;
+      }
+    }
+  </style>
+
 </head>
 
 <body>
 
-<header>
+  <header class="header">
 
-    <a href="index.html" class="logo">
+```
+<a href="index.html" class="logo">
+  <div class="logo-mark">W</div>
 
-        <div class="logo-mark">
-            W
-        </div>
+  <div class="logo-text">
+    <span class="logo-name">WEBORA</span>
+    <span class="logo-by">BY ABIR</span>
+  </div>
+</a>
 
-        <div class="logo-text">
-            <span class="logo-name">WEBORA</span>
-            <span class="logo-by">BY ABIR</span>
-        </div>
+<nav class="nav">
+  <a href="#businesses">Websites</a>
+  <a href="#process">How It Works</a>
+  <a href="#businesses" class="nav-cta">Explore</a>
+</nav>
+```
 
-    </a>
+  </header>
 
-    <nav>
-        <a href="#businesses">Businesses</a>
-        <a href="#packages">Packages</a>
-        <a href="#contact">Get Started</a>
-    </nav>
+  <main>
 
-</header>
-
+```
+<!-- HERO -->
 
 <section class="hero">
 
-    <div class="hero-content">
+  <div class="hero-inner">
 
-        <div class="tag">
-            WEBORA by Abir
-        </div>
+    <div>
 
-        <h1>
-            Your business deserves a
-            <span>better website.</span>
-        </h1>
+      <div class="eyebrow">
+        WEBORA by Abir
+      </div>
 
-        <p>
-            We design professional websites for businesses that want to look
-            credible, showcase what they offer and give their customers a better
-            way to interact with them online.
-        </p>
+      <h1>
+        Your business deserves a
+        <span>better website.</span>
+      </h1>
 
-        <div class="buttons">
+      <p>
+        We build professional, modern websites designed around your
+        business, your customers and the way you actually work.
+      </p>
 
-            <a href="#businesses" class="btn btn-primary">
-                Explore Websites
-            </a>
+      <div class="hero-buttons">
 
-            <a href="#packages" class="btn btn-secondary">
-                View Packages
-            </a>
+        <a href="#businesses" class="button button-primary">
+          Explore Websites
+        </a>
 
-        </div>
+        <a href="#process" class="button button-secondary">
+          How It Works
+        </a>
+
+      </div>
 
     </div>
+
+
+    <div class="hero-visual">
+
+      <div class="browser">
+
+        <div class="browser-top">
+          <span class="browser-dot"></span>
+          <span class="browser-dot"></span>
+          <span class="browser-dot"></span>
+        </div>
+
+        <div class="browser-body">
+
+          <div class="browser-logo"></div>
+
+          <div class="browser-heading"></div>
+
+          <div class="browser-heading-red"></div>
+
+          <div class="browser-text"></div>
+          <div class="browser-text short"></div>
+
+          <div class="browser-boxes">
+            <div class="browser-box"></div>
+            <div class="browser-box"></div>
+            <div class="browser-box"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
 
 
-<section id="businesses">
+<!-- BUSINESS TYPES -->
 
-    <div class="section-title">
+<section class="section categories" id="businesses">
 
-        <div class="small-title">
-            What We Build
-        </div>
+  <div class="section-heading">
 
-        <h2>
-            Websites designed around your business.
-        </h2>
-
-        <p>
-            Whether you sell cakes, style hair, make lashes, serve food or run
-            a professional business, we build a website around the way your
-            customers actually interact with you.
-        </p>
-
+    <div class="small-title">
+      What We Build
     </div>
-
-
-    <div class="categories">
-
-        <a class="category" href="business.html?type=cake">
-            <h3>Cake & Pastry</h3>
-        </a>
-
-        <a class="category" href="business.html?type=hair">
-            <h3>Hair Business</h3>
-        </a>
-
-        <a class="category" href="business.html?type=lash">
-            <h3>Lash & Beauty</h3>
-        </a>
-
-        <a class="category" href="business.html?type=fashion">
-            <h3>Fashion</h3>
-        </a>
-
-        <a class="category" href="business.html?type=restaurant">
-            <h3>Restaurant</h3>
-        </a>
-
-        <a class="category" href="business.html?type=barber">
-            <h3>Barber</h3>
-        </a>
-
-        <a class="category" href="business.html?type=makeup">
-            <h3>Makeup Artist</h3>
-        </a>
-
-        <a class="category" href="business.html?type=photography">
-            <h3>Photography</h3>
-        </a>
-
-        <a class="category" href="business.html?type=events">
-            <h3>Event Business</h3>
-        </a>
-
-        <a class="category" href="business.html?type=catalogue">
-            <h3>Product Catalogue</h3>
-        </a>
-
-        <a class="category" href="business.html?type=professional">
-            <h3>Professional Services</h3>
-        </a>
-
-        <a class="category" href="business.html?type=custom">
-            <h3>Custom Website</h3>
-        </a>
-
-    </div>
-
-</section>
-
-
-<section id="packages">
-
-    <div class="section-title">
-
-        <div class="small-title">
-            Website Packages
-        </div>
-
-        <h2>
-            Start simple. Build bigger.
-        </h2>
-
-        <p>
-            Choose a package based on how much your business needs its website
-            to do.
-        </p>
-
-    </div>
-
-
-    <div class="packages">
-
-        <div class="package">
-
-            <h3>One Page</h3>
-
-            <p>
-                A simple professional website for businesses that need a strong
-                online presence.
-            </p>
-
-            <div class="price">
-                From ₦80,000
-            </div>
-
-            <a href="business.html" class="btn btn-secondary">
-                View Package
-            </a>
-
-        </div>
-
-
-        <div class="package">
-
-            <h3>Two Pages</h3>
-
-            <p>
-                More space for your business information, products, services
-                and catalogue.
-            </p>
-
-            <div class="price">
-                From ₦120,000
-            </div>
-
-            <a href="business.html" class="btn btn-secondary">
-                View Package
-            </a>
-
-        </div>
-
-
-        <div class="package">
-
-            <h3>Three Pages</h3>
-
-            <p>
-                A larger website with dedicated pages and more room for customer
-                interaction.
-            </p>
-
-            <div class="price">
-                From ₦180,000
-            </div>
-
-            <a href="business.html" class="btn btn-secondary">
-                View Package
-            </a>
-
-        </div>
-
-
-        <div class="package premium">
-
-            <h3>Premium</h3>
-
-            <p>
-                Advanced websites with ordering, booking, checkout and payment
-                gateway options.
-            </p>
-
-            <div class="price">
-                From ₦250,000+
-            </div>
-
-            <a href="business.html" class="btn">
-                View Package
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="cta" id="contact">
 
     <h2>
-        Ready to build your website?
+      A website for the way your business works.
     </h2>
 
     <p>
-        Tell us what your business does and we'll help you choose the right
-        website package.
+      Select your type of business to see the website options,
+      features and packages available for you.
     </p>
 
-    <a href="#" class="btn btn-primary">
-        Get Started
+  </div>
+
+
+  <div class="category-grid">
+
+    <a href="business.html?type=cake" class="category-card">
+      <div class="category-number">01</div>
+      <h3>Cake & Pastry</h3>
+      <p>Showcase cakes, pastries, menus and custom orders.</p>
+      <div class="category-arrow">→</div>
     </a>
+
+    <a href="business.html?type=hair" class="category-card">
+      <div class="category-number">02</div>
+      <h3>Hair Business</h3>
+      <p>Present hairstyles, products, services and appointments.</p>
+      <div class="category-arrow">→</div>
+    </a>
+
+    <a href="business.html?type=lash" class="category-card">
+      <div class="category-number">03</div>
+      <h3>Lash & Beauty</h3>
+      <p>Display beauty services, lash styles and bookings.</p>
+      <div class="category-arrow">→</div>
+    </a>
+
+    <a href="business.html?type=fashion" class="category-card">
+      <div class="category-number">04</div>
+      <h3>Fashion</h3>
+      <p>Showcase collections, products, prices and orders.</p>
+      <div class="category-arrow">→</div>
+    </a>
+
+    <a href="business.html?type=restaurant" class="category-card">
+      <div class="category-number">05</div>
+      <h3>Restaurant</h3>
+      <p>Display menus, meals, prices and online ordering.</p>
+      <div class="category-arrow">→</div>
+    </a>
+
+    <a href="business.html?type=barber" class="category-card">
+      <div class="category-number">06</div>
+      <h3>Barber</h3>
+      <p>Showcase cuts, grooming services and bookings.</p>
+      <div class="category-arrow">→</div>
+    </a>
+
+    <a href="business.html?type=makeup" class="category-card">
+      <div class="category-number">07</div>
+      <h3>Makeup Artist</h3>
+      <p>Build a professional makeup portfolio and booking page.</p>
+      <div class="category-arrow">→</div>
+    </a>
+
+    <a href="business.html?type=photography" class="category-card">
+      <div class="category-number">08</div>
+      <h3>Photography</h3>
+      <p>Turn your photography work into a professional portfolio.</p>
+      <div class="category-arrow">→</div>
+    </a>
+
+    <a href="business.html?type=events" class="category-card">
+      <div class="category-number">09</div>
+      <h3>Event Business</h3>
+      <p>Showcase events, services, packages and bookings.</p>
+      <div class="category-arrow">→</div>
+    </a>
+
+    <a href="business.html?type=catalogue" class="category-card">
+      <div class="category-number">10</div>
+      <h3>Product Catalogue</h3>
+      <p>Put your products, categories and prices online.</p>
+      <div class="category-arrow">→</div>
+    </a>
+
+    <a href="business.html?type=professional" class="category-card">
+      <div class="category-number">11</div>
+      <h3>Professional Services</h3>
+      <p>Present your services, expertise and business professionally.</p>
+      <div class="category-arrow">→</div>
+    </a>
+
+    <a href="business.html?type=custom" class="category-card">
+      <div class="category-number">12</div>
+      <h3>Custom Website</h3>
+      <p>For businesses that need something completely tailored.</p>
+      <div class="category-arrow">→</div>
+    </a>
+
+  </div>
 
 </section>
 
 
-<footer>
+<!-- WHY WEBORA -->
 
-    © 2026 WEBORA by Abir. All rights reserved.
+<section class="section why">
 
-</footer>
+  <div class="section-heading">
+
+    <div class="small-title">
+      Why WEBORA
+    </div>
+
+    <h2>
+      Your website should do more than look good.
+    </h2>
+
+    <p>
+      It should help people understand your business, trust what you offer
+      and take the next step.
+    </p>
+
+  </div>
+
+
+  <div class="why-grid">
+
+    <div class="why-card">
+      <h3>Built Around Your Business</h3>
+      <p>
+        We don't force every business into the same website.
+        Your website is structured around what you actually sell and how
+        your customers interact with you.
+      </p>
+    </div>
+
+    <div class="why-card">
+      <h3>Designed for Customers</h3>
+      <p>
+        Clear information, simple navigation and purposeful pages make it
+        easier for visitors to understand what you offer.
+      </p>
+    </div>
+
+    <div class="why-card">
+      <h3>Ready to Grow</h3>
+      <p>
+        Start with what your business needs today and expand your website
+        as your business requires more functionality.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PROCESS -->
+
+<section class="section process" id="process">
+
+  <div class="section-heading">
+
+    <div class="small-title">
+      The Process
+    </div>
+
+    <h2>
+      From idea to website.
+    </h2>
+
+    <p>
+      We keep the process simple so you can focus on your business.
+    </p>
+
+  </div>
+
+
+  <div class="process-grid">
+
+    <div class="process-card">
+
+      <div class="process-number">01</div>
+
+      <h3>Choose Your Business</h3>
+
+      <p>
+        Tell us what type of business you run and what you need your
+        website to do.
+      </p>
+
+    </div>
+
+
+    <div class="process-card">
+
+      <div class="process-number">02</div>
+
+      <h3>Choose Your Package</h3>
+
+      <p>
+        Review the available website packages and select the level that
+        fits your business.
+      </p>
+
+    </div>
+
+
+    <div class="process-card">
+
+      <div class="process-number">03</div>
+
+      <h3>We Build It</h3>
+
+      <p>
+        We design and develop the website around your business,
+        information and requirements.
+      </p>
+
+    </div>
+
+
+    <div class="process-card">
+
+      <div class="process-number">04</div>
+
+      <h3>Go Live</h3>
+
+      <p>
+        Once everything is ready, your website is published and ready
+        for your customers.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+  <h2>
+    Let's build something<br>
+    your customers can use.
+  </h2>
+
+  <p>
+    Choose your business type and discover the website options available
+    for your business.
+  </p>
+
+  <a href="#businesses" class="button">
+    Explore Website Types
+  </a>
+
+</section>
+```
+
+  </main>
+
+  <footer>
+    © 2026 WEBORA by Abir. Websites built for businesses that mean business.
+  </footer>
 
 </body>
 </html>
-```
