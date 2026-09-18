@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>WEBORA by Abir | Websites Built for Businesses</title>
 
   <style>
@@ -13,40 +14,28 @@
       padding: 0;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: #fff;
       color: #111;
-      line-height: 1.6;
     }
 
     a {
-      color: inherit;
       text-decoration: none;
+      color: inherit;
     }
-
-    /* HEADER */
 
     header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(255,255,255,.96);
-      border-bottom: 1px solid #eee;
-      backdrop-filter: blur(10px);
-    }
-
-    .nav {
-      max-width: 1200px;
-      margin: auto;
-      padding: 17px 25px;
+      height: 76px;
+      padding: 0 7%;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      background: #fff;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     .logo {
@@ -56,33 +45,33 @@
     }
 
     .logo-box {
-      width: 40px;
-      height: 40px;
-      background: #e50914;
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      background: #d71920;
       color: #fff;
-      display: grid;
-      place-items: center;
-      font-size: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
       font-weight: 900;
     }
 
-    .logo-main {
-      font-size: 21px;
-      font-weight: 900;
-      letter-spacing: 1px;
-      line-height: 1;
-    }
-
-    .logo-sub {
+    .logo-text strong {
       display: block;
-      color: #e50914;
+      font-size: 21px;
+      letter-spacing: -1px;
+    }
+
+    .logo-text span {
+      display: block;
+      color: #d71920;
       font-size: 8px;
       font-weight: 800;
       letter-spacing: 3px;
-      margin-top: 4px;
     }
 
-    .nav-links {
+    nav {
       display: flex;
       gap: 28px;
       align-items: center;
@@ -90,379 +79,435 @@
       font-weight: 700;
     }
 
-    .nav-links a:hover {
-      color: #e50914;
+    nav a:hover {
+      color: #d71920;
     }
 
     .nav-button {
-      background: #e50914;
+      background: #d71920;
       color: #fff !important;
-      padding: 11px 18px;
+      padding: 12px 19px;
+      border-radius: 7px;
     }
 
     /* HERO */
 
     .hero {
-      max-width: 1200px;
-      margin: auto;
-      padding: 95px 25px 85px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 70px;
+      background: #111;
+      color: #fff;
+      padding: 90px 7%;
     }
 
-    .eyebrow {
-      color: #e50914;
-      font-size: 12px;
-      font-weight: 900;
+    .hero-inner {
+      max-width: 1250px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero small {
+      color: #e21b23;
+      font-weight: 800;
       letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 18px;
     }
 
     .hero h1 {
-      font-size: clamp(42px, 6vw, 76px);
-      line-height: .98;
-      letter-spacing: -2px;
-      max-width: 700px;
+      font-size: clamp(43px, 6vw, 76px);
+      line-height: 0.98;
+      margin: 18px 0;
+      letter-spacing: -3px;
     }
 
-    .hero h1 span {
-      color: #e50914;
-    }
-
-    .hero-text {
-      margin-top: 25px;
-      color: #666;
-      max-width: 580px;
-      font-size: 18px;
+    .hero p {
+      color: #ccc;
+      font-size: 17px;
+      line-height: 1.7;
+      max-width: 570px;
     }
 
     .hero-buttons {
-      display: flex;
-      gap: 12px;
       margin-top: 30px;
+      display: flex;
+      gap: 14px;
       flex-wrap: wrap;
     }
 
-    .button {
-      display: inline-block;
-      padding: 14px 22px;
-      font-weight: 800;
-      border: 1px solid #111;
-    }
-
-    .button-red {
-      background: #e50914;
+    .primary-btn {
+      background: #d71920;
       color: #fff;
-      border-color: #e50914;
+      padding: 15px 24px;
+      border-radius: 7px;
+      font-weight: 800;
     }
 
-    .button-white {
+    .secondary-btn {
+      border: 1px solid #555;
+      color: #fff;
+      padding: 15px 24px;
+      border-radius: 7px;
+      font-weight: 800;
+    }
+
+    /* HERO WEBSITE MOCKUP */
+
+    .browser {
       background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 25px 70px rgba(0,0,0,0.35);
       color: #111;
     }
 
-    /* PHONE */
-
-    .phone-area {
+    .browser-top {
+      height: 35px;
+      background: #eee;
       display: flex;
-      justify-content: center;
       align-items: center;
+      gap: 6px;
+      padding: 0 14px;
     }
 
-    .phone {
-      width: 310px;
-      height: 610px;
-      background: #090909;
-      border-radius: 42px;
-      padding: 11px;
-      box-shadow:
-        0 35px 70px rgba(0,0,0,.22),
-        0 5px 20px rgba(0,0,0,.15);
-      position: relative;
-      transform: rotate(2deg);
+    .browser-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #bbb;
     }
 
-    .phone::before {
-      content: "";
-      position: absolute;
-      left: -3px;
-      top: 125px;
-      width: 3px;
-      height: 65px;
-      background: #222;
-      border-radius: 3px 0 0 3px;
+    .mini-site {
+      min-height: 410px;
+      padding: 22px;
     }
 
-    .phone::after {
-      content: "";
-      position: absolute;
-      right: -3px;
-      top: 160px;
-      width: 3px;
-      height: 85px;
-      background: #222;
-      border-radius: 0 3px 3px 0;
-    }
-
-    .phone-screen {
-      height: 100%;
-      background: #fff;
-      border-radius: 32px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .phone-notch {
-      position: absolute;
-      top: 9px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 105px;
-      height: 25px;
-      background: #090909;
-      border-radius: 20px;
-      z-index: 5;
-    }
-
-    .phone-site {
-      height: 100%;
-      overflow: hidden;
-      background: #fff;
-    }
-
-    .mobile-nav {
-      height: 57px;
-      padding: 17px 14px 8px;
+    .mini-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid #eee;
+      margin-bottom: 18px;
     }
 
-    .mobile-logo {
+    .mini-brand {
+      font-size: 17px;
+      font-weight: 900;
+    }
+
+    .mini-nav {
       display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .mobile-logo-box {
-      width: 20px;
-      height: 20px;
-      background: #e50914;
-      color: #fff;
-      display: grid;
-      place-items: center;
-      font-size: 11px;
-      font-weight: 900;
-    }
-
-    .mobile-logo-text {
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: .5px;
-    }
-
-    .mobile-menu {
-      width: 20px;
-      height: 14px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .mobile-menu span {
-      height: 2px;
-      background: #111;
-      width: 100%;
-    }
-
-    .mobile-hero {
-      padding: 28px 18px 18px;
-    }
-
-    .mobile-small {
-      color: #e50914;
-      font-size: 7px;
-      font-weight: 900;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-    }
-
-    .mobile-hero h2 {
-      font-size: 27px;
-      line-height: 1;
-      margin-top: 8px;
-      letter-spacing: -1px;
-    }
-
-    .mobile-hero h2 span {
-      color: #e50914;
-    }
-
-    .mobile-hero p {
+      gap: 12px;
       font-size: 8px;
       color: #777;
-      margin-top: 9px;
-      line-height: 1.5;
     }
 
-    .mobile-button {
-      display: inline-block;
-      background: #e50914;
+    .mini-hero {
+      height: 175px;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
       color: #fff;
-      font-size: 7px;
-      font-weight: 800;
-      padding: 8px 11px;
-      margin-top: 11px;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
     }
 
-    .mobile-section {
-      padding: 10px 18px;
+    .mini-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.75));
     }
 
-    .mobile-section-title {
-      font-size: 13px;
-      font-weight: 900;
-      margin-bottom: 9px;
+    .mini-hero-content {
+      position: relative;
+      z-index: 2;
     }
 
-    .mobile-categories {
+    .mini-hero h3 {
+      font-size: 23px;
+      margin-bottom: 7px;
+    }
+
+    .mini-hero p {
+      font-size: 9px;
+      color: #ddd;
+    }
+
+    .mini-products {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 7px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 15px;
     }
 
-    .mobile-category {
-      border: 1px solid #eee;
-      padding: 10px 8px;
-      font-size: 8px;
-      font-weight: 700;
+    .mini-product {
+      height: 95px;
+      border-radius: 9px;
+      overflow: hidden;
+      background: #eee;
     }
 
-    .mobile-category strong {
-      display: block;
-      color: #e50914;
-      font-size: 12px;
-      margin-bottom: 2px;
+    .mini-product img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
-    .mobile-preview {
-      margin: 10px 18px;
-      background: #090909;
-      color: #fff;
-      padding: 16px;
-      border-radius: 10px;
-    }
+    /* GENERAL SECTIONS */
 
-    .mobile-preview span {
-      color: #e50914;
-      font-size: 7px;
-      font-weight: 900;
-      letter-spacing: 1px;
-    }
-
-    .mobile-preview h3 {
-      font-size: 15px;
-      line-height: 1.1;
-      margin-top: 5px;
-    }
-
-    .mobile-preview p {
-      font-size: 7px;
-      color: #bbb;
-      margin-top: 6px;
-    }
-
-    /* SECTION */
-
-    section {
+    .section {
+      width: 86%;
       max-width: 1200px;
       margin: auto;
-      padding: 85px 25px;
+      padding: 90px 0;
     }
 
     .section-heading {
-      margin-bottom: 40px;
+      max-width: 700px;
+      margin-bottom: 35px;
     }
 
-    .section-heading span {
-      color: #e50914;
-      font-size: 12px;
-      font-weight: 900;
+    .section-heading small {
+      color: #d71920;
+      font-weight: 800;
       letter-spacing: 2px;
       text-transform: uppercase;
     }
 
     .section-heading h2 {
-      font-size: clamp(32px, 5vw, 50px);
-      line-height: 1;
-      margin-top: 8px;
+      font-size: 43px;
+      margin: 10px 0;
+      letter-spacing: -1.5px;
     }
 
     .section-heading p {
-      max-width: 650px;
       color: #666;
-      margin-top: 12px;
+      line-height: 1.7;
+    }
+
+    /* WEBSITE PREVIEW */
+
+    .preview-section {
+      background: #f6f6f6;
+    }
+
+    .preview-wrap {
+      background: #111;
+      padding: 28px;
+      border-radius: 22px;
+    }
+
+    .preview-controls {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 25px;
+    }
+
+    .preview-button {
+      border: 1px solid #444;
+      background: transparent;
+      color: #aaa;
+      padding: 10px 15px;
+      border-radius: 7px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    .preview-button.active {
+      background: #d71920;
+      color: #fff;
+      border-color: #d71920;
+    }
+
+    .full-preview {
+      background: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    .site-preview-header {
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 25px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .site-preview-brand {
+      font-size: 17px;
+      font-weight: 900;
+    }
+
+    .site-preview-nav {
+      display: flex;
+      gap: 18px;
+      font-size: 10px;
+      color: #555;
+      font-weight: 700;
+    }
+
+    .site-preview-button {
+      background: #d71920;
+      color: #fff;
+      padding: 8px 13px;
+      border-radius: 5px;
+      font-size: 9px;
+      font-weight: 800;
+    }
+
+    .preview-main {
+      padding: 22px;
+    }
+
+    .preview-main-hero {
+      min-height: 300px;
+      border-radius: 12px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      padding: 35px;
+      color: #fff;
+    }
+
+    .preview-main-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        transparent 20%,
+        rgba(0,0,0,0.8)
+      );
+    }
+
+    .preview-main-content {
+      position: relative;
+      z-index: 2;
+      max-width: 500px;
+    }
+
+    .preview-main-content small {
+      color: #fff;
+      opacity: .8;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .preview-main-content h3 {
+      font-size: 35px;
+      margin: 8px 0;
+    }
+
+    .preview-main-content p {
+      font-size: 12px;
+      line-height: 1.5;
+      color: #ddd;
+    }
+
+    .preview-main-content a {
+      display: inline-block;
+      background: #d71920;
+      color: #fff;
+      padding: 11px 16px;
+      border-radius: 5px;
+      margin-top: 15px;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .preview-products {
+      margin-top: 25px;
+    }
+
+    .preview-products h4 {
+      font-size: 19px;
+      margin-bottom: 14px;
+    }
+
+    .preview-product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .preview-card {
+      border: 1px solid #eee;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .preview-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .preview-card-content {
+      padding: 13px;
+    }
+
+    .preview-card-content h5 {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .preview-card-content p {
+      color: #777;
+      font-size: 10px;
+      line-height: 1.4;
+    }
+
+    .preview-bottom {
+      margin-top: 20px;
+      padding: 18px;
+      background: #f5f5f5;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .preview-bottom strong {
+      font-size: 14px;
+    }
+
+    .preview-bottom span {
+      font-size: 10px;
+      color: #777;
     }
 
     /* CATEGORIES */
 
     .categories {
-      background: #f7f7f7;
-      max-width: none;
-    }
-
-    .categories-inner {
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .category-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 14px;
     }
 
-    .category-card {
-      background: #fff;
-      border: 1px solid #e5e5e5;
-      padding: 25px 20px;
-      min-height: 130px;
-      transition: .25s ease;
+    .category {
+      border: 1px solid #ddd;
+      padding: 22px;
+      border-radius: 10px;
+      font-weight: 800;
+      transition: .2s;
     }
 
-    .category-card:hover {
-      background: #e50914;
-      color: #fff;
-      transform: translateY(-4px);
-    }
-
-    .category-number {
-      color: #e50914;
-      font-size: 12px;
-      font-weight: 900;
-    }
-
-    .category-card:hover .category-number {
-      color: #fff;
-    }
-
-    .category-card h3 {
-      margin-top: 12px;
-      font-size: 18px;
-    }
-
-    .category-card p {
-      color: #777;
-      font-size: 12px;
-      margin-top: 5px;
-    }
-
-    .category-card:hover p {
-      color: #ffe7e7;
+    .category:hover {
+      border-color: #d71920;
+      color: #d71920;
+      transform: translateY(-3px);
     }
 
     /* WHY */
@@ -470,36 +515,36 @@
     .why-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      gap: 20px;
     }
 
     .why-card {
-      border-top: 4px solid #e50914;
-      background: #f8f8f8;
-      padding: 30px 25px;
+      padding: 30px;
+      background: #f6f6f6;
+      border-radius: 14px;
+    }
+
+    .why-number {
+      color: #d71920;
+      font-weight: 900;
+      font-size: 14px;
     }
 
     .why-card h3 {
-      font-size: 22px;
-      margin-bottom: 10px;
+      margin: 14px 0 8px;
     }
 
     .why-card p {
       color: #666;
       font-size: 14px;
+      line-height: 1.6;
     }
 
     /* PROCESS */
 
     .process {
-      background: #090909;
+      background: #111;
       color: #fff;
-      max-width: none;
-    }
-
-    .process-inner {
-      max-width: 1200px;
-      margin: auto;
     }
 
     .process .section-heading p {
@@ -513,120 +558,123 @@
     }
 
     .process-card {
-      border-top: 1px solid #444;
-      padding-top: 20px;
+      border: 1px solid #333;
+      padding: 25px;
+      border-radius: 12px;
     }
 
-    .process-number {
-      color: #e50914;
+    .process-card span {
+      color: #d71920;
       font-size: 13px;
       font-weight: 900;
     }
 
     .process-card h3 {
-      margin-top: 15px;
-      font-size: 20px;
+      margin: 14px 0 8px;
     }
 
     .process-card p {
-      color: #999;
+      color: #aaa;
       font-size: 13px;
-      margin-top: 8px;
+      line-height: 1.6;
     }
 
     /* CTA */
 
     .cta {
-      background: #e50914;
-      color: #fff;
-      max-width: none;
       text-align: center;
+      background: #d71920;
+      color: #fff;
+      padding: 80px 7%;
     }
 
     .cta h2 {
       font-size: clamp(35px, 5vw, 58px);
-      line-height: 1;
+      margin-bottom: 14px;
     }
 
     .cta p {
-      max-width: 600px;
-      margin: 15px auto 25px;
-      color: #ffe5e5;
+      color: #f5caca;
+      margin-bottom: 25px;
     }
 
-    .cta-button {
+    .cta a {
       display: inline-block;
       background: #fff;
-      color: #111;
-      padding: 14px 24px;
+      color: #d71920;
+      padding: 15px 25px;
+      border-radius: 7px;
       font-weight: 900;
     }
 
-    /* FOOTER */
-
     footer {
-      background: #080808;
-      color: #888;
-      padding: 35px 20px;
+      background: #111;
+      color: #aaa;
       text-align: center;
+      padding: 35px;
       font-size: 13px;
     }
 
-    /* MOBILE */
+    footer strong {
+      color: #fff;
+    }
 
-    @media (max-width: 950px) {
-      .hero {
+    @media (max-width: 900px) {
+      nav {
+        display: none;
+      }
+
+      .hero-inner {
         grid-template-columns: 1fr;
-        text-align: center;
       }
 
-      .hero-text {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero-buttons {
-        justify-content: center;
-      }
-
-      .category-grid {
+      .categories {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .why-grid {
-        grid-template-columns: 1fr;
-      }
-
+      .why-grid,
       .process-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media (max-width: 650px) {
-      .nav-links a:not(.nav-button) {
+    @media (max-width: 600px) {
+      .hero {
+        padding: 65px 5%;
+      }
+
+      .section {
+        width: 90%;
+        padding: 65px 0;
+      }
+
+      .categories,
+      .why-grid,
+      .process-grid,
+      .preview-product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .preview-wrap {
+        padding: 12px;
+      }
+
+      .site-preview-nav {
         display: none;
       }
 
-      .hero {
-        padding: 65px 20px;
-        gap: 50px;
+      .preview-main-hero {
+        min-height: 270px;
+        padding: 25px;
       }
 
-      .phone {
-        width: 285px;
-        height: 565px;
+      .preview-main-content h3 {
+        font-size: 27px;
       }
 
-      .category-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .process-grid {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 65px 20px;
+      .preview-bottom {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
@@ -635,190 +683,270 @@
 <body>
 
 <header>
-  <nav class="nav">
 
-    <a href="index.html" class="logo">
-      <div class="logo-box">W</div>
+  <a href="index.html" class="logo">
+    <div class="logo-box">W</div>
 
-      <div>
-        <div class="logo-main">WEBORA</div>
-        <span class="logo-sub">BY ABIR</span>
-      </div>
-    </a>
-
-    <div class="nav-links">
-      <a href="#websites">Websites</a>
-      <a href="#why">Why WEBORA</a>
-      <a href="#process">Process</a>
-      <a href="#websites" class="nav-button">Explore Websites</a>
+    <div class="logo-text">
+      <strong>WEBORA</strong>
+      <span>BY ABIR</span>
     </div>
+  </a>
 
+  <nav>
+    <a href="#preview">Website Preview</a>
+    <a href="#categories">Business Types</a>
+    <a href="#why">Why WEBORA</a>
+    <a href="business.html" class="nav-button">View Packages</a>
   </nav>
+
 </header>
 
 
 <!-- HERO -->
 
-<div class="hero">
+<section class="hero">
 
-  <div>
+  <div class="hero-inner">
 
-    <div class="eyebrow">
-      WEBORA by Abir
+    <div>
+
+      <small>WEBORA BY ABIR</small>
+
+      <h1>
+        Your business deserves a better website.
+      </h1>
+
+      <p>
+        Professional websites designed around your business,
+        your customers and the way you want people to experience
+        your brand online.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="business.html" class="primary-btn">
+          Explore Websites
+        </a>
+
+        <a href="#preview" class="secondary-btn">
+          See Website Preview
+        </a>
+
+      </div>
+
     </div>
 
-    <h1>
-      Your business deserves a
-      <span>better website.</span>
-    </h1>
 
-    <p class="hero-text">
-      Professional websites designed around your business,
-      your customers and the way you want to grow online.
-    </p>
+    <div class="browser">
 
-    <div class="hero-buttons">
+      <div class="browser-top">
+        <span class="browser-dot"></span>
+        <span class="browser-dot"></span>
+        <span class="browser-dot"></span>
+      </div>
 
-      <a href="#websites" class="button button-red">
-        Explore Websites
-      </a>
+      <div class="mini-site">
 
-      <a href="#process" class="button button-white">
-        How It Works
-      </a>
+        <div class="mini-header">
+
+          <div class="mini-brand" id="miniBrand">
+            Sweet Crumbs
+          </div>
+
+          <div class="mini-nav">
+            <span>Home</span>
+            <span>Menu</span>
+            <span>About</span>
+            <span>Contact</span>
+          </div>
+
+        </div>
+
+
+        <div
+          class="mini-hero"
+          id="miniHero"
+        >
+
+          <div class="mini-hero-content">
+
+            <h3 id="miniTitle">
+              Beautiful Cakes
+            </h3>
+
+            <p id="miniDescription">
+              Freshly made for every special moment.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="mini-products" id="miniProducts"></div>
+
+      </div>
 
     </div>
 
   </div>
 
+</section>
 
-  <!-- PHONE MOCKUP -->
 
-  <div class="phone-area">
+<!-- WEBSITE PREVIEW -->
 
-    <div class="phone">
+<section class="preview-section" id="preview">
 
-      <div class="phone-screen">
+  <div class="section">
 
-        <div class="phone-notch"></div>
+    <div class="section-heading">
 
-        <div class="phone-site">
+      <small>Website Preview</small>
 
-          <div class="mobile-nav">
+      <h2>
+        See how your business could look online.
+      </h2>
 
-            <div class="mobile-logo">
+      <p>
+        These are realistic website previews showing how WEBORA
+        can present your business, products, services and customer
+        experience online.
+      </p>
 
-              <div class="mobile-logo-box">
-                W
-              </div>
+    </div>
 
-              <div class="mobile-logo-text">
-                WEBORA
-              </div>
 
-            </div>
+    <div class="preview-wrap">
 
-            <div class="mobile-menu">
-              <span></span>
-              <span></span>
-              <span></span>
+      <div class="preview-controls">
+
+        <button class="preview-button active" data-type="cake">
+          Cake & Pastry
+        </button>
+
+        <button class="preview-button" data-type="fashion">
+          Fashion
+        </button>
+
+        <button class="preview-button" data-type="restaurant">
+          Restaurant
+        </button>
+
+        <button class="preview-button" data-type="hair">
+          Hair
+        </button>
+
+        <button class="preview-button" data-type="barber">
+          Barber
+        </button>
+
+        <button class="preview-button" data-type="makeup">
+          Makeup
+        </button>
+
+        <button class="preview-button" data-type="photography">
+          Photography
+        </button>
+
+        <button class="preview-button" data-type="events">
+          Events
+        </button>
+
+      </div>
+
+
+      <div class="full-preview">
+
+        <div class="site-preview-header">
+
+          <div class="site-preview-brand" id="siteBrand">
+            Sweet Crumbs
+          </div>
+
+          <div class="site-preview-nav">
+            <span>Home</span>
+            <span>About</span>
+            <span>Products</span>
+            <span>Services</span>
+            <span>Contact</span>
+          </div>
+
+          <div class="site-preview-button" id="siteButton">
+            ORDER NOW
+          </div>
+
+        </div>
+
+
+        <div class="preview-main">
+
+          <div
+            class="preview-main-hero"
+            id="previewHero"
+          >
+
+            <div class="preview-main-content">
+
+              <small id="previewSmall">
+                CAKES & PASTRIES
+              </small>
+
+              <h3 id="previewTitle">
+                Beautiful cakes for every celebration.
+              </h3>
+
+              <p id="previewDescription">
+                A professional online home for your cake
+                business where customers can discover your
+                work and place orders.
+              </p>
+
+              <a href="business.html" id="previewCTA">
+                VIEW WEBSITE PACKAGE
+              </a>
+
             </div>
 
           </div>
 
 
-          <div class="mobile-hero">
+          <div class="preview-products">
 
-            <div class="mobile-small">
-              WEBORA BY ABIR
+            <h4 id="productHeading">
+              Featured Cakes
+            </h4>
+
+            <div
+              class="preview-product-grid"
+              id="previewProducts"
+            ></div>
+
+          </div>
+
+
+          <div class="preview-bottom">
+
+            <div>
+              <strong id="bottomTitle">
+                Built around your business.
+              </strong>
+
+              <br>
+
+              <span id="bottomText">
+                Your website can include products,
+                services, ordering and customer information.
+              </span>
             </div>
 
-            <h2>
-              Websites for
-              <span>business.</span>
-            </h2>
-
-            <p>
-              Professional websites built around
-              your business and your customers.
-            </p>
-
-            <a class="mobile-button">
-              Explore Websites
+            <a
+              href="business.html"
+              class="site-preview-button"
+            >
+              EXPLORE PACKAGES
             </a>
-
-          </div>
-
-
-          <div class="mobile-section">
-
-            <div class="mobile-section-title">
-              Websites for businesses
-            </div>
-
-            <div class="mobile-categories">
-
-              <div class="mobile-category">
-                <strong>01</strong>
-                Cake & Pastry
-              </div>
-
-              <div class="mobile-category">
-                <strong>02</strong>
-                Hair Business
-              </div>
-
-              <div class="mobile-category">
-                <strong>03</strong>
-                Fashion
-              </div>
-
-              <div class="mobile-category">
-                <strong>04</strong>
-                Restaurant
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <div class="mobile-preview">
-
-            <span>WEBORA</span>
-
-            <h3>
-              Your business,
-              online.
-            </h3>
-
-            <p>
-              A professional website can help
-              customers discover your business.
-            </p>
-
-          </div>
-
-
-          <div class="mobile-section">
-
-            <div class="mobile-section-title">
-              Why WEBORA?
-            </div>
-
-            <div class="mobile-categories">
-
-              <div class="mobile-category">
-                <strong>✓</strong>
-                Mobile Ready
-              </div>
-
-              <div class="mobile-category">
-                <strong>✓</strong>
-                Professional
-              </div>
-
-            </div>
 
           </div>
 
@@ -830,226 +958,100 @@
 
   </div>
 
-</div>
+</section>
 
 
-<!-- BUSINESS CATEGORIES -->
+<!-- BUSINESS TYPES -->
 
-<div class="categories" id="websites">
+<section class="section" id="categories">
 
-  <div class="categories-inner">
+  <div class="section-heading">
 
-    <section>
+    <small>Business Types</small>
 
-      <div class="section-heading">
+    <h2>
+      Websites for different kinds of businesses.
+    </h2>
 
-        <span>
-          What We Build
-        </span>
-
-        <h2>
-          Websites for your kind of business.
-        </h2>
-
-        <p>
-          Choose your business category to see the website
-          structure and packages available for you.
-        </p>
-
-      </div>
-
-
-      <div class="category-grid">
-
-        <a class="category-card"
-           href="business.html?type=cake">
-
-          <div class="category-number">01</div>
-
-          <h3>Cake & Pastry</h3>
-
-          <p>
-            Showcase cakes, pastries and custom orders.
-          </p>
-
-        </a>
-
-
-        <a class="category-card"
-           href="business.html?type=hair">
-
-          <div class="category-number">02</div>
-
-          <h3>Hair Business</h3>
-
-          <p>
-            Present hair products and services.
-          </p>
-
-        </a>
-
-
-        <a class="category-card"
-           href="business.html?type=lash">
-
-          <div class="category-number">03</div>
-
-          <h3>Lash & Beauty</h3>
-
-          <p>
-            Showcase beauty services and results.
-          </p>
-
-        </a>
-
-
-        <a class="category-card"
-           href="business.html?type=fashion">
-
-          <div class="category-number">04</div>
-
-          <h3>Fashion</h3>
-
-          <p>
-            Display collections and fashion products.
-          </p>
-
-        </a>
-
-
-        <a class="category-card"
-           href="business.html?type=restaurant">
-
-          <div class="category-number">05</div>
-
-          <h3>Restaurant</h3>
-
-          <p>
-            Present menus and your food business.
-          </p>
-
-        </a>
-
-
-        <a class="category-card"
-           href="business.html?type=barber">
-
-          <div class="category-number">06</div>
-
-          <h3>Barber</h3>
-
-          <p>
-            Showcase cuts, styles and grooming.
-          </p>
-
-        </a>
-
-
-        <a class="category-card"
-           href="business.html?type=makeup">
-
-          <div class="category-number">07</div>
-
-          <h3>Makeup Artist</h3>
-
-          <p>
-            Build a professional beauty portfolio.
-          </p>
-
-        </a>
-
-
-        <a class="category-card"
-           href="business.html?type=photography">
-
-          <div class="category-number">08</div>
-
-          <h3>Photography</h3>
-
-          <p>
-            Display your best photography work.
-          </p>
-
-        </a>
-
-
-        <a class="category-card"
-           href="business.html?type=events">
-
-          <div class="category-number">09</div>
-
-          <h3>Event Business</h3>
-
-          <p>
-            Showcase events, decoration and setups.
-          </p>
-
-        </a>
-
-
-        <a class="category-card"
-           href="business.html?type=catalogue">
-
-          <div class="category-number">10</div>
-
-          <h3>Product Catalogue</h3>
-
-          <p>
-            Display products in a clean catalogue.
-          </p>
-
-        </a>
-
-
-        <a class="category-card"
-           href="business.html?type=professional">
-
-          <div class="category-number">11</div>
-
-          <h3>Professional Services</h3>
-
-          <p>
-            Present professional services and expertise.
-          </p>
-
-        </a>
-
-
-        <a class="category-card"
-           href="business.html?type=custom">
-
-          <div class="category-number">12</div>
-
-          <h3>Custom Website</h3>
-
-          <p>
-            A website built around your exact needs.
-          </p>
-
-        </a>
-
-      </div>
-
-    </section>
+    <p>
+      Choose your business type and see the website packages
+      available for it.
+    </p>
 
   </div>
 
-</div>
+
+  <div class="categories">
+
+    <a class="category" href="business.html?type=cake">
+      Cake & Pastry
+    </a>
+
+    <a class="category" href="business.html?type=hair">
+      Hair Business
+    </a>
+
+    <a class="category" href="business.html?type=lash">
+      Lash & Beauty
+    </a>
+
+    <a class="category" href="business.html?type=fashion">
+      Fashion
+    </a>
+
+    <a class="category" href="business.html?type=restaurant">
+      Restaurant
+    </a>
+
+    <a class="category" href="business.html?type=barber">
+      Barber
+    </a>
+
+    <a class="category" href="business.html?type=makeup">
+      Makeup Artist
+    </a>
+
+    <a class="category" href="business.html?type=photography">
+      Photography
+    </a>
+
+    <a class="category" href="business.html?type=events">
+      Event Business
+    </a>
+
+    <a class="category" href="business.html?type=catalogue">
+      Product Catalogue
+    </a>
+
+    <a class="category" href="business.html?type=professional">
+      Professional Services
+    </a>
+
+    <a class="category" href="business.html?type=custom">
+      Custom Website
+    </a>
+
+  </div>
+
+</section>
 
 
 <!-- WHY WEBORA -->
 
-<section id="why">
+<section class="section" id="why">
 
   <div class="section-heading">
 
-    <span>
-      Why WEBORA
-    </span>
+    <small>Why WEBORA</small>
 
     <h2>
-      Built to make your business look serious online.
+      More than just putting your business online.
     </h2>
+
+    <p>
+      Your website should give customers a clear reason to
+      trust your business and take the next step.
+    </p>
 
   </div>
 
@@ -1058,11 +1060,13 @@
 
     <div class="why-card">
 
+      <span class="why-number">01</span>
+
       <h3>Built for your business</h3>
 
       <p>
-        Your website is structured around what your
-        business actually does instead of using a generic template.
+        Your website is designed around what your business
+        actually sells or provides.
       </p>
 
     </div>
@@ -1070,23 +1074,27 @@
 
     <div class="why-card">
 
-      <h3>Mobile-first</h3>
+      <span class="why-number">02</span>
+
+      <h3>Designed for customers</h3>
 
       <p>
-        Your customers can browse your website comfortably
-        on phones, tablets and computers.
+        Information, products and services are arranged so
+        customers can easily understand what you offer.
       </p>
 
     </div>
 
 
     <div class="why-card">
+
+      <span class="why-number">03</span>
 
       <h3>Ready to grow</h3>
 
       <p>
-        Higher website packages can include ordering,
-        booking, checkout and payment functionality.
+        Higher packages can add ordering, booking,
+        payment and other advanced functionality.
       </p>
 
     </div>
@@ -1098,106 +1106,87 @@
 
 <!-- PROCESS -->
 
-<div class="process" id="process">
+<section class="process">
 
-  <div class="process-inner">
+  <div class="section">
 
-    <section>
+    <div class="section-heading">
 
-      <div class="section-heading">
+      <small>How It Works</small>
 
-        <span>
-          The Process
-        </span>
+      <h2>
+        From idea to finished website.
+      </h2>
 
-        <h2>
-          From idea to website.
-        </h2>
+      <p>
+        A straightforward process from understanding your
+        business to delivering the finished website.
+      </p>
+
+    </div>
+
+
+    <div class="process-grid">
+
+      <div class="process-card">
+
+        <span>01</span>
+
+        <h3>Choose</h3>
 
         <p>
-          A simple process designed to get your business online
-          without unnecessary complications.
+          Choose the website package that fits your business.
         </p>
 
       </div>
 
 
-      <div class="process-grid">
+      <div class="process-card">
 
-        <div class="process-card">
+        <span>02</span>
 
-          <div class="process-number">
-            01
-          </div>
+        <h3>Plan</h3>
 
-          <h3>
-            Choose
-          </h3>
-
-          <p>
-            Select the website type that fits your business.
-          </p>
-
-        </div>
-
-
-        <div class="process-card">
-
-          <div class="process-number">
-            02
-          </div>
-
-          <h3>
-            Plan
-          </h3>
-
-          <p>
-            We structure the pages and features your website needs.
-          </p>
-
-        </div>
-
-
-        <div class="process-card">
-
-          <div class="process-number">
-            03
-          </div>
-
-          <h3>
-            Build
-          </h3>
-
-          <p>
-            Your website is designed and developed around your brand.
-          </p>
-
-        </div>
-
-
-        <div class="process-card">
-
-          <div class="process-number">
-            04
-          </div>
-
-          <h3>
-            Launch
-          </h3>
-
-          <p>
-            Your finished website is prepared for your customers.
-          </p>
-
-        </div>
+        <p>
+          We organise your content, products, services and
+          website structure.
+        </p>
 
       </div>
 
-    </section>
+
+      <div class="process-card">
+
+        <span>03</span>
+
+        <h3>Build</h3>
+
+        <p>
+          Your website is designed and developed around your
+          business identity.
+        </p>
+
+      </div>
+
+
+      <div class="process-card">
+
+        <span>04</span>
+
+        <h3>Launch</h3>
+
+        <p>
+          Your completed website is prepared for customers
+          to access online.
+        </p>
+
+      </div>
+
+    </div>
 
   </div>
 
-</div>
+</section>
 
 
 <!-- CTA -->
@@ -1205,24 +1194,291 @@
 <section class="cta">
 
   <h2>
-    Your business is ready for the web.
+    Ready to give your business a better website?
   </h2>
 
   <p>
-    Let's build a website that gives your customers
-    a better way to discover what you do.
+    Choose a package and let's build something your customers
+    can actually use.
   </p>
 
-  <a href="#websites" class="cta-button">
-    Explore Website Options
+  <a href="business.html">
+    Explore Website Packages
   </a>
 
 </section>
 
 
 <footer>
-  © 2026 WEBORA by Abir. Websites built for businesses that mean business.
+
+  <strong>WEBORA by Abir</strong>
+
+  <br><br>
+
+  Websites built for businesses that mean business.
+
 </footer>
+
+
+<script>
+
+const previewData = {
+
+  cake: {
+    brand: "Sweet Crumbs",
+    small: "CAKES & PASTRIES",
+    title: "Beautiful cakes for every celebration.",
+    description: "A professional online home for your cake business where customers can discover your work and place orders.",
+    button: "ORDER NOW",
+    productHeading: "Featured Cakes",
+    bottom: "Built around your cake business.",
+    hero: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1400&q=85",
+    products: [
+      ["Celebration Cake", "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=85"],
+      ["Dessert Selection", "https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=800&q=85"],
+      ["Fresh Pastries", "https://images.unsplash.com/photo-1559622214-f8a9850965bb?auto=format&fit=crop&w=800&q=85"]
+    ]
+  },
+
+  fashion: {
+    brand: "ABIR FASHION",
+    small: "FASHION COLLECTION",
+    title: "A fashion brand customers can explore.",
+    description: "Showcase your collections, clothing, brand story and customer shopping experience.",
+    button: "VIEW COLLECTION",
+    productHeading: "Latest Collection",
+    bottom: "Built around your fashion brand.",
+    hero: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1400&q=85",
+    products: [
+      ["New Collection", "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=800&q=85"],
+      ["Fashion Style", "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=85"],
+      ["Featured Pieces", "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=800&q=85"]
+    ]
+  },
+
+  restaurant: {
+    brand: "THE TABLE",
+    small: "RESTAURANT",
+    title: "Let customers discover what is on your menu.",
+    description: "A professional restaurant website can showcase your food, menu, location and ordering experience.",
+    button: "VIEW MENU",
+    productHeading: "Popular Dishes",
+    bottom: "Built around your restaurant.",
+    hero: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1400&q=85",
+    products: [
+      ["Signature Dish", "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=85"],
+      ["Restaurant Special", "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=85"],
+      ["Fresh Food", "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=800&q=85"]
+    ]
+  },
+
+  hair: {
+    brand: "ABIR HAIR STUDIO",
+    small: "HAIR BUSINESS",
+    title: "Show your work before customers book.",
+    description: "Present hairstyles, services, transformations and booking information in one professional website.",
+    button: "BOOK NOW",
+    productHeading: "Featured Styles",
+    bottom: "Built around your hair business.",
+    hero: "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1400&q=85",
+    products: [
+      ["Hair Styling", "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=85"],
+      ["Hair Service", "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=85"],
+      ["Salon Experience", "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=85"]
+    ]
+  },
+
+  barber: {
+    brand: "THE BARBER ROOM",
+    small: "BARBERSHOP",
+    title: "Turn your cuts into a professional online portfolio.",
+    description: "Showcase your best cuts, grooming services, barbershop and booking options.",
+    button: "BOOK APPOINTMENT",
+    productHeading: "Featured Cuts",
+    bottom: "Built around your barbershop.",
+    hero: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1400&q=85",
+    products: [
+      ["Classic Cut", "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=85"],
+      ["Modern Grooming", "https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=800&q=85"],
+      ["Barber Service", "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=800&q=85"]
+    ]
+  },
+
+  makeup: {
+    brand: "ABIR BEAUTY",
+    small: "MAKEUP ARTIST",
+    title: "A beauty portfolio built to attract clients.",
+    description: "Showcase makeup looks, bridal work, transformations and your booking process.",
+    button: "BOOK A SESSION",
+    productHeading: "Makeup Looks",
+    bottom: "Built around your beauty business.",
+    hero: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1400&q=85",
+    products: [
+      ["Bridal Makeup", "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=85"],
+      ["Beauty Look", "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=800&q=85"],
+      ["Makeup Session", "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=85"]
+    ]
+  },
+
+  photography: {
+    brand: "ABIR VISUALS",
+    small: "PHOTOGRAPHY",
+    title: "Let your photography speak for itself.",
+    description: "Create a professional portfolio that presents your photography work and makes it easier for clients to contact you.",
+    button: "VIEW PORTFOLIO",
+    productHeading: "Featured Work",
+    bottom: "Built around your photography business.",
+    hero: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1400&q=85",
+    products: [
+      ["Portrait Work", "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=800&q=85"],
+      ["Photography", "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=85"],
+      ["Creative Work", "https://images.unsplash.com/photo-1452780212940-6f5c0d14d848?auto=format&fit=crop&w=800&q=85"]
+    ]
+  },
+
+  events: {
+    brand: "ABIR EVENTS",
+    small: "EVENT BUSINESS",
+    title: "Show clients what their event could look like.",
+    description: "Present your event decoration, planning, setups and previous work in a professional website.",
+    button: "VIEW EVENTS",
+    productHeading: "Event Highlights",
+    bottom: "Built around your event business.",
+    hero: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1400&q=85",
+    products: [
+      ["Event Setup", "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800&q=85"],
+      ["Wedding Setup", "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=85"],
+      ["Celebration", "https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=800&q=85"]
+    ]
+  }
+
+};
+
+
+const miniBrand = document.getElementById("miniBrand");
+const miniTitle = document.getElementById("miniTitle");
+const miniDescription = document.getElementById("miniDescription");
+const miniHero = document.getElementById("miniHero");
+const miniProducts = document.getElementById("miniProducts");
+
+const siteBrand = document.getElementById("siteBrand");
+const siteButton = document.getElementById("siteButton");
+const previewHero = document.getElementById("previewHero");
+const previewSmall = document.getElementById("previewSmall");
+const previewTitle = document.getElementById("previewTitle");
+const previewDescription = document.getElementById("previewDescription");
+const previewCTA = document.getElementById("previewCTA");
+const productHeading = document.getElementById("productHeading");
+const previewProducts = document.getElementById("previewProducts");
+const bottomTitle = document.getElementById("bottomTitle");
+
+
+function loadPreview(type) {
+
+  const data = previewData[type];
+
+  if (!data) return;
+
+
+  miniBrand.textContent = data.brand;
+  miniTitle.textContent = data.title;
+  miniDescription.textContent = data.description;
+
+  miniHero.style.backgroundImage =
+    `url("${data.hero}")`;
+
+  miniProducts.innerHTML = "";
+
+  data.products.forEach(product => {
+
+    const img = document.createElement("div");
+
+    img.className = "mini-product";
+
+    img.innerHTML = `
+      <img
+        src="${product[1]}"
+        alt="${product[0]}"
+      >
+    `;
+
+    miniProducts.appendChild(img);
+
+  });
+
+
+  siteBrand.textContent = data.brand;
+
+  siteButton.textContent = data.button;
+
+  previewHero.style.backgroundImage =
+    `url("${data.hero}")`;
+
+  previewSmall.textContent = data.small;
+
+  previewTitle.textContent = data.title;
+
+  previewDescription.textContent = data.description;
+
+  previewCTA.textContent = data.button;
+
+  productHeading.textContent = data.productHeading;
+
+  bottomTitle.textContent = data.bottom;
+
+  previewProducts.innerHTML = "";
+
+
+  data.products.forEach(product => {
+
+    const card = document.createElement("div");
+
+    card.className = "preview-card";
+
+    card.innerHTML = `
+      <img
+        src="${product[1]}"
+        alt="${product[0]}"
+      >
+
+      <div class="preview-card-content">
+        <h5>${product[0]}</h5>
+        <p>
+          Example of how your products or services
+          can appear on your website.
+        </p>
+      </div>
+    `;
+
+    previewProducts.appendChild(card);
+
+  });
+
+}
+
+
+document.querySelectorAll(".preview-button")
+  .forEach(button => {
+
+    button.addEventListener("click", () => {
+
+      document.querySelectorAll(".preview-button")
+        .forEach(item => {
+          item.classList.remove("active");
+        });
+
+      button.classList.add("active");
+
+      loadPreview(button.dataset.type);
+
+    });
+
+  });
+
+
+loadPreview("cake");
+
+</script>
 
 </body>
 </html>
