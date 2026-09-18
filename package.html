@@ -1,20 +1,21 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Website Package | WEBORA by Abir</title>
+  <title>WEBORA by Abir | Website Package</title>
 
   <style>
     :root {
       --red: #b30000;
       --dark-red: #7f0000;
-      --white: #ffffff;
-      --off-white: #f8f8f8;
       --black: #111111;
+      --white: #ffffff;
+      --off-white: #f7f7f7;
       --grey: #666666;
-      --light-grey: #eeeeee;
+      --light-grey: #e8e8e8;
+      --border: #dddddd;
     }
 
     * {
@@ -25,8 +26,8 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: var(--white);
       color: var(--black);
+      background: var(--white);
       line-height: 1.6;
     }
 
@@ -35,23 +36,17 @@
       color: inherit;
     }
 
-    /* HEADER */
-
-    header {
+    .header {
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 100;
+      height: 76px;
       background: var(--white);
       border-bottom: 1px solid var(--light-grey);
-    }
-
-    .nav {
-      max-width: 1180px;
-      margin: auto;
-      padding: 16px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding: 0 6%;
     }
 
     .logo {
@@ -61,16 +56,15 @@
     }
 
     .logo-mark {
-      width: 42px;
-      height: 42px;
+      width: 40px;
+      height: 40px;
       background: var(--red);
       color: var(--white);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 24px;
+      font-size: 23px;
       font-weight: 900;
-      border-radius: 7px;
     }
 
     .logo-text {
@@ -80,1177 +74,892 @@
     }
 
     .logo-name {
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 900;
       letter-spacing: 1px;
     }
 
     .logo-by {
       font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
       color: var(--red);
-      font-weight: 800;
-      letter-spacing: 2px;
-      margin-top: 4px;
+      margin-top: 5px;
     }
 
     .back-link {
-      color: var(--red);
-      font-weight: 700;
+      color: var(--black);
       font-size: 14px;
+      font-weight: 700;
     }
 
-    /* HERO */
+    .back-link:hover {
+      color: var(--red);
+    }
 
-    .package-hero {
+    .hero {
       background: var(--black);
       color: var(--white);
-      padding: 80px 24px;
+      padding: 80px 6%;
     }
 
     .hero-inner {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
     }
 
     .eyebrow {
-      color: #ff4b4b;
-      text-transform: uppercase;
+      color: #e00000;
+      font-size: 12px;
+      font-weight: 800;
       letter-spacing: 2px;
-      font-size: 12px;
-      font-weight: 800;
-      margin-bottom: 14px;
-    }
-
-    .package-hero h1 {
-      font-size: clamp(38px, 6vw, 68px);
-      line-height: 1.05;
-      margin-bottom: 20px;
-      max-width: 800px;
-    }
-
-    .package-hero p {
-      max-width: 720px;
-      color: #cccccc;
-      font-size: 18px;
-    }
-
-    /* VISUAL SHOWCASE */
-
-    .showcase-section {
-      padding: 70px 24px 30px;
-      background: var(--white);
-    }
-
-    .showcase-container {
-      max-width: 1050px;
-      margin: auto;
-    }
-
-    .showcase-heading {
-      margin-bottom: 25px;
-    }
-
-    .showcase-heading span {
-      color: var(--red);
       text-transform: uppercase;
-      letter-spacing: 1.5px;
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .showcase-heading h2 {
-      font-size: 32px;
-      margin-top: 6px;
-    }
-
-    .showcase-heading p {
-      color: var(--grey);
-      margin-top: 6px;
-    }
-
-    .image-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
-      grid-template-rows: 230px 230px;
-      gap: 12px;
-    }
-
-    .image-card {
-      overflow: hidden;
-      border-radius: 10px;
-      background: var(--light-grey);
-    }
-
-    .image-card:first-child {
-      grid-row: span 2;
-    }
-
-    .image-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.4s ease;
-    }
-
-    .image-card:hover img {
-      transform: scale(1.04);
-    }
-
-    /* PACKAGE */
-
-    .package-section {
-      padding: 50px 24px 70px;
-      background: var(--off-white);
-    }
-
-    .package-container {
-      max-width: 1050px;
-      margin: auto;
-    }
-
-    .package-box {
-      background: var(--white);
-      border: 1px solid var(--light-grey);
-      border-top: 6px solid var(--red);
-      padding: 40px;
-      border-radius: 12px;
-    }
-
-    .package-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 30px;
-      margin-bottom: 35px;
-    }
-
-    .package-label {
-      color: var(--red);
-      text-transform: uppercase;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-      margin-bottom: 8px;
-    }
-
-    .package-top h2 {
-      font-size: 36px;
-      margin-bottom: 8px;
-    }
-
-    .package-description {
-      color: var(--grey);
-      max-width: 600px;
-    }
-
-    .price {
-      white-space: nowrap;
-      color: var(--red);
-      font-size: 30px;
-      font-weight: 900;
-    }
-
-    .features-title {
-      font-size: 21px;
       margin-bottom: 18px;
     }
 
-    .features {
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 68px);
+      line-height: 1.05;
+      max-width: 850px;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      color: #d2d2d2;
+      font-size: 17px;
+    }
+
+    .showcase {
+      padding: 80px 6%;
+      background: var(--off-white);
+    }
+
+    .section-heading {
+      max-width: 1100px;
+      margin: 0 auto 38px;
+    }
+
+    .section-heading .small-title {
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+
+    .section-heading p {
+      color: var(--grey);
+      max-width: 680px;
+    }
+
+    .mockup-grid {
+      max-width: 1100px;
+      margin: auto;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      margin-bottom: 40px;
+      gap: 24px;
     }
 
-    .feature {
-      padding: 16px;
-      background: var(--off-white);
-      border: 1px solid var(--light-grey);
-      border-radius: 8px;
-      font-size: 15px;
+    .mockup-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      overflow: hidden;
     }
 
-    .feature::before {
-      content: "✓";
-      color: var(--red);
-      font-weight: 900;
-      margin-right: 9px;
-    }
-
-    .not-included {
-      margin-bottom: 40px;
-    }
-
-    .not-included h3 {
-      font-size: 19px;
-      margin-bottom: 12px;
-    }
-
-    .not-included p {
-      color: var(--grey);
-    }
-
-    .cta-area {
-      border-top: 1px solid var(--light-grey);
-      padding-top: 30px;
+    .mockup-label {
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--border);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
+      gap: 15px;
     }
 
-    .cta-text strong {
+    .mockup-label strong {
+      font-size: 15px;
+    }
+
+    .mockup-label span {
+      font-size: 11px;
+      color: var(--red);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .mockup {
+      min-height: 250px;
+      padding: 22px;
+      background: #f2f2f2;
+    }
+
+    .site-window {
+      height: 205px;
+      background: var(--white);
+      border: 1px solid #d8d8d8;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .site-top {
+      height: 28px;
+      background: var(--black);
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      gap: 5px;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #aaa;
+    }
+
+    .site-content {
+      padding: 16px;
+      height: calc(100% - 28px);
+    }
+
+    .mock-title {
+      font-size: 18px;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .mock-subtitle {
+      font-size: 8px;
+      color: #777;
+      margin-bottom: 13px;
+    }
+
+    .red-line {
+      width: 42px;
+      height: 4px;
+      background: var(--red);
+      margin-bottom: 12px;
+    }
+
+    .mock-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .mock-item {
+      background: #eeeeee;
+      min-height: 65px;
+      padding: 8px;
+      position: relative;
+    }
+
+    .mock-item::before {
+      content: "";
       display: block;
-      margin-bottom: 4px;
+      width: 100%;
+      height: 32px;
+      background: #d5d5d5;
+      margin-bottom: 6px;
     }
 
-    .cta-text span {
-      color: var(--grey);
-      font-size: 14px;
+    .mock-item span {
+      display: block;
+      width: 70%;
+      height: 4px;
+      background: #bbb;
+    }
+
+    .mock-item span::after {
+      content: "";
+      display: block;
+      width: 45%;
+      height: 3px;
+      background: #d0d0d0;
+      margin-top: 5px;
+    }
+
+    .cake .mock-item::before {
+      background:
+        radial-gradient(circle at 50% 35%, #fff 0 12%, transparent 13%),
+        linear-gradient(#d7d7d7, #eeeeee);
+    }
+
+    .hair .mock-item::before {
+      background:
+        radial-gradient(ellipse at 50% 35%, #333 0 25%, transparent 26%),
+        linear-gradient(#ddd, #eee);
+    }
+
+    .lash .mock-item::before {
+      background:
+        radial-gradient(ellipse at 50% 50%, #222 0 10%, transparent 11%),
+        linear-gradient(#ddd, #eee);
+    }
+
+    .fashion .mock-item::before {
+      background:
+        linear-gradient(135deg, transparent 40%, #bbb 41% 60%, transparent 61%),
+        #eee;
+    }
+
+    .restaurant .mock-item::before {
+      background:
+        radial-gradient(circle at center, #bbb 0 28%, transparent 29%),
+        #eee;
+    }
+
+    .barber .mock-item::before {
+      background:
+        linear-gradient(90deg, #bbb 0 25%, #eee 25% 75%, #bbb 75%);
+    }
+
+    .makeup .mock-item::before {
+      background:
+        radial-gradient(circle at 30% 40%, #bbb 0 10%, transparent 11%),
+        radial-gradient(circle at 65% 60%, #aaa 0 13%, transparent 14%),
+        #eee;
+    }
+
+    .photography .mock-item::before {
+      background:
+        linear-gradient(135deg, #bbb 0 35%, #eee 36% 65%, #aaa 66%);
+    }
+
+    .events .mock-item::before {
+      background:
+        radial-gradient(circle at 20% 50%, #aaa 0 12%, transparent 13%),
+        radial-gradient(circle at 50% 50%, #bbb 0 12%, transparent 13%),
+        radial-gradient(circle at 80% 50%, #aaa 0 12%, transparent 13%),
+        #eee;
+    }
+
+    .catalogue .mock-item::before {
+      background:
+        linear-gradient(90deg, #bbb 0 30%, #eee 30% 70%, #bbb 70%);
+    }
+
+    .professional .mock-item::before {
+      background:
+        linear-gradient(#bbb 0 20%, #eee 20% 100%);
+    }
+
+    .custom .mock-item::before {
+      background:
+        linear-gradient(45deg, #bbb 0 10%, transparent 10% 90%, #bbb 90%),
+        #eee;
+    }
+
+    .package-section {
+      padding: 85px 6%;
+      background: var(--white);
+    }
+
+    .package-container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .package-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 35px;
+    }
+
+    .package-card {
+      border: 1px solid var(--border);
+      padding: 28px 22px;
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .package-card.featured {
+      border: 2px solid var(--red);
+      position: relative;
+    }
+
+    .featured-tag {
+      position: absolute;
+      top: -12px;
+      right: 15px;
+      background: var(--red);
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 800;
+      padding: 5px 9px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .package-card h3 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .package-type {
+      color: var(--red);
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .price {
+      font-size: 28px;
+      font-weight: 900;
+      margin: 20px 0;
+    }
+
+    .features {
+      list-style: none;
+      margin-bottom: 25px;
+      flex: 1;
+    }
+
+    .features li {
+      font-size: 13px;
+      padding: 7px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .features li::before {
+      content: "✓";
+      color: var(--red);
+      font-weight: 900;
+      margin-right: 8px;
+    }
+
+    .package-button {
+      display: block;
+      width: 100%;
+      background: var(--black);
+      color: var(--white);
+      text-align: center;
+      padding: 13px;
+      font-size: 13px;
+      font-weight: 800;
+      border: none;
+      cursor: pointer;
+    }
+
+    .package-card.featured .package-button {
+      background: var(--red);
+    }
+
+    .package-button:hover {
+      background: var(--dark-red);
+    }
+
+    .important-note {
+      margin-top: 30px;
+      padding: 20px;
+      background: #fff5f5;
+      border-left: 4px solid var(--red);
+      font-size: 13px;
+      color: #444;
+    }
+
+    .cta {
+      background: var(--red);
+      color: var(--white);
+      padding: 70px 6%;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: clamp(30px, 4vw, 48px);
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      max-width: 600px;
+      margin: 0 auto 25px;
+      color: #ffe6e6;
     }
 
     .cta-button {
       display: inline-block;
-      background: var(--red);
-      color: var(--white);
-      padding: 15px 25px;
-      border-radius: 6px;
-      font-weight: 800;
-      transition: 0.2s ease;
-    }
-
-    .cta-button:hover {
-      background: var(--dark-red);
-    }
-
-    /* OTHER PACKAGES */
-
-    .other-section {
-      padding: 70px 24px;
       background: var(--white);
-    }
-
-    .other-container {
-      max-width: 1050px;
-      margin: auto;
-    }
-
-    .section-heading {
-      margin-bottom: 30px;
-    }
-
-    .section-heading span {
-      color: var(--red);
-      text-transform: uppercase;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-    }
-
-    .section-heading h2 {
-      font-size: 34px;
-      margin-top: 7px;
-    }
-
-    .other-packages {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 15px;
-    }
-
-    .other-card {
-      border: 1px solid var(--light-grey);
-      padding: 25px;
-      border-radius: 10px;
-      transition: 0.2s ease;
-    }
-
-    .other-card:hover {
-      border-color: var(--red);
-      transform: translateY(-3px);
-    }
-
-    .other-card h3 {
-      margin-bottom: 7px;
-    }
-
-    .other-card p {
-      color: var(--grey);
+      color: var(--black);
+      padding: 14px 26px;
       font-size: 14px;
-      margin-bottom: 18px;
-    }
-
-    .other-card a {
-      color: var(--red);
       font-weight: 800;
-      font-size: 14px;
     }
-
-    /* FOOTER */
 
     footer {
       background: var(--black);
-      color: var(--white);
-      padding: 35px 24px;
+      color: #aaa;
       text-align: center;
+      padding: 25px 6%;
+      font-size: 12px;
     }
 
-    footer p {
-      color: #aaaaaa;
-      font-size: 13px;
+    @media (max-width: 900px) {
+      .package-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
-    /* MOBILE */
-
-    @media (max-width: 760px) {
-
-      .nav {
-        padding: 14px 18px;
+    @media (max-width: 700px) {
+      .header {
+        padding: 0 5%;
       }
 
-      .back-link {
-        font-size: 12px;
+      .hero,
+      .showcase,
+      .package-section {
+        padding-left: 5%;
+        padding-right: 5%;
       }
 
-      .package-hero {
-        padding: 60px 20px;
-      }
-
-      .package-hero p {
-        font-size: 16px;
-      }
-
-      .showcase-section,
-      .package-section,
-      .other-section {
-        padding-left: 18px;
-        padding-right: 18px;
-      }
-
-      .image-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 220px 160px;
-      }
-
-      .image-card:first-child {
-        grid-column: span 2;
-        grid-row: auto;
-      }
-
-      .package-box {
-        padding: 25px;
-      }
-
-      .package-top {
-        flex-direction: column;
-        gap: 15px;
-      }
-
-      .package-top h2 {
-        font-size: 30px;
-      }
-
-      .price {
-        font-size: 27px;
-      }
-
-      .features {
+      .mockup-grid {
         grid-template-columns: 1fr;
       }
 
-      .cta-area {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .cta-button {
-        width: 100%;
-        text-align: center;
-      }
-
-      .other-packages {
+      .package-grid {
         grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 60px;
+        padding-bottom: 60px;
       }
     }
   </style>
+
 </head>
 
 <body>
 
-<header>
-
-  <nav class="nav">
-
+  <header class="header">
     <a href="index.html" class="logo">
-
-      <div class="logo-mark">
-        W
-      </div>
-
+      <div class="logo-mark">W</div>
       <div class="logo-text">
-
-        <span class="logo-name">
-          WEBORA
-        </span>
-
-        <span class="logo-by">
-          BY ABIR
-        </span>
-
+        <span class="logo-name">WEBORA</span>
+        <span class="logo-by">BY ABIR</span>
       </div>
-
     </a>
 
-    <a href="javascript:history.back()" class="back-link">
-      ← Back
-    </a>
+```
+<a href="javascript:history.back()" class="back-link">← Back</a>
+```
 
-  </nav>
+  </header>
 
-</header>
-
-
-<section class="package-hero">
-
-  <div class="hero-inner">
-
-    <div class="eyebrow" id="heroEyebrow">
-      Website Package
-    </div>
-
-    <h1 id="heroTitle">
-      Professional Website
-    </h1>
-
-    <p id="heroDescription">
-      A professionally designed website created around your business and your customers.
-    </p>
-
-  </div>
-
-</section>
-
-
-<!-- VISUAL SHOWCASE -->
-
-<section class="showcase-section">
-
-  <div class="showcase-container">
-
-    <div class="showcase-heading">
-
-      <span>
-        Website Inspiration
-      </span>
-
-      <h2 id="showcaseTitle">
-        See what your website can showcase
-      </h2>
-
-      <p>
-        Your website can be designed around the products, services and visual identity of your business.
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Website Package</div>
+      <h1 id="heroTitle">Website Package</h1>
+      <p id="heroDescription">
+        A professional website designed around your business and your customers.
       </p>
+    </div>
+  </section>
 
+  <section class="showcase">
+    <div class="section-heading">
+      <div class="small-title">Website Inspiration</div>
+      <h2>What your website can look like.</h2>
+      <p id="showcaseDescription">
+        Every WEBORA website is designed around the type of business it represents.
+      </p>
     </div>
 
+```
+<div class="mockup-grid" id="mockupGrid"></div>
+```
 
-    <div class="image-grid">
+  </section>
 
-      <div class="image-card">
-        <img id="imageOne" src="" alt="Business website showcase">
-      </div>
+  <section class="package-section">
+    <div class="package-container">
 
-      <div class="image-card">
-        <img id="imageTwo" src="" alt="Business website showcase">
-      </div>
-
-      <div class="image-card">
-        <img id="imageThree" src="" alt="Business website showcase">
-      </div>
-
-      <div class="image-card">
-        <img id="imageFour" src="" alt="Business website showcase">
-      </div>
-
-      <div class="image-card">
-        <img id="imageFive" src="" alt="Business website showcase">
-      </div>
-
-    </div>
-
+```
+  <div class="section-heading" style="padding:0;">
+    <div class="small-title">Choose Your Package</div>
+    <h2 id="packageHeading">Website Packages</h2>
+    <p>
+      Choose the level of website functionality your business needs.
+      Higher packages include more pages, features and customer interaction.
+    </p>
   </div>
 
-</section>
+  <div class="package-grid" id="packageGrid"></div>
 
+  <div class="important-note">
+    <strong>Important:</strong>
+    Every package can be adjusted to suit your business. Custom requirements,
+    additional pages and advanced functionality may affect the final price.
+  </div>
 
-<!-- PACKAGE DETAILS -->
+</div>
+```
 
-<section class="package-section">
+  </section>
 
-  <div class="package-container">
+  <section class="cta">
+    <h2>Ready to build your website?</h2>
+    <p>
+      Tell us what your business needs and we will help you choose the right
+      website package.
+    </p>
+    <a href="mailto:hello@weborabyabir.com" class="cta-button">
+      Get Started
+    </a>
+  </section>
 
-    <div class="package-box">
+  <footer>
+    © 2026 WEBORA by Abir. Websites built for businesses that mean business.
+  </footer>
 
-      <div class="package-top">
+  <script>
+    const businesses = {
+      cake: {
+        name: "Cake & Pastry",
+        description: "Beautiful websites for cake makers, bakers, pastry businesses and dessert brands.",
+        showcase: "cakes, pastries, menus, custom orders and delivery options.",
+        className: "cake",
+        mockups: [
+          "Cake Showcase",
+          "Product Menu",
+          "Custom Cake Orders",
+          "Bakery Information",
+          "Customer Orders"
+        ]
+      },
 
-        <div>
+      hair: {
+        name: "Hair Business",
+        description: "Professional websites for hairstylists, hair vendors, salons and hair brands.",
+        showcase: "hairstyles, services, hair products, appointments and customer enquiries.",
+        className: "hair",
+        mockups: [
+          "Hair Gallery",
+          "Services",
+          "Hair Products",
+          "Appointment Page",
+          "Business Profile"
+        ]
+      },
 
-          <div class="package-label" id="packageLabel">
-            Starter Package
+      lash: {
+        name: "Lash & Beauty",
+        description: "Elegant websites for lash technicians, beauty studios and beauty professionals.",
+        showcase: "lash styles, beauty services, pricing, appointments and customer information.",
+        className: "lash",
+        mockups: [
+          "Lash Gallery",
+          "Beauty Services",
+          "Price List",
+          "Booking Page",
+          "Beauty Profile"
+        ]
+      },
+
+      fashion: {
+        name: "Fashion",
+        description: "Modern websites for fashion designers, clothing brands, boutiques and vendors.",
+        showcase: "fashion collections, products, sizes, prices, orders and brand information.",
+        className: "fashion",
+        mockups: [
+          "Fashion Collection",
+          "Product Catalogue",
+          "New Arrivals",
+          "Order Page",
+          "Brand Story"
+        ]
+      },
+
+      restaurant: {
+        name: "Restaurant",
+        description: "Websites for restaurants, food vendors, cafés and food businesses.",
+        showcase: "menus, food items, prices, ordering options, locations and contact information.",
+        className: "restaurant",
+        mockups: [
+          "Food Menu",
+          "Popular Meals",
+          "Online Ordering",
+          "Restaurant Profile",
+          "Customer Checkout"
+        ]
+      },
+
+      barber: {
+        name: "Barber",
+        description: "Clean and professional websites for barbers, barber shops and grooming businesses.",
+        showcase: "haircuts, grooming services, prices, barber profiles and bookings.",
+        className: "barber",
+        mockups: [
+          "Haircut Gallery",
+          "Services",
+          "Price List",
+          "Booking Page",
+          "Barber Profile"
+        ]
+      },
+
+      makeup: {
+        name: "Makeup Artist",
+        description: "Stylish websites for makeup artists, beauty professionals and bridal makeup businesses.",
+        showcase: "makeup looks, service packages, portfolios, appointments and client information.",
+        className: "makeup",
+        mockups: [
+          "Makeup Portfolio",
+          "Service Packages",
+          "Bridal Looks",
+          "Booking Page",
+          "Artist Profile"
+        ]
+      },
+
+      photography: {
+        name: "Photography",
+        description: "Portfolio-focused websites for photographers and creative visual professionals.",
+        showcase: "photography portfolios, packages, galleries, bookings and client enquiries.",
+        className: "photography",
+        mockups: [
+          "Photography Portfolio",
+          "Gallery",
+          "Packages",
+          "Booking Page",
+          "Photographer Profile"
+        ]
+      },
+
+      events: {
+        name: "Event Business",
+        description: "Professional websites for event planners, decorators and event service providers.",
+        showcase: "past events, services, packages, galleries, enquiries and bookings.",
+        className: "events",
+        mockups: [
+          "Event Portfolio",
+          "Services",
+          "Event Packages",
+          "Booking Form",
+          "Business Profile"
+        ]
+      },
+
+      catalogue: {
+        name: "Product Catalogue",
+        description: "Product-focused websites for businesses that need a professional online catalogue.",
+        showcase: "products, categories, prices, descriptions and customer ordering options.",
+        className: "catalogue",
+        mockups: [
+          "Product Catalogue",
+          "Product Categories",
+          "Product Details",
+          "Order Page",
+          "Customer Summary"
+        ]
+      },
+
+      professional: {
+        name: "Professional Services",
+        description: "Professional websites for consultants, agencies, service providers and personal brands.",
+        showcase: "services, company information, professional profiles, enquiries and bookings.",
+        className: "professional",
+        mockups: [
+          "Professional Profile",
+          "Services",
+          "About Business",
+          "Contact Form",
+          "Booking Page"
+        ]
+      },
+
+      custom: {
+        name: "Custom Website",
+        description: "A completely tailored website for businesses with specific functionality or unique requirements.",
+        showcase: "custom layouts, unique features, specialised pages and advanced business functions.",
+        className: "custom",
+        mockups: [
+          "Custom Homepage",
+          "Custom Feature",
+          "Business Dashboard",
+          "Customer Area",
+          "Advanced Function"
+        ]
+      }
+    };
+
+    const plans = {
+      one: {
+        name: "Starter",
+        label: "1 Page Website",
+        price: "₦80,000",
+        features: [
+          "Business introduction",
+          "About the business",
+          "Products or services showcase",
+          "Basic business information",
+          "Mobile-friendly design"
+        ]
+      },
+
+      two: {
+        name: "Standard",
+        label: "2 Page Website",
+        price: "₦120,000",
+        features: [
+          "Everything in Starter",
+          "Dedicated product or service page",
+          "Product categories",
+          "Product photos",
+          "Prices and descriptions",
+          "Professional navigation"
+        ]
+      },
+
+      three: {
+        name: "Business",
+        label: "3 Page Website",
+        price: "₦180,000",
+        features: [
+          "Everything in Standard",
+          "Dedicated ordering or booking page",
+          "Customer information form",
+          "Order or booking selection",
+          "Delivery or appointment options",
+          "Order summary"
+        ]
+      },
+
+      premium: {
+        name: "Premium",
+        label: "Advanced Website",
+        price: "₦250,000+",
+        features: [
+          "Everything in Business",
+          "Advanced ordering or booking system",
+          "Shopping cart where applicable",
+          "Online checkout",
+          "Payment gateway integration",
+          "Payment confirmation",
+          "WhatsApp integration",
+          "Social media integration"
+        ]
+      }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+
+    const businessType = params.get("type") || "cake";
+    const planType = params.get("plan") || "one";
+
+    const business = businesses[businessType] || businesses.cake;
+    const selectedPlan = plans[planType] || plans.one;
+
+    document.title = `${selectedPlan.name} ${business.name} Website | WEBORA by Abir`;
+
+    document.getElementById("heroTitle").textContent =
+      `${selectedPlan.name} for ${business.name}`;
+
+    document.getElementById("heroDescription").textContent =
+      business.description;
+
+    document.getElementById("showcaseDescription").textContent =
+      `A ${business.name} website can professionally showcase ${business.showcase}`;
+
+    document.getElementById("packageHeading").textContent =
+      `${business.name} Website Packages`;
+
+    function createMockup(title, index) {
+      return `
+        <div class="mockup-card">
+          <div class="mockup-label">
+            <strong>${title}</strong>
+            <span>${business.name}</span>
           </div>
 
-          <h2 id="packageName">
-            1 Page Website
-          </h2>
+          <div class="mockup ${business.className}">
+            <div class="site-window">
+              <div class="site-top">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
 
-          <p class="package-description" id="packageDescription">
-            A clean and professional website for your business.
-          </p>
+              <div class="site-content">
+                <div class="red-line"></div>
 
+                <div class="mock-title">
+                  ${business.name}
+                </div>
+
+                <div class="mock-subtitle">
+                  Professional online presence by WEBORA
+                </div>
+
+                <div class="mock-grid">
+                  <div class="mock-item">
+                    <span></span>
+                  </div>
+
+                  <div class="mock-item">
+                    <span></span>
+                  </div>
+
+                  <div class="mock-item">
+                    <span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div class="price" id="packagePrice">
-          ₦80,000
-        </div>
-
-      </div>
-
-
-      <h3 class="features-title">
-        What you get
-      </h3>
-
-
-      <div class="features" id="featuresList">
-      </div>
-
-
-      <div class="not-included">
-
-        <h3>
-          Important to know
-        </h3>
-
-        <p id="importantNote">
-          This package is designed for businesses that need a simple professional online presence.
-        </p>
-
-      </div>
-
-
-      <div class="cta-area">
-
-        <div class="cta-text">
-
-          <strong>
-            Ready to get started?
-          </strong>
-
-          <span>
-            Tell us about your business and let's build your website.
-          </span>
-
-        </div>
-
-        <a href="#" class="cta-button" id="startButton">
-          Get Started
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- OTHER PACKAGES -->
-
-<section class="other-section">
-
-  <div class="other-container">
-
-    <div class="section-heading">
-
-      <span>
-        Explore
-      </span>
-
-      <h2>
-        Other Website Packages
-      </h2>
-
-    </div>
-
-
-    <div class="other-packages">
-
-      <div class="other-card">
-
-        <h3>
-          1 Page Website
-        </h3>
-
-        <p>
-          A simple professional website for introducing your business online.
-        </p>
-
-        <a href="#" id="onePageLink">
-          View Package →
-        </a>
-
-      </div>
-
-
-      <div class="other-card">
-
-        <h3>
-          2 Page Website
-        </h3>
-
-        <p>
-          A larger website with dedicated space for products or services.
-        </p>
-
-        <a href="#" id="twoPageLink">
-          View Package →
-        </a>
-
-      </div>
-
-
-      <div class="other-card">
-
-        <h3>
-          3 Page Website
-        </h3>
-
-        <p>
-          A more complete website with ordering or booking functionality.
-        </p>
-
-        <a href="#" id="threePageLink">
-          View Package →
-        </a>
-
-      </div>
-
-
-      <div class="other-card">
-
-        <h3>
-          Premium Website
-        </h3>
-
-        <p>
-          Advanced website functionality including checkout and payment gateway integration.
-        </p>
-
-        <a href="#" id="premiumLink">
-          View Package →
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<footer>
-
-  <p>
-    © 2026 WEBORA by Abir. Websites built for businesses that mean business.
-  </p>
-
-</footer>
-
-
-<script>
-
-  const params = new URLSearchParams(window.location.search);
-
-  const businessType = params.get("type") || "cake";
-
-  const packageType = params.get("plan") || "one";
-
-
-  /*
-    BUSINESS INFORMATION
-  */
-
-  const businesses = {
-
-    cake: {
-
-      name: "Cake & Pastry",
-
-      description:
-        "A professional website designed to showcase your cakes, pastries, menu and ordering options.",
-
-      images: [
-        "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1200&q=85",
-        "https://images.unsplash.com/photo-1588195538326-c5b1e4b9f4f6?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1519869325930-281384150729?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1603532648955-039310d9ed75?auto=format&fit=crop&w=900&q=85"
-      ]
-
-    },
-
-
-    hair: {
-
-      name: "Hair Business",
-
-      description:
-        "A professional website for hairstylists, salons and hair brands to showcase services and attract customers.",
-
-      images: [
-        "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=85",
-        "https://images.unsplash.com/photo-1560869713-da86a9ec0324?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=900&q=85"
-      ]
-
-    },
-
-
-    lash: {
-
-      name: "Lash & Beauty",
-
-      description:
-        "A polished online presence for lash artists, beauty professionals and beauty studios.",
-
-      images: [
-        "https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1200&q=85",
-        "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=85"
-      ]
-
-    },
-
-
-    fashion: {
-
-      name: "Fashion",
-
-      description:
-        "A stylish website for fashion brands, designers and clothing businesses.",
-
-      images: [
-        "https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1200&q=85",
-        "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=900&q=85"
-      ]
-
-    },
-
-
-    restaurant: {
-
-      name: "Restaurant",
-
-      description:
-        "A professional restaurant website for displaying your menu, services and customer ordering options.",
-
-      images: [
-        "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85",
-        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=85"
-      ]
-
-    },
-
-
-    barber: {
-
-      name: "Barber",
-
-      description:
-        "A clean professional website for barbers and grooming businesses to showcase services and bookings.",
-
-      images: [
-        "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1200&q=85",
-        "https://images.unsplash.com/photo-1517832207067-4db24a2ae47c?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=900&q=85"
-      ]
-
-    },
-
-
-    makeup: {
-
-      name: "Makeup Artist",
-
-      description:
-        "A portfolio-focused website for makeup artists to showcase their work and attract clients.",
-
-      images: [
-        "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=85",
-        "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=900&q=85"
-      ]
-
-    },
-
-
-    photography: {
-
-      name: "Photography",
-
-      description:
-        "A visual portfolio website for photographers to showcase their work and booking services.",
-
-      images: [
-        "https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&w=1200&q=85",
-        "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=85"
-      ]
-
-    },
-
-
-    events: {
-
-      name: "Event Business",
-
-      description:
-        "A professional website for event planners, decorators and event service providers.",
-
-      images: [
-        "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=85",
-        "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=900&q=85"
-      ]
-
-    },
-
-
-    catalogue: {
-
-      name: "Product Catalogue",
-
-      description:
-        "A product-focused website for businesses that want to showcase products, prices and categories.",
-
-      images: [
-        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=85",
-        "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1560343090-f0409e92791a?auto=format&fit=crop&w=900&q=85"
-      ]
-
-    },
-
-
-    professional: {
-
-      name: "Professional Services",
-
-      description:
-        "A professional website for consultants, agencies, coaches and service-based businesses.",
-
-      images: [
-        "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=85",
-        "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=85"
-      ]
-
-    },
-
-
-    custom: {
-
-      name: "Custom Website",
-
-      description:
-        "A fully customised website built around your exact business requirements.",
-
-      images: [
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=85",
-        "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=900&q=85",
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=85"
-      ]
-
+      `;
     }
 
-  };
+    const mockupGrid = document.getElementById("mockupGrid");
 
+    business.mockups.forEach((mockup, index) => {
+      mockupGrid.innerHTML += createMockup(mockup, index);
+    });
 
-  /*
-    PACKAGE INFORMATION
-  */
+    function createPackageCard(key, plan) {
+      const isFeatured = key === "premium";
 
-  const plans = {
+      return `
+        <div class="package-card ${isFeatured ? "featured" : ""}">
+          ${isFeatured ? '<div class="featured-tag">Most Complete</div>' : ""}
 
-    one: {
+          <span class="package-type">${plan.label}</span>
 
-      label: "Starter Package",
+          <h3>${plan.name}</h3>
 
-      name: "1 Page Website",
+          <div class="price">${plan.price}</div>
 
-      price: "₦80,000",
+          <ul class="features">
+            ${plan.features.map(feature => `<li>${feature}</li>`).join("")}
+          </ul>
 
-      description:
-        "A clean and professional one-page website for businesses that need a strong online presence without unnecessary complexity.",
-
-      features: [
-        "Professional homepage design",
-        "Business introduction",
-        "About the business",
-        "Products or services showcase",
-        "Business contact information",
-        "Mobile-friendly design",
-        "Basic website navigation",
-        "Professional typography and layout"
-      ],
-
-      note:
-        "This package focuses on presenting your business clearly and professionally. Advanced ordering, booking and payment functions are not included."
-
-    },
-
-
-    two: {
-
-      label: "Standard Package",
-
-      name: "2 Page Website",
-
-      price: "₦120,000",
-
-      description:
-        "A larger website that gives your business dedicated space for products, services or other important information.",
-
-      features: [
-        "Everything in the 1 Page package",
-        "Dedicated second page",
-        "Detailed products or services page",
-        "Product categories",
-        "Product photos",
-        "Prices and descriptions",
-        "Professional website navigation",
-        "Mobile-friendly design"
-      ],
-
-      note:
-        "This package gives your customers more information about what you offer. Ordering, booking and payment systems are not included."
-
-    },
-
-
-    three: {
-
-      label: "Business Package",
-
-      name: "3 Page Website",
-
-      price: "₦180,000",
-
-      description:
-        "A more complete business website with a dedicated page for customer orders, bookings or enquiries.",
-
-      features: [
-        "Everything in the 2 Page package",
-        "Dedicated ordering or booking page",
-        "Customer information form",
-        "Order or booking selection",
-        "Delivery or appointment options",
-        "Customer enquiry form",
-        "Order or booking summary",
-        "Professional mobile-friendly design"
-      ],
-
-      note:
-        "This package introduces customer interaction and booking or ordering functionality. Online payment gateway integration is reserved for the Premium package."
-
-    },
-
-
-    premium: {
-
-      label: "Premium Package",
-
-      name: "Premium Website",
-
-      price: "₦250,000+",
-
-      description:
-        "A complete business website with advanced customer interaction, checkout and payment functionality.",
-
-      features: [
-        "Everything in the 3 Page package",
-        "Advanced ordering or booking system",
-        "Shopping cart where applicable",
-        "Online checkout",
-        "Payment gateway integration",
-        "Payment confirmation",
-        "WhatsApp integration",
-        "Social media integration",
-        "Advanced business functionality",
-        "Custom features based on business needs"
-      ],
-
-      note:
-        "Premium pricing starts from ₦250,000. Final pricing depends on the business, number of products or services, payment gateway requirements and additional functionality."
-
+          <a
+            class="package-button"
+            href="package.html?type=${businessType}&plan=${key}"
+          >
+            ${key === planType ? "Selected Package" : "View Package"}
+          </a>
+        </div>
+      `;
     }
 
-  };
+    const packageGrid = document.getElementById("packageGrid");
 
-
-  const business =
-    businesses[businessType] || businesses.cake;
-
-  const plan =
-    plans[packageType] || plans.one;
-
-
-  /*
-    PAGE CONTENT
-  */
-
-  document.title =
-    `${plan.name} | ${business.name} | WEBORA by Abir`;
-
-
-  document.getElementById("heroEyebrow").textContent =
-    `${business.name} Website`;
-
-
-  document.getElementById("heroTitle").textContent =
-    `${plan.name} for ${business.name}`;
-
-
-  document.getElementById("heroDescription").textContent =
-    business.description;
-
-
-  document.getElementById("showcaseTitle").textContent =
-    `What a ${business.name} website can showcase`;
-
-
-  document.getElementById("packageLabel").textContent =
-    plan.label;
-
-
-  document.getElementById("packageName").textContent =
-    plan.name;
-
-
-  document.getElementById("packagePrice").textContent =
-    plan.price;
-
-
-  document.getElementById("packageDescription").textContent =
-    plan.description;
-
-
-  document.getElementById("importantNote").textContent =
-    plan.note;
-
-
-  /*
-    IMAGES
-  */
-
-  const imageIds = [
-    "imageOne",
-    "imageTwo",
-    "imageThree",
-    "imageFour",
-    "imageFive"
-  ];
-
-
-  imageIds.forEach((id, index) => {
-
-    const image =
-      document.getElementById(id);
-
-    image.src =
-      business.images[index];
-
-    image.alt =
-      `${business.name} website showcase image ${index + 1}`;
-
-  });
-
-
-  /*
-    FEATURES
-  */
-
-  const featuresList =
-    document.getElementById("featuresList");
-
-
-  plan.features.forEach(feature => {
-
-    const item =
-      document.createElement("div");
-
-    item.className =
-      "feature";
-
-    item.textContent =
-      feature;
-
-    featuresList.appendChild(item);
-
-  });
-
-
-  /*
-    PACKAGE LINKS
-  */
-
-  document.getElementById("startButton").href =
-    `contact.html?type=${businessType}&plan=${packageType}`;
-
-
-  document.getElementById("onePageLink").href =
-    `package.html?type=${businessType}&plan=one`;
-
-
-  document.getElementById("twoPageLink").href =
-    `package.html?type=${businessType}&plan=two`;
-
-
-  document.getElementById("threePageLink").href =
-    `package.html?type=${businessType}&plan=three`;
-
-
-  document.getElementById("premiumLink").href =
-    `package.html?type=${businessType}&plan=premium`;
-
-</script>
+    Object.entries(plans).forEach(([key, plan]) => {
+      packageGrid.innerHTML += createPackageCard(key, plan);
+    });
+  </script>
 
 </body>
 </html>
