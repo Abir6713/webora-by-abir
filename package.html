@@ -40,7 +40,9 @@ body{
 }
 
 button,
-select{
+select,
+input,
+textarea{
   font:inherit;
 }
 
@@ -292,6 +294,16 @@ nav a:hover{
   background:var(--red);
 }
 
+.note{
+  margin-top:20px;
+  padding:17px;
+  border-left:4px solid var(--red);
+  border-radius:8px;
+  background:#fff5f5;
+  color:#666;
+  font-size:13px;
+}
+
 .preview-section{
   margin-top:75px;
 }
@@ -376,6 +388,7 @@ nav a:hover{
 .demo-nav{
   display:flex;
   gap:20px;
+  flex-wrap:wrap;
 }
 
 .demo-nav span{
@@ -590,24 +603,6 @@ nav a:hover{
   font-size:11px;
 }
 
-.note{
-  margin-top:20px;
-  padding:17px;
-  border-left:4px solid var(--red);
-  border-radius:8px;
-  background:#fff5f5;
-  color:#666;
-  font-size:13px;
-}
-
-footer{
-  padding:30px 20px;
-  background:#111;
-  color:#999;
-  text-align:center;
-  font-size:13px;
-}
-
 @media(max-width:1000px){
   .packages{
     grid-template-columns:repeat(2,1fr);
@@ -646,11 +641,6 @@ footer{
   .demo-header{
     align-items:flex-start;
     flex-direction:column;
-  }
-
-  .demo-nav{
-    gap:12px;
-    flex-wrap:wrap;
   }
 
   .demo-hero{
@@ -701,10 +691,10 @@ footer{
 
 <div class="eyebrow">WEBORA BY ABIR</div>
 
-<h1 id="heroTitle">Website Package</h1>
+<h1 id="heroTitle">Website Packages</h1>
 
 <p id="heroText">
-  See exactly what your business website could look like at each package level.
+Choose the website package that fits your business.
 </p>
 
 </section>
@@ -741,7 +731,7 @@ footer{
 <h2 id="businessHeading">Cake & Pastry</h2>
 
 <p id="businessIntro">
-  A professional website designed to showcase cakes, pastries and custom orders.
+A professional website designed around your business.
 </p>
 
 </section>
@@ -852,7 +842,7 @@ View Website
 </section>
 
 <div class="note">
-The preview below demonstrates how the selected package can be structured for this type of business. The final website is customised to the client's branding, content, products, services and requirements.
+The preview demonstrates how the selected package can be structured for this type of business. The final website is customised to the client's branding, content, products, services and requirements.
 </div>
 
 <section class="preview-section" id="websitePreview">
@@ -861,10 +851,10 @@ The preview below demonstrates how the selected package can be structured for th
 
 <div class="eyebrow">Website Preview</div>
 
-<h2 id="previewTitle">Cake & Pastry Website</h2>
+<h2 id="previewTitle">Cake Haven Website</h2>
 
 <p id="previewDescription">
-A realistic preview of the website your customers could see.
+See how this business could look online.
 </p>
 
 </div>
@@ -875,6 +865,7 @@ A realistic preview of the website your customers could see.
 <span class="dot"></span>
 <span class="dot"></span>
 <span class="dot"></span>
+
 <div class="address-bar" id="addressBar">
 yourbusiness.com
 </div>
@@ -888,12 +879,10 @@ yourbusiness.com
 Cake Haven
 </div>
 
-<div class="demo-nav">
+<div class="demo-nav" id="demoNav">
 <span>Home</span>
 <span>About</span>
 <span id="productsNav">Products</span>
-<span class="advanced nav-order">Order</span>
-<span class="advanced nav-cart">Cart</span>
 </div>
 
 </header>
@@ -911,11 +900,11 @@ Beautiful Cakes for Every Occasion
 </h2>
 
 <p id="demoHeroText">
-Freshly baked cakes, pastries and sweet treats made for your special moments.
+Freshly baked cakes and pastries made for special moments.
 </p>
 
 <span class="demo-cta" id="demoCTA">
-Explore Our Menu
+Explore Our Products
 </span>
 
 </div>
@@ -927,7 +916,7 @@ Explore Our Menu
 <h3 id="aboutTitle">About Us</h3>
 
 <p id="aboutText">
-We create beautiful, delicious products using quality ingredients and careful attention to detail.
+A professional business introduction.
 </p>
 
 <div class="info-grid">
@@ -939,7 +928,7 @@ We create beautiful, delicious products using quality ingredients and careful at
 
 <div class="info-card">
 <strong>Opening Hours</strong>
-<span id="infoHours">Mon - Sat · 8am - 7pm</span>
+<span id="infoHours">Mon - Sat</span>
 </div>
 
 <div class="info-card">
@@ -956,57 +945,36 @@ We create beautiful, delicious products using quality ingredients and careful at
 <h3 id="productsTitle">Our Products</h3>
 
 <p id="productsIntro">
-Browse some of our featured products.
+Explore what this business offers.
 </p>
 
 <div class="demo-products">
 
 <article class="demo-product">
-
 <img id="productImage1" src="" alt="">
-
 <div class="demo-product-body">
-
 <h4 id="productName1"></h4>
-
 <p id="productDescription1"></p>
-
 <div class="demo-price" id="productPrice1"></div>
-
 </div>
-
 </article>
 
 <article class="demo-product">
-
 <img id="productImage2" src="" alt="">
-
 <div class="demo-product-body">
-
 <h4 id="productName2"></h4>
-
 <p id="productDescription2"></p>
-
 <div class="demo-price" id="productPrice2"></div>
-
 </div>
-
 </article>
 
 <article class="demo-product">
-
 <img id="productImage3" src="" alt="">
-
 <div class="demo-product-body">
-
 <h4 id="productName3"></h4>
-
 <p id="productDescription3"></p>
-
 <div class="demo-price" id="productPrice3"></div>
-
 </div>
-
 </article>
 
 </div>
@@ -1018,7 +986,7 @@ Browse some of our featured products.
 <h3 id="orderTitle">Order / Booking</h3>
 
 <p id="orderIntro">
-Customers can select what they want and provide their information.
+Customers can select a product or service and provide their information.
 </p>
 
 <div class="demo-form">
@@ -1039,9 +1007,9 @@ Customers can select what they want and provide their information.
 <option>4+</option>
 </select>
 
-<textarea placeholder="Additional details"></textarea>
+<textarea id="orderDetails" placeholder="Additional details"></textarea>
 
-<button type="button">
+<button type="button" id="orderButton">
 Continue
 </button>
 
@@ -1051,10 +1019,10 @@ Continue
 
 <section class="demo-section advanced" id="cartSection">
 
-<h3>Shopping Cart</h3>
+<h3 id="cartTitle">Shopping Cart</h3>
 
-<p>
-Customers can review selected products before checkout.
+<p id="cartIntro">
+Customers can review their selected products before checkout.
 </p>
 
 <div class="premium-features">
@@ -1066,12 +1034,12 @@ Customers can review selected products before checkout.
 
 <div class="premium-card">
 <strong>Order Total</strong>
-<span>Automatic calculation of the customer's order.</span>
+<span>Automatic calculation of selected items.</span>
 </div>
 
 <div class="premium-card">
 <strong>Checkout</strong>
-<span>Customers proceed to payment.</span>
+<span>Customers continue to complete their order.</span>
 </div>
 
 </div>
@@ -1080,9 +1048,9 @@ Customers can review selected products before checkout.
 
 <section class="demo-section advanced" id="paymentSection">
 
-<h3>Online Checkout</h3>
+<h3 id="paymentTitle">Online Checkout</h3>
 
-<p>
+<p id="paymentIntro">
 The premium package can connect the website to a supported payment gateway.
 </p>
 
@@ -1115,17 +1083,17 @@ The premium package can connect the website to a supported payment gateway.
 
 <div class="premium-card">
 <strong>WhatsApp</strong>
-<span>Customers can contact the business directly.</span>
+<span id="whatsappText">Direct customer communication.</span>
 </div>
 
 <div class="premium-card">
 <strong>Social Media</strong>
-<span>Connect your website to your social platforms.</span>
+<span>Connect the website to the business's social platforms.</span>
 </div>
 
 <div class="premium-card">
 <strong>Customer Journey</strong>
-<span>Move visitors from browsing to contacting or buying.</span>
+<span>Move visitors from discovering the business to taking action.</span>
 </div>
 
 </div>
@@ -1133,9 +1101,11 @@ The premium package can connect the website to a supported payment gateway.
 </section>
 
 <footer class="demo-footer">
+
 <span id="demoFooter">
 © 2026 Cake Haven. All rights reserved.
 </span>
+
 </footer>
 
 </div>
@@ -1170,25 +1140,14 @@ contact:"0800 000 0000",
 productsTitle:"Our Cakes & Pastries",
 productsIntro:"Browse some of our popular creations.",
 heroImage:"photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1400&q=85",
+orderTitle:"Custom Cake Order",
+orderIntro:"Customers can choose a cake and provide their preferred size, flavour and celebration details.",
+orderButton:"Request Cake",
+detailsPlaceholder:"Cake size, flavour, colour, message and delivery details...",
 products:[
-{
-name:"Celebration Cake",
-description:"Custom-designed cakes for birthdays and celebrations.",
-price:"From ₦35,000",
-image:"photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85"
-},
-{
-name:"Premium Pastry",
-description:"Freshly baked pastry made for everyday indulgence.",
-price:"From ₦4,500",
-image:"photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=85"
-},
-{
-name:"Signature Cupcakes",
-description:"Beautiful cupcakes for parties and events.",
-price:"From ₦12,000",
-image:"photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=900&q=85"
-}
+{name:"Celebration Cake",description:"Custom-designed cakes for birthdays and celebrations.",price:"From ₦35,000",image:"photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85"},
+{name:"Premium Pastry",description:"Freshly baked pastry made for everyday indulgence.",price:"From ₦4,500",image:"photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=85"},
+{name:"Signature Cupcakes",description:"Beautiful cupcakes for parties and events.",price:"From ₦12,000",image:"photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=900&q=85"}
 ]
 },
 
@@ -1203,28 +1162,17 @@ about:"Crown Hair Studio provides professional hair services with attention to h
 location:"Lagos, Nigeria",
 hours:"Mon - Sat · 9am - 7pm",
 contact:"0800 111 1111",
-productsTitle:"Our Hair Services",
-productsIntro:"Explore our most requested services.",
+productsTitle:"Hair Services",
+productsIntro:"Explore our most requested hair services.",
 heroImage:"photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1400&q=85",
+orderTitle:"Book a Hair Appointment",
+orderIntro:"Customers can select a service, preferred date and provide appointment details.",
+orderButton:"Book Appointment",
+detailsPlaceholder:"Preferred date, time, hair type or other details...",
 products:[
-{
-name:"Braiding",
-description:"Neat and stylish protective braiding services.",
-price:"From ₦20,000",
-image:"photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=85"
-},
-{
-name:"Hair Treatment",
-description:"Professional treatments for healthier-looking hair.",
-price:"From ₦15,000",
-image:"photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=900&q=85"
-},
-{
-name:"Wig Styling",
-description:"Custom wig styling, revamp and finishing.",
-price:"From ₦18,000",
-image:"photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=900&q=85"
-}
+{name:"Braiding",description:"Neat and stylish protective braiding services.",price:"From ₦20,000",image:"photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=85"},
+{name:"Hair Treatment",description:"Professional treatments for healthier-looking hair.",price:"From ₦15,000",image:"photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=900&q=85"},
+{name:"Wig Styling",description:"Custom wig styling, revamp and finishing.",price:"From ₦18,000",image:"photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=900&q=85"}
 ]
 },
 
@@ -1239,28 +1187,17 @@ about:"Luxe Lash Studio specialises in beautiful lash sets and beauty treatments
 location:"Lagos, Nigeria",
 hours:"Mon - Sat · 9am - 6pm",
 contact:"0800 222 2222",
-productsTitle:"Our Beauty Services",
-productsIntro:"Choose the service that fits your look.",
+productsTitle:"Lash Services",
+productsIntro:"Choose the lash service that fits your look.",
 heroImage:"photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=1400&q=85",
+orderTitle:"Book a Lash Session",
+orderIntro:"Customers can select a lash service and provide their preferred appointment details.",
+orderButton:"Book Session",
+detailsPlaceholder:"Preferred date, time and lash style...",
 products:[
-{
-name:"Classic Lashes",
-description:"Natural-looking individual lash extensions.",
-price:"From ₦18,000",
-image:"photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=900&q=85"
-},
-{
-name:"Volume Lashes",
-description:"Fuller and more dramatic lash styling.",
-price:"From ₦25,000",
-image:"photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=85"
-},
-{
-name:"Lash Refill",
-description:"Refresh and maintain your existing lash set.",
-price:"From ₦12,000",
-image:"photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=85"
-}
+{name:"Classic Lashes",description:"Natural-looking individual lash extensions.",price:"From ₦18,000",image:"photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=900&q=85"},
+{name:"Volume Lashes",description:"Fuller and more dramatic lash styling.",price:"From ₦25,000",image:"photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=85"},
+{name:"Lash Refill",description:"Refresh and maintain your existing lash set.",price:"From ₦12,000",image:"photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=85"}
 ]
 },
 
@@ -1275,28 +1212,17 @@ about:"Abir Fashion House creates and curates fashion pieces that combine modern
 location:"Lagos, Nigeria",
 hours:"Mon - Sat · 9am - 7pm",
 contact:"0800 333 3333",
-productsTitle:"Featured Collection",
+productsTitle:"Latest Collection",
 productsIntro:"Discover selected pieces from our latest collection.",
 heroImage:"photo-1445205170230-053b83016050?auto=format&fit=crop&w=1400&q=85",
+orderTitle:"Place a Fashion Order",
+orderIntro:"Customers can select an outfit and provide size and delivery information.",
+orderButton:"Add to Order",
+detailsPlaceholder:"Size, colour, preferred delivery date and other details...",
 products:[
-{
-name:"Signature Dress",
-description:"Elegant statement dress for special occasions.",
-price:"₦65,000",
-image:"photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=900&q=85"
-},
-{
-name:"Premium Shirt",
-description:"Clean-cut shirt for a polished wardrobe.",
-price:"₦35,000",
-image:"photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=900&q=85"
-},
-{
-name:"Statement Outfit",
-description:"A complete look designed to stand out.",
-price:"₦85,000",
-image:"photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=85"
-}
+{name:"Signature Dress",description:"Elegant statement dress for special occasions.",price:"₦65,000",image:"photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=900&q=85"},
+{name:"Premium Shirt",description:"Clean-cut shirt for a polished wardrobe.",price:"₦35,000",image:"photo-1596755389378-c31d21fd1273?auto=format&fit=crop&w=900&q=85"},
+{name:"Statement Outfit",description:"A complete look designed to stand out.",price:"₦85,000",image:"photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=900&q=85"}
 ]
 },
 
@@ -1314,25 +1240,14 @@ contact:"0800 444 4444",
 productsTitle:"Featured Menu",
 productsIntro:"A taste of what we serve.",
 heroImage:"photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=85",
+orderTitle:"Order Your Meal",
+orderIntro:"Customers can select meals, choose quantities and provide delivery details.",
+orderButton:"Place Order",
+detailsPlaceholder:"Delivery address, special request or additional details...",
 products:[
-{
-name:"Jollof Rice & Chicken",
-description:"Classic Nigerian jollof rice served with grilled chicken.",
-price:"₦8,500",
-image:"photo-1604329760661-e71dc83f8f26?auto=format&fit=crop&w=900&q=85"
-},
-{
-name:"Fried Rice & Chicken",
-description:"Fried rice served with juicy seasoned chicken.",
-price:"₦9,000",
-image:"photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=85"
-},
-{
-name:"Beef Suya",
-description:"Spicy grilled beef prepared with traditional suya seasoning.",
-price:"₦7,500",
-image:"photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=85"
-}
+{name:"Jollof Rice & Chicken",description:"Classic Nigerian jollof rice served with grilled chicken.",price:"₦8,500",image:"photo-1604329760661-e71dc83f8f26?auto=format&fit=crop&w=900&q=85"},
+{name:"Fried Rice & Chicken",description:"Fried rice served with juicy seasoned chicken.",price:"₦9,000",image:"photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=85"},
+{name:"Beef Suya",description:"Spicy grilled beef prepared with traditional suya seasoning.",price:"₦7,500",image:"photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=85"}
 ]
 },
 
@@ -1347,28 +1262,17 @@ about:"The Gentleman's Cut delivers modern barbering, beard grooming and clean f
 location:"Lagos, Nigeria",
 hours:"Mon - Sat · 9am - 8pm",
 contact:"0800 555 5555",
-productsTitle:"Our Services",
+productsTitle:"Grooming Services",
 productsIntro:"Choose your preferred grooming service.",
 heroImage:"photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1400&q=85",
+orderTitle:"Book a Barber Appointment",
+orderIntro:"Customers can select a haircut or grooming service and choose an appointment time.",
+orderButton:"Book a Cut",
+detailsPlaceholder:"Preferred date, time and grooming request...",
 products:[
-{
-name:"Classic Haircut",
-description:"Clean, professional haircut tailored to your style.",
-price:"₦7,000",
-image:"photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=85"
-},
-{
-name:"Haircut & Beard",
-description:"Complete haircut and beard grooming service.",
-price:"₦12,000",
-image:"photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=900&q=85"
-},
-{
-name:"Premium Grooming",
-description:"Full grooming session with styling and finishing.",
-price:"₦18,000",
-image:"photo-1512690459411-b9245aed614b?auto=format&fit=crop&w=900&q=85"
-}
+{name:"Classic Haircut",description:"Clean, professional haircut tailored to your style.",price:"₦7,000",image:"photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=900&q=85"},
+{name:"Haircut & Beard",description:"Complete haircut and beard grooming service.",price:"₦12,000",image:"photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=900&q=85"},
+{name:"Premium Grooming",description:"Full grooming session with styling and finishing.",price:"₦18,000",image:"photo-1512690459411-b9245aed614b?auto=format&fit=crop&w=900&q=85"}
 ]
 },
 
@@ -1386,25 +1290,14 @@ contact:"0800 666 6666",
 productsTitle:"Makeup Services",
 productsIntro:"Professional looks for every occasion.",
 heroImage:"photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1400&q=85",
+orderTitle:"Book a Makeup Session",
+orderIntro:"Customers can choose a makeup package and provide their event details.",
+orderButton:"Book Makeup",
+detailsPlaceholder:"Event date, location, preferred look and other details...",
 products:[
-{
-name:"Bridal Makeup",
-description:"Elegant long-lasting makeup for your wedding day.",
-price:"From ₦80,000",
-image:"photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=85"
-},
-{
-name:"Event Glam",
-description:"A polished glam look for special occasions.",
-price:"From ₦35,000",
-image:"photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=85"
-},
-{
-name:"Photoshoot Makeup",
-description:"Camera-ready makeup for professional shoots.",
-price:"From ₦30,000",
-image:"photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=900&q=85"
-}
+{name:"Bridal Makeup",description:"Elegant long-lasting makeup for your wedding day.",price:"From ₦80,000",image:"photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=900&q=85"},
+{name:"Event Glam",description:"A polished glam look for special occasions.",price:"From ₦35,000",image:"photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=85"},
+{name:"Photoshoot Makeup",description:"Camera-ready makeup for professional shoots.",price:"From ₦30,000",image:"photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=900&q=85"}
 ]
 },
 
@@ -1419,28 +1312,17 @@ about:"Abir Visuals creates professional photographs that tell stories, preserve
 location:"Lagos, Nigeria",
 hours:"Mon - Sun · By Booking",
 contact:"0800 777 7777",
-productsTitle:"Photography Services",
+productsTitle:"Photography Packages",
 productsIntro:"Photography packages designed for different needs.",
 heroImage:"photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1400&q=85",
+orderTitle:"Book a Photography Session",
+orderIntro:"Customers can choose a photography package and provide their preferred date and shoot details.",
+orderButton:"Book a Shoot",
+detailsPlaceholder:"Shoot date, location, number of people and other details...",
 products:[
-{
-name:"Portrait Session",
-description:"Professional portrait photography for individuals and creatives.",
-price:"From ₦50,000",
-image:"photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=85"
-},
-{
-name:"Event Coverage",
-description:"Professional photography coverage for your event.",
-price:"From ₦120,000",
-image:"photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85"
-},
-{
-name:"Brand Photography",
-description:"Professional images created for your business and marketing.",
-price:"From ₦100,000",
-image:"photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=85"
-}
+{name:"Portrait Session",description:"Professional portrait photography for individuals and creatives.",price:"From ₦50,000",image:"photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=85"},
+{name:"Event Coverage",description:"Professional photography coverage for your event.",price:"From ₦120,000",image:"photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85"},
+{name:"Brand Photography",description:"Professional images created for your business and marketing.",price:"From ₦100,000",image:"photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=85"}
 ]
 },
 
@@ -1455,28 +1337,17 @@ about:"Abir Events helps clients plan, coordinate and style memorable celebratio
 location:"Lagos, Nigeria",
 hours:"Mon - Sun · By Appointment",
 contact:"0800 888 8888",
-productsTitle:"Our Event Services",
+productsTitle:"Event Services",
 productsIntro:"Everything you need to bring your event together.",
 heroImage:"photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1400&q=85",
+orderTitle:"Plan Your Event",
+orderIntro:"Customers can choose an event service and provide date, venue and event requirements.",
+orderButton:"Request Event Plan",
+detailsPlaceholder:"Event date, venue, guest count, theme and other details...",
 products:[
-{
-name:"Event Planning",
-description:"Complete planning and coordination for your event.",
-price:"From ₦150,000",
-image:"photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=85"
-},
-{
-name:"Event Decoration",
-description:"Beautiful styling and decoration tailored to your theme.",
-price:"From ₦200,000",
-image:"photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=900&q=85"
-},
-{
-name:"Event Coordination",
-description:"Professional coordination to keep your event running smoothly.",
-price:"From ₦100,000",
-image:"photo-1511578314322-379afb476865?auto=format&fit=crop&w=900&q=85"
-}
+{name:"Event Planning",description:"Complete planning and coordination for your event.",price:"From ₦150,000",image:"photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=85"},
+{name:"Event Decoration",description:"Beautiful styling and decoration tailored to your theme.",price:"From ₦200,000",image:"photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=900&q=85"},
+{name:"Event Coordination",description:"Professional coordination to keep your event running smoothly.",price:"From ₦100,000",image:"photo-1511578314322-379afb476865?auto=format&fit=crop&w=900&q=85"}
 ]
 },
 
@@ -1494,25 +1365,14 @@ contact:"0800 999 9999",
 productsTitle:"Featured Products",
 productsIntro:"Browse our featured product selection.",
 heroImage:"photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1400&q=85",
+orderTitle:"Product Enquiry",
+orderIntro:"Customers can select a product and provide their contact details for enquiries.",
+orderButton:"Send Enquiry",
+detailsPlaceholder:"Product colour, size, quantity or other enquiry...",
 products:[
-{
-name:"Premium Collection",
-description:"A curated selection from our latest product range.",
-price:"View Price",
-image:"photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=85"
-},
-{
-name:"Featured Product",
-description:"One of our most popular products.",
-price:"View Price",
-image:"photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=85"
-},
-{
-name:"New Arrival",
-description:"Explore one of our newest products.",
-price:"View Price",
-image:"photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=900&q=85"
-}
+{name:"Premium Collection",description:"A curated selection from our latest product range.",price:"View Price",image:"photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=85"},
+{name:"Featured Product",description:"One of our most popular products.",price:"View Price",image:"photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=85"},
+{name:"New Arrival",description:"Explore one of our newest products.",price:"View Price",image:"photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=900&q=85"}
 ]
 },
 
@@ -1530,25 +1390,14 @@ contact:"0800 101 0101",
 productsTitle:"Our Services",
 productsIntro:"Explore the services we provide.",
 heroImage:"photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=85",
+orderTitle:"Request a Service",
+orderIntro:"Customers can choose a service and provide information about their requirements.",
+orderButton:"Request Service",
+detailsPlaceholder:"Tell us what service you need and how we can help...",
 products:[
-{
-name:"Consultation",
-description:"A focused consultation to understand your needs.",
-price:"From ₦25,000",
-image:"photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=85"
-},
-{
-name:"Professional Service",
-description:"Tailored professional support based on your requirements.",
-price:"Request Quote",
-image:"photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=85"
-},
-{
-name:"Business Package",
-description:"A structured service package for growing businesses.",
-price:"Request Quote",
-image:"photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=85"
-}
+{name:"Consultation",description:"A focused consultation to understand your needs.",price:"From ₦25,000",image:"photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=85"},
+{name:"Professional Service",description:"Tailored professional support based on your requirements.",price:"Request Quote",image:"photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=85"},
+{name:"Business Package",description:"A structured service package for growing businesses.",price:"Request Quote",image:"photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=85"}
 ]
 },
 
@@ -1566,25 +1415,14 @@ contact:"Contact for Quote",
 productsTitle:"Your Products or Services",
 productsIntro:"Your custom website can showcase exactly what your business offers.",
 heroImage:"photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1400&q=85",
+orderTitle:"Start Your Custom Project",
+orderIntro:"Tell us what you need and we can structure the website around your business.",
+orderButton:"Start Project",
+detailsPlaceholder:"Describe the website, features and functions you need...",
 products:[
-{
-name:"Custom Feature",
-description:"A website section designed specifically for your business.",
-price:"Custom",
-image:"photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=85"
-},
-{
-name:"Custom Service",
-description:"Present your services in a structure that fits your business.",
-price:"Custom",
-image:"photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=85"
-},
-{
-name:"Custom Experience",
-description:"Build a customer journey around your specific requirements.",
-price:"Custom",
-image:"photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85"
-}
+{name:"Custom Feature",description:"A website section designed specifically for your business.",price:"Custom",image:"photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=85"},
+{name:"Custom Service",description:"Present your services in a structure that fits your business.",price:"Custom",image:"photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=85"},
+{name:"Custom Experience",description:"Build a customer journey around your specific requirements.",price:"Custom",image:"photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85"}
 ]
 }
 
@@ -1708,6 +1546,37 @@ orderSelect.appendChild(option);
 
 });
 
+document.getElementById("orderTitle").textContent =
+data.orderTitle;
+
+document.getElementById("orderIntro").textContent =
+data.orderIntro;
+
+document.getElementById("orderButton").textContent =
+data.orderButton;
+
+document.getElementById("orderDetails").placeholder =
+data.detailsPlaceholder;
+
+document.getElementById("cartTitle").textContent =
+data.category === "Restaurant"
+? "Order Cart"
+: data.category === "Fashion"
+? "Shopping Cart"
+: data.category === "Product Catalogue"
+? "Product Selection"
+: "Customer Cart";
+
+document.getElementById("cartIntro").textContent =
+data.category === "Restaurant"
+? "Customers can review meals, quantities and order details before checkout."
+: data.category === "Fashion"
+? "Customers can review selected clothing, sizes and quantities before checkout."
+: "Customers can review selected items and quantities before checkout.";
+
+document.getElementById("whatsappText").textContent =
+`Customers can contact ${data.name} directly through WhatsApp.`;
+
 document.getElementById("demoFooter").textContent =
 `© 2026 ${data.name}. All rights reserved.`;
 
@@ -1730,11 +1599,8 @@ document.getElementById("orderSection").style.display = "block";
 if(plan === "premium"){
 
 document.getElementById("orderSection").style.display = "block";
-
 document.getElementById("cartSection").style.display = "block";
-
 document.getElementById("paymentSection").style.display = "block";
-
 document.getElementById("integrationSection").style.display = "block";
 
 }
@@ -1759,9 +1625,9 @@ window.history.replaceState({}, "", url);
 
 });
 
-const initialType = getTypeFromURL();
-
 const params = new URLSearchParams(window.location.search);
+
+const initialType = params.get("type") || "cake";
 
 const initialPlan = params.get("plan");
 
@@ -1773,9 +1639,13 @@ initialPlan === "two" ||
 initialPlan === "three" ||
 initialPlan === "premium"
 ){
+
 showPlan(initialPlan);
+
 }else{
+
 showPlan("one");
+
 }
 
 </script>
