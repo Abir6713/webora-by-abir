@@ -1,1107 +1,1645 @@
-```html
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Package Preview | WEBORA by Abir</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #fff;
-      color: #111;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    header {
-      background: #fff;
-      border-bottom: 1px solid #eee;
-      padding: 18px 7%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-    }
-
-    .logo-box {
-      width: 38px;
-      height: 38px;
-      background: #d90000;
-      color: white;
-      display: grid;
-      place-items: center;
-      font-size: 22px;
-      font-weight: 900;
-      border-radius: 8px;
-    }
-
-    .logo-text span {
-      display: block;
-    }
-
-    .logo-main {
-      font-size: 18px;
-      letter-spacing: 1px;
-    }
-
-    .logo-sub {
-      font-size: 9px;
-      color: #d90000;
-      letter-spacing: 2px;
-    }
-
-    .back {
-      color: #d90000;
-      font-weight: 700;
-      font-size: 14px;
-    }
-
-    .hero {
-      background: #090909;
-      color: #fff;
-      padding: 75px 7%;
-    }
-
-    .eyebrow {
-      color: #ff2b2b;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 12px;
-      font-weight: 800;
-      margin-bottom: 14px;
-    }
-
-    .hero h1 {
-      font-size: clamp(36px, 6vw, 70px);
-      line-height: 1;
-      max-width: 800px;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      max-width: 680px;
-      color: #ccc;
-      font-size: 17px;
-    }
-
-    .content {
-      width: 86%;
-      max-width: 1200px;
-      margin: 60px auto;
-    }
-
-    .section-title {
-      margin-bottom: 30px;
-    }
-
-    .section-title h2 {
-      font-size: 34px;
-      margin-bottom: 8px;
-    }
-
-    .section-title p {
-      color: #666;
-    }
-
-    .packages {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-
-    .package {
-      border: 1px solid #ddd;
-      border-radius: 18px;
-      padding: 28px;
-      background: white;
-      display: flex;
-      flex-direction: column;
-      transition: .25s ease;
-    }
-
-    .package:hover {
-      transform: translateY(-5px);
-      border-color: #d90000;
-      box-shadow: 0 15px 35px rgba(0,0,0,.08);
-    }
-
-    .package.premium {
-      background: #090909;
-      color: #fff;
-      border-color: #d90000;
-    }
-
-    .package h3 {
-      font-size: 22px;
-      margin-bottom: 8px;
-    }
-
-    .price {
-      color: #d90000;
-      font-size: 27px;
-      font-weight: 900;
-      margin-bottom: 20px;
-    }
-
-    .package ul {
-      list-style: none;
-      margin-bottom: 25px;
-      flex: 1;
-    }
-
-    .package li {
-      margin-bottom: 10px;
-      font-size: 14px;
-      color: #555;
-    }
-
-    .premium li {
-      color: #ccc;
-    }
-
-    .package li::before {
-      content: "✓";
-      color: #d90000;
-      font-weight: 900;
-      margin-right: 8px;
-    }
-
-    .preview-btn {
-      width: 100%;
-      border: none;
-      background: #d90000;
-      color: white;
-      padding: 13px 18px;
-      border-radius: 9px;
-      font-weight: 800;
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    .preview-btn:hover {
-      background: #b80000;
-    }
-
-    /* PREVIEW AREA */
-
-    .preview-section {
-      margin-top: 80px;
-    }
-
-    .preview-shell {
-      border: 1px solid #ddd;
-      border-radius: 20px;
-      overflow: hidden;
-      background: #f5f5f5;
-      box-shadow: 0 20px 60px rgba(0,0,0,.12);
-    }
-
-    .preview-top {
-      background: #161616;
-      color: white;
-      padding: 12px 18px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 12px;
-    }
-
-    .browser-dots {
-      display: flex;
-      gap: 6px;
-    }
-
-    .browser-dots span {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: #777;
-    }
-
-    .preview-label {
-      color: #aaa;
-    }
-
-    .website {
-      background: white;
-      min-height: 600px;
-    }
-
-    .site-header {
-      padding: 18px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #eee;
-    }
-
-    .site-logo {
-      font-weight: 900;
-      font-size: 20px;
-    }
-
-    .site-nav {
-      display: flex;
-      gap: 20px;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .site-nav button {
-      border: none;
-      background: none;
-      cursor: pointer;
-      font-weight: 700;
-      font-size: 13px;
-    }
-
-    .site-hero {
-      min-height: 300px;
-      padding: 55px 7%;
-      display: flex;
-      align-items: center;
-      background:
-        linear-gradient(90deg, rgba(0,0,0,.72), rgba(0,0,0,.15)),
-        url("https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1400&q=85")
-        center/cover;
-      color: white;
-    }
-
-    .site-hero-content {
-      max-width: 560px;
-    }
-
-    .site-hero h2 {
-      font-size: clamp(34px, 5vw, 58px);
-      line-height: 1.05;
-      margin-bottom: 15px;
-    }
-
-    .site-hero p {
-      color: #eee;
-      margin-bottom: 20px;
-    }
-
-    .site-button {
-      display: inline-block;
-      background: #d90000;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 7px;
-      font-weight: 800;
-      cursor: pointer;
-    }
-
-    .site-section {
-      padding: 45px 7%;
-    }
-
-    .site-section h3 {
-      font-size: 28px;
-      margin-bottom: 8px;
-    }
-
-    .site-section > p {
-      color: #666;
-      margin-bottom: 25px;
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .product {
-      border: 1px solid #eee;
-      border-radius: 12px;
-      overflow: hidden;
-      background: #fff;
-    }
-
-    .product img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .product-info {
-      padding: 15px;
-    }
-
-    .product-info h4 {
-      margin-bottom: 5px;
-    }
-
-    .product-price {
-      color: #d90000;
-      font-weight: 900;
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-    }
-
-    .feature {
-      background: #f7f7f7;
-      padding: 22px;
-      border-radius: 12px;
-    }
-
-    .feature strong {
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .order-box {
-      background: #111;
-      color: white;
-      padding: 30px;
-      border-radius: 15px;
-    }
-
-    .order-box p {
-      color: #ccc;
-      margin-bottom: 20px;
-    }
-
-    .cart {
-      border: 1px solid #ddd;
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 20px;
-    }
-
-    .payment-box {
-      border: 2px solid #d90000;
-      border-radius: 14px;
-      padding: 25px;
-      background: #fff8f8;
-    }
-
-    .payment-box h4 {
-      margin-bottom: 8px;
-    }
-
-    .payment-box p {
-      color: #555;
-      font-size: 14px;
-      margin-bottom: 15px;
-    }
-
-    .site-footer {
-      background: #111;
-      color: white;
-      padding: 35px 7%;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .site-footer p {
-      color: #aaa;
-      font-size: 13px;
-    }
-
-    .hidden {
-      display: none !important;
-    }
-
-    .notice {
-      background: #fff5f5;
-      border-left: 4px solid #d90000;
-      padding: 18px;
-      margin-top: 25px;
-      color: #444;
-      border-radius: 5px;
-    }
-
-    .custom {
-      margin-top: 50px;
-      background: #f7f7f7;
-      padding: 30px;
-      border-radius: 15px;
-      text-align: center;
-    }
-
-    .custom h3 {
-      margin-bottom: 10px;
-    }
-
-    .custom p {
-      color: #666;
-      max-width: 650px;
-      margin: 0 auto 20px;
-    }
-
-    footer {
-      background: #090909;
-      color: #aaa;
-      text-align: center;
-      padding: 35px 20px;
-      margin-top: 80px;
-      font-size: 13px;
-    }
-
-    @media (max-width: 950px) {
-      .packages {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 650px) {
-      header {
-        padding: 15px 5%;
-      }
-
-      .hero {
-        padding: 55px 6%;
-      }
-
-      .content {
-        width: 90%;
-      }
-
-      .packages {
-        grid-template-columns: 1fr;
-      }
-
-      .site-nav {
-        display: none;
-      }
-
-      .products,
-      .feature-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .site-hero {
-        min-height: 380px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Package Preview | WEBORA by Abir</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f5f5f5;
+  color:#111;
+  line-height:1.6;
+}
+
+button,
+input,
+select{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+a{
+  text-decoration:none;
+}
+
+header{
+  background:#fff;
+  border-bottom:1px solid #e8e8e8;
+  padding:16px 7%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo-box{
+  width:40px;
+  height:40px;
+  border-radius:8px;
+  background:#d90000;
+  color:#fff;
+  display:grid;
+  place-items:center;
+  font-size:22px;
+  font-weight:900;
+}
+
+.logo-main{
+  display:block;
+  font-size:18px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.logo-sub{
+  display:block;
+  color:#d90000;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:2px;
+}
+
+.back{
+  color:#d90000;
+  font-weight:700;
+  font-size:14px;
+}
+
+.hero{
+  background:#090909;
+  color:#fff;
+  padding:70px 7%;
+}
+
+.eyebrow{
+  color:#ff3030;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-bottom:14px;
+}
+
+.hero h1{
+  max-width:850px;
+  font-size:clamp(34px,6vw,68px);
+  line-height:1;
+  margin-bottom:18px;
+}
+
+.hero p{
+  max-width:700px;
+  color:#ccc;
+  font-size:17px;
+}
+
+.content{
+  width:min(88%,1200px);
+  margin:55px auto;
+}
+
+.heading{
+  margin-bottom:28px;
+}
+
+.heading h2{
+  font-size:34px;
+  margin-bottom:6px;
+}
+
+.heading p{
+  color:#666;
+}
+
+.packages{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.package{
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:18px;
+  padding:25px;
+  display:flex;
+  flex-direction:column;
+  transition:.2s ease;
+}
+
+.package:hover{
+  transform:translateY(-4px);
+  border-color:#d90000;
+  box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.package.premium{
+  background:#0a0a0a;
+  color:#fff;
+  border-color:#d90000;
+}
+
+.package h3{
+  font-size:22px;
+  margin-bottom:7px;
+}
+
+.price{
+  color:#d90000;
+  font-size:26px;
+  font-weight:900;
+  margin-bottom:18px;
+}
+
+.package ul{
+  list-style:none;
+  flex:1;
+  margin-bottom:22px;
+}
+
+.package li{
+  font-size:14px;
+  margin-bottom:9px;
+  color:#555;
+}
+
+.premium li{
+  color:#ccc;
+}
+
+.package li::before{
+  content:"✓";
+  color:#d90000;
+  font-weight:900;
+  margin-right:8px;
+}
+
+.view-btn{
+  width:100%;
+  border:0;
+  border-radius:8px;
+  padding:13px;
+  background:#d90000;
+  color:#fff;
+  font-weight:800;
+}
+
+.view-btn:hover{
+  background:#b80000;
+}
+
+/* PREVIEW */
+
+.preview-section{
+  margin-top:70px;
+}
+
+.preview-heading{
+  margin-bottom:20px;
+}
+
+.preview-heading h2{
+  font-size:34px;
+  margin-bottom:5px;
+}
+
+.preview-heading p{
+  color:#666;
+}
+
+.browser{
+  overflow:hidden;
+  background:#fff;
+  border-radius:18px;
+  border:1px solid #ddd;
+  box-shadow:0 20px 60px rgba(0,0,0,.13);
+}
+
+.browser-bar{
+  height:45px;
+  background:#171717;
+  color:#aaa;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 18px;
+  font-size:11px;
+}
+
+.dots{
+  display:flex;
+  gap:6px;
+}
+
+.dots span{
+  width:9px;
+  height:9px;
+  background:#666;
+  border-radius:50%;
+}
+
+.demo-site{
+  background:#fff;
+  min-height:650px;
+}
+
+.demo-header{
+  padding:17px 6%;
+  border-bottom:1px solid #eee;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.demo-logo{
+  font-size:20px;
+  font-weight:900;
+}
+
+.demo-nav{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.demo-nav button{
+  background:none;
+  border:0;
+  font-size:12px;
+  font-weight:700;
+}
+
+.demo-nav button:hover{
+  color:#d90000;
+}
+
+.demo-hero{
+  min-height:330px;
+  padding:55px 7%;
+  display:flex;
+  align-items:center;
+  color:#fff;
+  background:
+  linear-gradient(90deg,rgba(0,0,0,.76),rgba(0,0,0,.18)),
+  url("https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1500&q=85")
+  center/cover;
+}
+
+.demo-hero-content{
+  max-width:600px;
+}
+
+.demo-hero h2{
+  font-size:clamp(34px,5vw,58px);
+  line-height:1.05;
+  margin-bottom:15px;
+}
+
+.demo-hero p{
+  color:#eee;
+  margin-bottom:20px;
+}
+
+.red-btn{
+  background:#d90000;
+  border:0;
+  border-radius:7px;
+  padding:12px 20px;
+  color:#fff;
+  font-weight:800;
+}
+
+.demo-section{
+  padding:45px 7%;
+}
+
+.demo-section h3{
+  font-size:28px;
+  margin-bottom:7px;
+}
+
+.demo-section > p{
+  color:#666;
+  margin-bottom:24px;
+}
+
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.info-card{
+  background:#f7f7f7;
+  border-radius:12px;
+  padding:20px;
+}
+
+.info-card strong{
+  display:block;
+  margin-bottom:5px;
+}
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.product{
+  border:1px solid #e7e7e7;
+  border-radius:12px;
+  overflow:hidden;
+  background:#fff;
+}
+
+.product img{
+  width:100%;
+  height:175px;
+  object-fit:cover;
+  display:block;
+}
+
+.product-info{
+  padding:15px;
+}
+
+.product-info h4{
+  margin-bottom:4px;
+}
+
+.product-price{
+  color:#d90000;
+  font-weight:900;
+}
+
+.form-demo{
+  max-width:700px;
+  background:#f8f8f8;
+  border-radius:14px;
+  padding:25px;
+}
+
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-bottom:12px;
+}
+
+.form-demo input,
+.form-demo select{
+  width:100%;
+  padding:12px;
+  border:1px solid #ddd;
+  border-radius:7px;
+  background:#fff;
+}
+
+.form-demo .full{
+  margin-bottom:12px;
+}
+
+.order-summary{
+  background:#111;
+  color:#fff;
+  padding:25px;
+  border-radius:14px;
+  margin-top:20px;
+}
+
+.order-summary p{
+  color:#ccc;
+  margin:6px 0;
+}
+
+.cart-box{
+  border:1px solid #ddd;
+  border-radius:12px;
+  padding:20px;
+  background:#fff;
+  margin-bottom:18px;
+}
+
+.cart-row{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  padding:12px 0;
+  border-bottom:1px solid #eee;
+}
+
+.cart-row:last-child{
+  border-bottom:0;
+}
+
+.checkout-box{
+  background:#fff8f8;
+  border:2px solid #d90000;
+  border-radius:14px;
+  padding:25px;
+}
+
+.checkout-box h4{
+  font-size:22px;
+  margin-bottom:7px;
+}
+
+.checkout-box p{
+  color:#666;
+  margin-bottom:16px;
+}
+
+.payment-methods{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin:18px 0;
+}
+
+.payment-method{
+  border:1px solid #ddd;
+  border-radius:8px;
+  padding:14px;
+  text-align:center;
+  font-size:13px;
+  font-weight:700;
+}
+
+.confirmation{
+  margin-top:20px;
+  padding:22px;
+  background:#edf9f0;
+  border:1px solid #9bd3a7;
+  border-radius:12px;
+}
+
+.confirmation strong{
+  color:#176c2d;
+  display:block;
+  margin-bottom:5px;
+}
+
+.integration-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:15px;
+}
+
+.integration{
+  padding:22px;
+  border-radius:12px;
+  background:#111;
+  color:#fff;
+}
+
+.integration h4{
+  color:#fff;
+  margin-bottom:5px;
+}
+
+.integration p{
+  color:#bbb;
+  font-size:14px;
+}
+
+.demo-footer{
+  background:#111;
+  color:#fff;
+  padding:35px 7%;
+  display:flex;
+  justify-content:space-between;
+  gap:25px;
+  flex-wrap:wrap;
+}
+
+.demo-footer p{
+  color:#aaa;
+  font-size:13px;
+}
+
+.hidden{
+  display:none!important;
+}
+
+.package-indicator{
+  display:inline-flex;
+  background:#fff0f0;
+  color:#d90000;
+  padding:7px 12px;
+  border-radius:30px;
+  font-size:12px;
+  font-weight:800;
+  margin-bottom:15px;
+}
+
+.mobile-note{
+  background:#111;
+  color:#fff;
+  border-radius:12px;
+  padding:20px;
+  margin-top:18px;
+}
+
+.mobile-note strong{
+  color:#ff3030;
+}
+
+.custom{
+  margin-top:55px;
+  background:#eee;
+  border-radius:16px;
+  padding:30px;
+  text-align:center;
+}
+
+.custom h3{
+  margin-bottom:8px;
+}
+
+.custom p{
+  color:#666;
+  max-width:650px;
+  margin:0 auto 20px;
+}
+
+footer{
+  background:#090909;
+  color:#aaa;
+  text-align:center;
+  padding:35px 20px;
+  margin-top:70px;
+  font-size:13px;
+}
+
+@media(max-width:1000px){
+  .packages{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:700px){
+
+  header{
+    padding:14px 5%;
+  }
+
+  .hero{
+    padding:55px 6%;
+  }
+
+  .content{
+    width:92%;
+  }
+
+  .packages{
+    grid-template-columns:1fr;
+  }
+
+  .demo-nav{
+    display:none;
+  }
+
+  .products,
+  .info-grid,
+  .integration-grid,
+  .payment-methods{
+    grid-template-columns:1fr;
+  }
+
+  .form-row{
+    grid-template-columns:1fr;
+  }
+
+  .demo-hero{
+    min-height:380px;
+  }
+
+}
+</style>
+
 </head>
 
 <body>
 
 <header>
-  <a href="index.html" class="logo">
-    <div class="logo-box">W</div>
-    <div class="logo-text">
-      <span class="logo-main">WEBORA</span>
-      <span class="logo-sub">BY ABIR</span>
-    </div>
-  </a>
 
-  <a href="business.html" class="back">← Back to Packages</a>
+<a href="index.html" class="logo">
+  <div class="logo-box">W</div>
+
+  <div>
+    <span class="logo-main">WEBORA</span>
+    <span class="logo-sub">BY ABIR</span>
+  </div>
+</a>
+
+<a href="business.html" class="back">← Back to Packages</a>
+
 </header>
 
 <section class="hero">
-  <div class="eyebrow">WEBORA BY ABIR</div>
-  <h1 id="pageTitle">Website Packages</h1>
-  <p id="pageIntro">
-    See exactly what your website could look like at each package level.
-  </p>
+
+<div class="eyebrow">WEBORA BY ABIR</div>
+
+<h1 id="pageTitle">Website Packages</h1>
+
+<p id="pageIntro">
+See exactly what your website could look like at every package level.
+</p>
+
 </section>
 
 <main class="content">
 
-  <div class="section-title">
-    <h2>Choose Your Website Package</h2>
-    <p>Click “View Website” to see a realistic example of what that package can deliver.</p>
-  </div>
-
-  <section class="packages">
-
-    <div class="package">
-      <h3>1 Page</h3>
-      <div class="price">₦80,000</div>
-
-      <ul>
-        <li>Business introduction</li>
-        <li>About the business</li>
-        <li>Products or services showcase</li>
-        <li>Basic business information</li>
-        <li>Mobile-friendly design</li>
-      </ul>
-
-      <button class="preview-btn" data-plan="one">
-        View Website
-      </button>
-    </div>
-
-    <div class="package">
-      <h3>2 Pages</h3>
-      <div class="price">₦120,000</div>
-
-      <ul>
-        <li>Everything in 1 Page</li>
-        <li>Dedicated products/services page</li>
-        <li>Product categories</li>
-        <li>Product photos</li>
-        <li>Prices and descriptions</li>
-        <li>Professional navigation</li>
-      </ul>
-
-      <button class="preview-btn" data-plan="two">
-        View Website
-      </button>
-    </div>
-
-    <div class="package">
-      <h3>3 Pages</h3>
-      <div class="price">₦180,000</div>
-
-      <ul>
-        <li>Everything in 2 Pages</li>
-        <li>Dedicated ordering or booking page</li>
-        <li>Customer information form</li>
-        <li>Order/booking selection</li>
-        <li>Delivery or appointment options</li>
-        <li>Order summary</li>
-      </ul>
-
-      <button class="preview-btn" data-plan="three">
-        View Website
-      </button>
-    </div>
-
-    <div class="package premium">
-      <h3>Premium</h3>
-      <div class="price">₦250,000+</div>
-
-      <ul>
-        <li>Everything in 3 Pages</li>
-        <li>Advanced ordering/booking</li>
-        <li>Shopping cart</li>
-        <li>Online checkout</li>
-        <li>Payment gateway</li>
-        <li>Payment confirmation</li>
-        <li>WhatsApp integration</li>
-        <li>Social media integration</li>
-      </ul>
-
-      <button class="preview-btn" data-plan="premium">
-        View Website
-      </button>
-    </div>
-
-  </section>
-
-  <div class="notice">
-    <strong>See the difference:</strong>
-    Each preview below demonstrates the kind of website experience included at that package level.
-  </div>
-
-  <!-- REALISTIC WEBSITE PREVIEW -->
-
-  <section class="preview-section" id="previewSection">
-
-    <div class="section-title">
-      <h2 id="previewTitle">Website Preview</h2>
-      <p id="previewDescription">
-        Select a package above to see the website experience.
-      </p>
-    </div>
-
-    <div class="preview-shell">
-
-      <div class="preview-top">
-        <div class="browser-dots">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-        <div class="preview-label">
-          Live website preview
-        </div>
-
-        <div>
-          WEBORA
-        </div>
-      </div>
-
-      <div class="website">
-
-        <div class="site-header">
-          <div class="site-logo" id="siteLogo">
-            Cake Haven
-          </div>
-
-          <div class="site-nav" id="siteNav"></div>
-        </div>
-
-        <div class="site-hero">
-          <div class="site-hero-content">
-            <h2 id="siteHeroTitle">
-              Freshly Baked. Made for Every Celebration.
-            </h2>
+<section>
 
-            <p id="siteHeroText">
-              Beautiful cakes and pastries made specially for you.
-            </p>
+<div class="heading">
+  <h2>Choose Your Website Package</h2>
 
-            <button class="site-button" id="heroButton">
-              Explore Our Cakes
-            </button>
-          </div>
-        </div>
-
-        <!-- PRODUCTS -->
-
-        <section class="site-section" id="productsSection">
-          <h3 id="productsTitle">Our Best Sellers</h3>
-          <p id="productsText">
-            A preview of how products can be displayed on your website.
-          </p>
-
-          <div class="products">
+  <p>
+    Each package includes everything below it, with additional features added as you move up.
+  </p>
+</div>
 
-            <div class="product">
-              <img
-                src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85"
-                alt="Chocolate cake"
-              >
+<div class="packages">
 
-              <div class="product-info">
-                <h4>Celebration Cake</h4>
-                <div class="product-price">₦35,000</div>
-              </div>
-            </div>
+<div class="package">
 
-            <div class="product">
-              <img
-                src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=85"
-                alt="Pastries"
-              >
+<h3>1 Page</h3>
 
-              <div class="product-info">
-                <h4>Premium Pastries</h4>
-                <div class="product-price">₦18,000</div>
-              </div>
-            </div>
+<div class="price">₦80,000</div>
 
-            <div class="product">
-              <img
-                src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=900&q=85"
-                alt="Cupcakes"
-              >
+<ul>
+<li>Business introduction</li>
+<li>About the business</li>
+<li>Products or services showcase</li>
+<li>Basic business information</li>
+<li>Mobile-friendly design</li>
+</ul>
 
-              <div class="product-info">
-                <h4>Signature Cupcakes</h4>
-                <div class="product-price">₦12,000</div>
-              </div>
-            </div>
+<button class="view-btn" data-plan="one">
+View Website
+</button>
 
-          </div>
-        </section>
+</div>
 
-        <!-- FEATURES -->
+<div class="package">
 
-        <section class="site-section" id="featuresSection">
+<h3>2 Pages</h3>
 
-          <h3>Why Customers Choose Us</h3>
+<div class="price">₦120,000</div>
 
-          <p>
-            A professional section that tells customers why they should choose the business.
-          </p>
+<ul>
+<li>Everything in 1 Page</li>
+<li>Dedicated products/services page</li>
+<li>Product categories</li>
+<li>Product photos</li>
+<li>Prices and descriptions</li>
+<li>Professional navigation</li>
+</ul>
 
-          <div class="feature-grid">
+<button class="view-btn" data-plan="two">
+View Website
+</button>
 
-            <div class="feature">
-              <strong>Quality Products</strong>
-              <span>Carefully prepared products customers can trust.</span>
-            </div>
+</div>
 
-            <div class="feature">
-              <strong>Fast Service</strong>
-              <span>Quick response and reliable customer service.</span>
-            </div>
+<div class="package">
 
-            <div class="feature">
-              <strong>Made With Care</strong>
-              <span>Every order receives personal attention.</span>
-            </div>
+<h3>3 Pages</h3>
 
-          </div>
+<div class="price">₦180,000</div>
 
-        </section>
+<ul>
+<li>Everything in 2 Pages</li>
+<li>Dedicated ordering or booking page</li>
+<li>Customer information form</li>
+<li>Order/booking selection</li>
+<li>Delivery or appointment options</li>
+<li>Order summary</li>
+</ul>
 
-        <!-- ORDER -->
+<button class="view-btn" data-plan="three">
+View Website
+</button>
 
-        <section class="site-section hidden" id="orderSection">
+</div>
 
-          <div class="order-box">
+<div class="package premium">
 
-            <h3>Place Your Order</h3>
+<h3>Premium</h3>
 
-            <p>
-              Customers can select what they want and submit their information.
-            </p>
+<div class="price">₦250,000+</div>
 
-            <div class="cart">
-              <strong>Celebration Cake</strong>
-              <br>
-              Quantity: 1
-              <br>
-              <strong>₦35,000</strong>
-            </div>
+<ul>
+<li>Everything in 3 Pages</li>
+<li>Advanced ordering/booking</li>
+<li>Shopping cart</li>
+<li>Online checkout</li>
+<li>Payment gateway</li>
+<li>Payment confirmation</li>
+<li>WhatsApp integration</li>
+<li>Social media integration</li>
+</ul>
 
-            <button class="site-button">
-              Continue Order
-            </button>
+<button class="view-btn" data-plan="premium">
+View Website
+</button>
 
-          </div>
+</div>
 
-        </section>
+</div>
 
-        <!-- BOOKING -->
+</section>
 
-        <section class="site-section hidden" id="bookingSection">
+<section class="preview-section" id="previewSection">
 
-          <div class="order-box">
+<div class="preview-heading">
 
-            <h3>Book Your Service</h3>
+<div class="package-indicator" id="packageIndicator">
+1 PAGE WEBSITE
+</div>
 
-            <p>
-              Customers can select a date, service and provide their details.
-            </p>
+<h2 id="previewTitle">
+1 Page Website Preview
+</h2>
 
-            <button class="site-button">
-              Choose Date & Time
-            </button>
+<p id="previewDescription">
+A complete single-page business website with all features included in the 1 Page package.
+</p>
 
-          </div>
+</div>
 
-        </section>
+<div class="browser">
 
-        <!-- PAYMENT -->
+<div class="browser-bar">
 
-        <section class="site-section hidden" id="paymentSection">
+<div class="dots">
+<span></span>
+<span></span>
+<span></span>
+</div>
 
-          <div class="payment-box">
+<span>Client website preview</span>
 
-            <h4>Secure Online Payment</h4>
+<span>WEBORA</span>
 
-            <p>
-              Premium websites can include online checkout and payment gateway integration.
-            </p>
+</div>
 
-            <strong>Total: ₦35,000</strong>
+<div class="demo-site">
 
-            <br><br>
+<header class="demo-header">
 
-            <button class="site-button">
-              Pay Securely
-            </button>
+<div class="demo-logo" id="demoLogo">
+Cake Haven
+</div>
 
-          </div>
+<nav class="demo-nav" id="demoNav"></nav>
 
-        </section>
+</header>
 
-        <!-- FOOTER -->
+<section class="demo-hero">
 
-        <footer class="site-footer">
+<div class="demo-hero-content">
 
-          <div>
-            <strong id="footerBusiness">Cake Haven</strong>
-            <p>Quality products. Professional service.</p>
-          </div>
+<h2 id="demoHeroTitle">
+Freshly Baked. Made for Every Celebration.
+</h2>
 
-          <div>
-            <p>Contact us</p>
-            <p>Instagram · WhatsApp · Facebook</p>
-          </div>
+<p id="demoHeroText">
+Beautiful cakes and pastries made specially for every occasion.
+</p>
 
-        </footer>
+<button class="red-btn" id="heroAction">
+Explore Our Business
+</button>
 
-      </div>
-    </div>
+</div>
 
-  </section>
+</section>
 
-  <div class="custom">
+<!-- BUSINESS INTRODUCTION -->
 
-    <h3>Need something beyond these packages?</h3>
+<section class="demo-section" id="introSection">
 
-    <p>
-      We can build a custom website around your exact business requirements,
-      including advanced features and systems.
-    </p>
+<h3>Welcome to <span id="introBusiness">Cake Haven</span></h3>
 
-    <a href="business.html" class="preview-btn">
-      Discuss a Custom Website
-    </a>
+<p>
+We provide quality products and professional services designed around our customers.
+Our website gives visitors a clear understanding of who we are, what we offer and how to contact us.
+</p>
 
-  </div>
+<div class="info-grid">
+
+<div class="info-card">
+<strong>About Us</strong>
+<span>Learn who we are and what our business offers.</span>
+</div>
+
+<div class="info-card">
+<strong>Our Services</strong>
+<span>See the products and services available to customers.</span>
+</div>
+
+<div class="info-card">
+<strong>Contact Information</strong>
+<span>Phone, location and other important business information.</span>
+</div>
+
+</div>
+
+</section>
+
+<!-- PRODUCTS -->
+
+<section class="demo-section" id="productsSection">
+
+<h3 id="productsTitle">
+Featured Products
+</h3>
+
+<p>
+Products or services can be displayed clearly with images, names, descriptions and prices.
+</p>
+
+<div class="products">
+
+<div class="product">
+
+<img
+src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=85"
+alt="Cake"
+
+>
+
+<div class="product-info">
+
+<h4>Celebration Cake</h4>
+
+<div class="product-price">
+₦35,000
+</div>
+
+</div>
+
+</div>
+
+<div class="product">
+
+<img
+src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=85"
+alt="Pastry"
+
+>
+
+<div class="product-info">
+
+<h4>Premium Pastry</h4>
+
+<div class="product-price">
+₦18,000
+</div>
+
+</div>
+
+</div>
+
+<div class="product">
+
+<img
+src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?auto=format&fit=crop&w=900&q=85"
+alt="Cupcakes"
+
+>
+
+<div class="product-info">
+
+<h4>Signature Cupcakes</h4>
+
+<div class="product-price">
+₦12,000
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- BASIC BUSINESS INFORMATION -->
+
+<section class="demo-section" id="businessInfoSection">
+
+<h3>Business Information</h3>
+
+<p>
+Important information customers need before contacting or visiting the business.
+</p>
+
+<div class="info-grid">
+
+<div class="info-card">
+<strong>Opening Hours</strong>
+<span>Monday - Saturday<br>8:00 AM - 7:00 PM</span>
+</div>
+
+<div class="info-card">
+<strong>Location</strong>
+<span>Lagos, Nigeria</span>
+</div>
+
+<div class="info-card">
+<strong>Contact</strong>
+<span>Phone, email and business enquiries.</span>
+</div>
+
+</div>
+
+<div class="mobile-note">
+<strong>Mobile-Friendly Design:</strong>
+The website automatically adjusts its layout for phones, tablets and computers.
+</div>
+
+</section>
+
+<!-- 3 PAGE ORDER / BOOKING -->
+
+<section class="demo-section hidden" id="orderSection">
+
+<h3>Order / Booking Page</h3>
+
+<p>
+This is the dedicated third page available in the 3 Page package.
+</p>
+
+<div class="form-demo">
+
+<div class="form-row">
+
+<input type="text" placeholder="Full Name">
+
+<input type="tel" placeholder="Phone Number">
+
+</div>
+
+<div class="form-row">
+
+<select>
+<option>Select Product / Service</option>
+<option>Celebration Cake</option>
+<option>Premium Pastry</option>
+<option>Signature Cupcakes</option>
+</select>
+
+<select>
+<option>Select Quantity</option>
+<option>1</option>
+<option>2</option>
+<option>3</option>
+</select>
+
+</div>
+
+<input class="full" type="text" placeholder="Delivery Address">
+
+<button class="red-btn">
+Submit Order
+</button>
+
+</div>
+
+</section>
+
+<!-- DELIVERY / APPOINTMENT -->
+
+<section class="demo-section hidden" id="deliverySection">
+
+<h3>Delivery / Appointment Options</h3>
+
+<p>
+Customers can choose how they want to receive the product or service.
+</p>
+
+<div class="info-grid">
+
+<div class="info-card">
+<strong>Home Delivery</strong>
+<span>Customer provides a delivery address.</span>
+</div>
+
+<div class="info-card">
+<strong>Pickup</strong>
+<span>Customer chooses to pick up the order.</span>
+</div>
+
+<div class="info-card">
+<strong>Appointment</strong>
+<span>For service businesses, customers can choose an appointment.</span>
+</div>
+
+</div>
+
+</section>
+
+<!-- ORDER SUMMARY -->
+
+<section class="demo-section hidden" id="summarySection">
+
+<h3>Order Summary</h3>
+
+<p>
+Customers can review their selected order before proceeding.
+</p>
+
+<div class="order-summary">
+
+<strong>Order</strong>
+
+<p>Celebration Cake × 1</p>
+
+<p>Premium Pastry × 1</p>
+
+<p><strong>Total: ₦53,000</strong></p>
+
+<button class="red-btn">
+Continue to Checkout
+</button>
+
+</div>
+
+</section>
+
+<!-- SHOPPING CART -->
+
+<section class="demo-section hidden" id="cartSection">
+
+<h3>Shopping Cart</h3>
+
+<p>
+Premium websites can allow customers to add multiple products before checkout.
+</p>
+
+<div class="cart-box">
+
+<div class="cart-row">
+<span>Celebration Cake × 1</span>
+<strong>₦35,000</strong>
+</div>
+
+<div class="cart-row">
+<span>Premium Pastry × 1</span>
+<strong>₦18,000</strong>
+</div>
+
+<div class="cart-row">
+<strong>Cart Total</strong>
+<strong>₦53,000</strong>
+</div>
+
+</div>
+
+<button class="red-btn">
+Proceed to Checkout
+</button>
+
+</section>
+
+<!-- CHECKOUT -->
+
+<section class="demo-section hidden" id="checkoutSection">
+
+<h3>Online Checkout</h3>
+
+<p>
+Customers can enter their details and review their order before payment.
+</p>
+
+<div class="form-demo">
+
+<div class="form-row">
+
+<input type="text" placeholder="Full Name">
+
+<input type="tel" placeholder="Phone Number">
+
+</div>
+
+<input class="full" type="email" placeholder="Email Address">
+
+<input class="full" type="text" placeholder="Delivery Address">
+
+<button class="red-btn">
+Continue to Payment
+</button>
+
+</div>
+
+</section>
+
+<!-- PAYMENT -->
+
+<section class="demo-section hidden" id="paymentSection">
+
+<h3>Payment Gateway</h3>
+
+<p>
+The Premium package can integrate an online payment gateway for customer payments.
+</p>
+
+<div class="checkout-box">
+
+<h4>Secure Payment</h4>
+
+<p>
+Choose a payment method to complete your order.
+</p>
+
+<strong>Total Amount: ₦53,000</strong>
+
+<div class="payment-methods">
+
+<div class="payment-method">
+Card Payment
+</div>
+
+<div class="payment-method">
+Bank Transfer
+</div>
+
+<div class="payment-method">
+Other Gateway
+</div>
+
+</div>
+
+<button class="red-btn" id="payButton">
+Pay ₦53,000
+</button>
+
+<div class="confirmation hidden" id="paymentConfirmation">
+
+<strong>Payment Successful</strong>
+
+<span>
+Your payment has been received and your order has been confirmed.
+</span>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- WHATSAPP + SOCIAL -->
+
+<section class="demo-section hidden" id="integrationSection">
+
+<h3>Business Integrations</h3>
+
+<p>
+Premium websites can connect customers directly with the business through messaging and social platforms.
+</p>
+
+<div class="integration-grid">
+
+<div class="integration">
+
+<h4>WhatsApp Integration</h4>
+
+<p>
+Customers can contact the business directly through WhatsApp from the website.
+</p>
+
+<br>
+
+<button class="red-btn">
+Chat on WhatsApp
+</button>
+
+</div>
+
+<div class="integration">
+
+<h4>Social Media Integration</h4>
+
+<p>
+The website can connect visitors to the business's social media platforms.
+</p>
+
+<br>
+
+<button class="red-btn">
+View Social Media
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<footer class="demo-footer">
+
+<div>
+
+<strong id="footerBusiness">
+Cake Haven
+</strong>
+
+<p>
+Quality products. Professional service.
+</p>
+
+</div>
+
+<div>
+
+<p>
+Phone · Email · WhatsApp
+</p>
+
+<p>
+Instagram · Facebook
+</p>
+
+</div>
+
+</footer>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="custom">
+
+<h3>Need something beyond these packages?</h3>
+
+<p>
+We can build a custom website around your exact business requirements,
+including advanced features and systems.
+</p>
+
+<a href="business.html" class="view-btn">
+Discuss a Custom Website
+</a>
+
+</section>
 
 </main>
 
 <footer>
-  © 2026 WEBORA by Abir. Websites built for businesses that mean business.
+© 2026 WEBORA by Abir. Websites built for businesses that mean business.
 </footer>
 
 <script>
 
-  const params = new URLSearchParams(window.location.search);
+const params = new URLSearchParams(window.location.search);
 
-  const type = params.get("type") || "cake";
+const type = params.get("type") || "cake";
 
-  const businessData = {
 
-    cake: {
-      name: "Cake Haven",
-      hero: "Freshly Baked. Made for Every Celebration.",
-      text: "Beautiful cakes and pastries made specially for you.",
-      products: "Our Best Sellers"
-    },
+const businesses = {
 
-    hair: {
-      name: "Abir Hair Studio",
-      hero: "Hair That Makes You Feel Beautiful.",
-      text: "Premium hair styling, installation and beauty services.",
-      products: "Our Hair Services"
-    },
+cake:{
+name:"Cake Haven",
+hero:"Freshly Baked. Made for Every Celebration.",
+text:"Beautiful cakes and pastries made specially for every occasion.",
+products:"Featured Cakes & Pastries"
+},
 
-    lash: {
-      name: "Lash & Beauty Studio",
-      hero: "Your Beauty. Your Confidence.",
-      text: "Professional lash and beauty services for every occasion.",
-      products: "Our Beauty Services"
-    },
+hair:{
+name:"Abir Hair Studio",
+hero:"Hair That Makes You Feel Beautiful.",
+text:"Premium hair styling, installation and beauty services.",
+products:"Featured Hair Services"
+},
 
-    fashion: {
-      name: "Abir Fashion",
-      hero: "Style Made For You.",
-      text: "Discover carefully selected fashion pieces designed to stand out.",
-      products: "Featured Collection"
-    },
+lash:{
+name:"Lash & Beauty Studio",
+hero:"Your Beauty. Your Confidence.",
+text:"Professional lash and beauty services for every occasion.",
+products:"Featured Beauty Services"
+},
 
-    restaurant: {
-      name: "Abir Kitchen",
-      hero: "Good Food. Great Moments.",
-      text: "Fresh meals prepared with quality ingredients and delivered to you.",
-      products: "Popular Meals"
-    },
+fashion:{
+name:"Abir Fashion",
+hero:"Style Made For You.",
+text:"Discover fashion pieces designed to help you stand out.",
+products:"Featured Collection"
+},
 
-    barber: {
-      name: "Abir Barbers",
-      hero: "Sharp Cuts. Clean Confidence.",
-      text: "Professional grooming and barbering services.",
-      products: "Our Services"
-    },
+restaurant:{
+name:"Abir Kitchen",
+hero:"Good Food. Great Moments.",
+text:"Fresh meals prepared with quality ingredients and delivered to you.",
+products:"Popular Meals"
+},
 
-    makeup: {
-      name: "Abir Makeup Studio",
-      hero: "Your Face. Our Art.",
-      text: "Professional makeup for weddings, events and special occasions.",
-      products: "Makeup Services"
-    },
+barber:{
+name:"Abir Barbers",
+hero:"Sharp Cuts. Clean Confidence.",
+text:"Professional grooming and barbering services.",
+products:"Featured Services"
+},
 
-    photography: {
-      name: "Abir Photography",
-      hero: "Moments Worth Remembering.",
-      text: "Professional photography for people, brands and events.",
-      products: "Our Work"
-    },
+makeup:{
+name:"Abir Makeup Studio",
+hero:"Your Face. Our Art.",
+text:"Professional makeup for weddings, events and special occasions.",
+products:"Makeup Services"
+},
 
-    events: {
-      name: "Abir Events",
-      hero: "We Make Your Moments Special.",
-      text: "Professional event planning, decoration and coordination.",
-      products: "Our Services"
-    },
+photography:{
+name:"Abir Photography",
+hero:"Moments Worth Remembering.",
+text:"Professional photography for people, brands and events.",
+products:"Featured Work"
+},
 
-    catalogue: {
-      name: "Abir Catalogue",
-      hero: "Discover Our Products.",
-      text: "Browse our complete product catalogue online.",
-      products: "Featured Products"
-    },
+events:{
+name:"Abir Events",
+hero:"We Make Your Moments Special.",
+text:"Professional event planning, decoration and coordination.",
+products:"Our Services"
+},
 
-    professional: {
-      name: "Abir Professional Services",
-      hero: "Professional Solutions. Built Around You.",
-      text: "Reliable professional services for individuals and businesses.",
-      products: "Our Services"
-    },
+catalogue:{
+name:"Abir Catalogue",
+hero:"Discover Our Products.",
+text:"Browse our complete product catalogue online.",
+products:"Featured Products"
+},
 
-    custom: {
-      name: "Your Business",
-      hero: "A Website Built Around Your Business.",
-      text: "A completely custom online experience designed around your goals.",
-      products: "Featured Services"
-    }
+professional:{
+name:"Abir Professional Services",
+hero:"Professional Solutions. Built Around You.",
+text:"Reliable professional services for individuals and businesses.",
+products:"Our Services"
+},
 
-  };
+custom:{
+name:"Your Business",
+hero:"A Website Built Around Your Business.",
+text:"A completely custom online experience designed around your goals.",
+products:"Featured Services"
+}
 
-  const data = businessData[type] || businessData.cake;
+};
 
-  document.getElementById("pageTitle").textContent =
-    data.name + " Website Packages";
 
-  document.getElementById("pageIntro").textContent =
-    "See how " + data.name + " could look online at each package level.";
+const data = businesses[type] || businesses.cake;
 
-  document.getElementById("siteLogo").textContent = data.name;
-  document.getElementById("footerBusiness").textContent = data.name;
-  document.getElementById("siteHeroTitle").textContent = data.hero;
-  document.getElementById("siteHeroText").textContent = data.text;
-  document.getElementById("productsTitle").textContent = data.products;
 
-  const previewButtons = document.querySelectorAll(".preview-btn");
+document.getElementById("pageTitle").textContent =
+data.name + " Website Packages";
 
-  const siteNav = document.getElementById("siteNav");
+document.getElementById("pageIntro").textContent =
+"See how " + data.name + " could look online at every package level.";
 
-  const productsSection = document.getElementById("productsSection");
-  const featuresSection = document.getElementById("featuresSection");
-  const orderSection = document.getElementById("orderSection");
-  const bookingSection = document.getElementById("bookingSection");
-  const paymentSection = document.getElementById("paymentSection");
+document.getElementById("demoLogo").textContent =
+data.name;
 
-  const previewTitle = document.getElementById("previewTitle");
-  const previewDescription = document.getElementById("previewDescription");
+document.getElementById("footerBusiness").textContent =
+data.name;
 
-  function showPlan(plan) {
+document.getElementById("introBusiness").textContent =
+data.name;
 
-    productsSection.classList.remove("hidden");
-    featuresSection.classList.remove("hidden");
-    orderSection.classList.add("hidden");
-    bookingSection.classList.add("hidden");
-    paymentSection.classList.add("hidden");
+document.getElementById("demoHeroTitle").textContent =
+data.hero;
 
-    if (plan === "one") {
+document.getElementById("demoHeroText").textContent =
+data.text;
 
-      siteNav.innerHTML = `
-        <button>Home</button>
-        <button>About</button>
-        <button>Contact</button>
-      `;
+document.getElementById("productsTitle").textContent =
+data.products;
 
-      previewTitle.textContent = "1 Page Website Preview";
 
-      previewDescription.textContent =
-        "This demonstrates the focused one-page website a client receives at the ₦80,000 level.";
+const buttons =
+document.querySelectorAll(".view-btn[data-plan]");
 
-      document.getElementById("heroButton").textContent =
-        "Learn More";
 
-    }
+const sections = {
 
-    if (plan === "two") {
+order:document.getElementById("orderSection"),
 
-      siteNav.innerHTML = `
-        <button>Home</button>
-        <button>Products</button>
-        <button>About</button>
-        <button>Contact</button>
-      `;
+delivery:document.getElementById("deliverySection"),
 
-      previewTitle.textContent = "2 Page Website Preview";
+summary:document.getElementById("summarySection"),
 
-      previewDescription.textContent =
-        "This demonstrates how the second page gives the business room for a dedicated products or services section.";
+cart:document.getElementById("cartSection"),
 
-      document.getElementById("heroButton").textContent =
-        "View Products";
+checkout:document.getElementById("checkoutSection"),
 
-    }
+payment:document.getElementById("paymentSection"),
 
-    if (plan === "three") {
+integration:document.getElementById("integrationSection")
 
-      siteNav.innerHTML = `
-        <button>Home</button>
-        <button>Products</button>
-        <button>Order / Book</button>
-        <button>Contact</button>
-      `;
+};
 
-      orderSection.classList.remove("hidden");
 
-      previewTitle.textContent = "3 Page Website Preview";
+const demoNav =
+document.getElementById("demoNav");
 
-      previewDescription.textContent =
-        "This demonstrates the additional ordering or booking experience included in the 3-page package.";
 
-      document.getElementById("heroButton").textContent =
-        "Order Now";
+const indicator =
+document.getElementById("packageIndicator");
 
-    }
+const previewTitle =
+document.getElementById("previewTitle");
 
-    if (plan === "premium") {
+const previewDescription =
+document.getElementById("previewDescription");
 
-      siteNav.innerHTML = `
-        <button>Home</button>
-        <button>Products</button>
-        <button>Cart</button>
-        <button>Checkout</button>
-        <button>Contact</button>
-      `;
+const heroAction =
+document.getElementById("heroAction");
 
-      orderSection.classList.remove("hidden");
-      bookingSection.classList.remove("hidden");
-      paymentSection.classList.remove("hidden");
 
-      previewTitle.textContent = "Premium Website Preview";
+function hideAllAdvanced(){
 
-      previewDescription.textContent =
-        "This demonstrates the full website experience, including ordering, booking, cart, checkout and payment gateway functionality.";
+Object.values(sections).forEach(section=>{
+section.classList.add("hidden");
+});
 
-      document.getElementById("heroButton").textContent =
-        "Shop / Book Now";
+}
 
-    }
 
-    document.getElementById("previewSection").scrollIntoView({
-      behavior: "smooth"
-    });
+function showPlan(plan){
 
-  }
+hideAllAdvanced();
 
-  previewButtons.forEach(button => {
 
-    button.addEventListener("click", () => {
+if(plan === "one"){
 
-      const plan = button.dataset.plan;
+indicator.textContent =
+"1 PAGE WEBSITE";
 
-      showPlan(plan);
+previewTitle.textContent =
+"1 Page Website Preview";
 
-    });
+previewDescription.textContent =
+"Everything listed in the 1 Page package is demonstrated below on one complete business website.";
 
-  });
+demoNav.innerHTML = `
+<button>Home</button>
+<button>About</button>
+<button>Products / Services</button>
+<button>Contact</button>
+`;
 
-  showPlan("one");
+heroAction.textContent =
+"Learn About Us";
+
+}
+
+
+if(plan === "two"){
+
+indicator.textContent =
+"2 PAGE WEBSITE";
+
+previewTitle.textContent =
+"2 Page Website Preview";
+
+previewDescription.textContent =
+"The 2 Page package keeps everything from the 1 Page package and adds a dedicated products/services experience.";
+
+demoNav.innerHTML = `
+<button>Home</button>
+<button>Products</button>
+<button>About</button>
+<button>Contact</button>
+`;
+
+heroAction.textContent =
+"View Products";
+
+}
+
+
+if(plan === "three"){
+
+indicator.textContent =
+"3 PAGE WEBSITE";
+
+previewTitle.textContent =
+"3 Page Website Preview";
+
+previewDescription.textContent =
+"The 3 Page package adds a dedicated ordering or booking experience, customer information, delivery or appointment options and an order summary.";
+
+demoNav.innerHTML = `
+<button>Home</button>
+<button>Products</button>
+<button>Order / Book</button>
+<button>Contact</button>
+`;
+
+sections.order.classList.remove("hidden");
+sections.delivery.classList.remove("hidden");
+sections.summary.classList.remove("hidden");
+
+heroAction.textContent =
+"Order / Book Now";
+
+}
+
+
+if(plan === "premium"){
+
+indicator.textContent =
+"PREMIUM WEBSITE";
+
+previewTitle.textContent =
+"Premium Website Preview";
+
+previewDescription.textContent =
+"The Premium package demonstrates the complete experience: ordering or booking, cart, checkout, payment gateway, payment confirmation, WhatsApp and social media integration.";
+
+demoNav.innerHTML = `
+<button>Home</button>
+<button>Products</button>
+<button>Order / Book</button>
+<button>Cart</button>
+<button>Checkout</button>
+`;
+
+sections.order.classList.remove("hidden");
+sections.delivery.classList.remove("hidden");
+sections.summary.classList.remove("hidden");
+sections.cart.classList.remove("hidden");
+sections.checkout.classList.remove("hidden");
+sections.payment.classList.remove("hidden");
+sections.integration.classList.remove("hidden");
+
+heroAction.textContent =
+"Shop / Book Now";
+
+}
+
+
+document
+.getElementById("previewSection")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+buttons.forEach(button=>{
+
+button.addEventListener("click",()=>{
+
+showPlan(
+button.dataset.plan
+);
+
+});
+
+});
+
+
+document
+.getElementById("payButton")
+.addEventListener("click",()=>{
+
+document
+.getElementById("paymentConfirmation")
+.classList.remove("hidden");
+
+});
+
+
+showPlan("one");
 
 </script>
 
 </body>
 </html>
-```
